@@ -140,9 +140,13 @@
 
 /* --- 8. testimonials: a real carousel ------------------------------------ */
 .rf-quotes{position:relative}
-.rf-track{display:flex;gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;padding:.5rem .2rem 1.6rem;
+/* Snapping switches on only after the visitor first touches the carousel
+   (refine.js adds .rf-snap). Snapping from page load makes Chrome register a
+   scroll during load, which stops Largest Contentful Paint being measured. */
+.rf-track{display:flex;gap:1.4rem;overflow-x:auto;
+  padding:.5rem .2rem 1.6rem;
   scrollbar-width:none;-ms-overflow-style:none}
+.rf-track.rf-snap{scroll-snap-type:x mandatory;scroll-behavior:smooth}
 .rf-track::-webkit-scrollbar{display:none}
 .rf-quote{scroll-snap-align:start;flex:0 0 min(560px,86%);
   background:#fff;border:1px solid var(--rf-line);border-radius:4px;
@@ -164,15 +168,16 @@
 .rf-arrow:focus-visible{outline:3px solid var(--rf-brass);outline-offset:3px}
 
 /* --- 9. scroll reveals ----------------------------------------------------
-   Anyone who prefers reduced motion gets the page with no movement at all,
-   and if the script never runs nothing is left invisible - see refine.js.  */
+   Sections are never parked at opacity:0 - that stopped Chrome measuring
+   Largest Contentful Paint. They stay visible until refine.js marks them just
+   before they scroll into view, then play a fade-up animation. Reduced-motion
+   visitors get no movement, and without the script nothing is hidden.       */
 @media(prefers-reduced-motion:no-preference){
-  .rf-js .rf-reveal{opacity:0;transform:translateY(22px);
-    transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
-  .rf-js .rf-reveal.rf-in{opacity:1;transform:none}
-  .rf-js .rf-reveal.d1{transition-delay:.09s}
-  .rf-js .rf-reveal.d2{transition-delay:.18s}
-  .rf-js .rf-reveal.d3{transition-delay:.27s}
+  @keyframes rfUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  .rf-js .rf-reveal.rf-in{animation:rfUp .75s cubic-bezier(.2,.7,.3,1) both}
+  .rf-js .rf-reveal.rf-in.d1{animation-delay:.09s}
+  .rf-js .rf-reveal.rf-in.d2{animation-delay:.18s}
+  .rf-js .rf-reveal.rf-in.d3{animation-delay:.27s}
 }
 
 /* --- 10. services as photo cards ---------------------------------------- */

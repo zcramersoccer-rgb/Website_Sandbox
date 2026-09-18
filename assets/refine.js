@@ -4,8 +4,10 @@
 (function () {
   var root = document.documentElement;
 
-  /* Scroll reveals. The rf-js class is what arms the hidden state in
-     refine.css, so it is only added once we know we can undo it. */
+  /* Scroll reveals. Nothing is ever hidden up front (a page parked at opacity:0
+     stops Chrome measuring Largest Contentful Paint). Sections already on screen
+     at load are left alone; the rest get .rf-in just before they scroll into
+     view, which plays the fade-up animation in refine.css. */
   var items = document.querySelectorAll('.rf-reveal');
   var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (items.length && 'IntersectionObserver' in window && !still) {
@@ -14,17 +16,27 @@
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add('rf-in'); io.unobserve(e.target); }
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-    items.forEach(function (el) { io.observe(el); });
+    }, { rootMargin: '0px 0px 6% 0px', threshold: 0 });
+    var fold = window.innerHeight;
+    items.forEach(function (el) {
+      if (el.getBoundingClientRect().top < fold) return;  // visible at load: no animation
+      io.observe(el);
+    });
   }
 
-  /* Testimonial arrows. The track is a native scroll-snap row, so touch
-     swiping works on its own; the arrows move it one card at a time. */
+  /* Testimonial arrows. Swiping works natively; the arrows move one card at a
+     time. Scroll snapping is only switched on after the first touch, click or
+     key press on the carousel, so nothing scrolls while the page is loading. */
   document.querySelectorAll('.rf-quotes').forEach(function (box) {
     var track = box.querySelector('.rf-track');
     var prev = box.querySelector('.rf-prev');
     var next = box.querySelector('.rf-next');
     if (!track || !prev || !next) return;
+
+    function snapOn() { track.classList.add('rf-snap'); }
+    ['pointerdown', 'touchstart', 'keydown', 'wheel'].forEach(function (ev) {
+      box.addEventListener(ev, snapOn, { once: true, passive: true });
+    });
 
     function step() {
       var card = track.querySelector('.rf-quote');
@@ -37,8 +49,8 @@
       prev.disabled = track.scrollLeft <= 2;
       next.disabled = track.scrollLeft >= max;
     }
-    prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
-    next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    prev.addEventListener('click', function () { snapOn(); track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { snapOn(); track.scrollBy({ left: step(), behavior: 'smooth' }); });
     track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
     window.addEventListener('resize', sync);
     track.addEventListener('keydown', function (e) {
