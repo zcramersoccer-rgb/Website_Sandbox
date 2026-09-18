@@ -59,7 +59,7 @@
    text on a bright photo. A full-width vertical scrim fixes the contrast
    wherever content lands, and the copy column is capped so lines stay short. */
 .cl-page .cl-hero.split{position:relative;isolation:isolate;width:auto;margin-left:0;margin-right:0;
-  background-image:url('work/charleston-brick-steps-retaining-wall-curb-appeal-800.webp') !important;
+  background:#1b2a22 !important;
   background-size:cover;background-position:center 60%;
   padding:clamp(5rem,11vw,8.5rem) 0 clamp(4rem,9vw,7rem) !important;
   min-height:min(82vh,740px);display:flex;align-items:center}
@@ -216,5 +216,6 @@
 .rf-quote blockquote{margin:0}
 .rf-quote figcaption{margin-top:auto}
 
-/* hero on wide screens: the full-size photo; phones keep the 800px one */
-@media(min-width:761px){ .cl-page .cl-hero.split{background-image:url('work/charleston-brick-steps-retaining-wall-curb-appeal-1600.webp') !important} }
+
+/* hero photo is a real image so browsers (and Google) treat it as the main content */
+.cl-page .cl-hero.split > .rf-hero-img{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;border-radius:0;object-fit:cover;object-position:center 60%;z-index:-2}
