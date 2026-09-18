@@ -107,6 +107,8 @@
     '.clw-err{align-self:flex-start;background:#fef2f2;color:#991b1b;border:1px solid #fecaca;',
     'font-size:13.5px}',
     '.clw-msg a{color:inherit;text-decoration:underline}',
+    '.clw-img{display:block;max-width:100%;height:auto;border-radius:10px;margin:6px 0 2px;',
+    'background:#eef1ef}',
 
     '.clw-dots{display:inline-flex;gap:4px;align-items:center;padding:3px 0}',
     '.clw-dots i{width:6px;height:6px;border-radius:50%;background:#9ca3af;display:block;',
@@ -261,10 +263,31 @@
   }
 
   // Render plain text, turning bare URLs, tel: and emails into links.
+  // A URL is rendered as a photo only when it is on this site AND ends in an image
+  // extension. Everything else stays a plain link. The allow-list is the point: the
+  // model is told to use only image URLs it was given, but it is not a security
+  // boundary, so the widget refuses to load an image from anywhere else - that stops
+  // a poisoned reply pulling in a remote image (which would leak the visitor's IP)
+  // or faking site furniture. Tested against the escaped string, so quotes cannot
+  // break out of the attribute.
+  var SITE_IMAGE =
+    /^https:\/\/(?:www\.)?cramerslandscaping\.com\/[^\s<"']+\.(?:jpe?g|png|webp|gif|avif)(?:\?[^\s<"']*)?$/i;
+
+  // Fallback alt text from the file name, until the images carry real alt text.
+  function altFromUrl(u) {
+    var name = (u.split("?")[0].split("/").pop() || "").replace(/\.[a-z0-9]+$/i, "");
+    name = name.replace(/[-_]+/g, " ").replace(/\d{3,}/g, " ").replace(/\s+/g, " ").trim();
+    return name ? name.slice(0, 80) : "Photo from a Cramers Landscaping project";
+  }
+
   function linkify(text) {
     var out = esc(text);
-    out = out.replace(/\b(https?:\/\/[^\s<]+[^\s<.,;:!?)\]])/g,
-      '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>');
+    out = out.replace(/\b(https?:\/\/[^\s<]+[^\s<.,;:!?)\]])/g, function (m) {
+      if (SITE_IMAGE.test(m)) {
+        return '<img class="clw-img" src="' + m + '" alt="' + altFromUrl(m) + '" loading="lazy">';
+      }
+      return '<a href="' + m + '" target="_blank" rel="noopener noreferrer">' + m + "</a>";
+    });
     out = out.replace(/\b([\w.+-]+@[\w-]+\.[\w.]{2,})\b/g, '<a href="mailto:$1">$1</a>');
     out = out.replace(/(\(\d{3}\)\s?\d{3}-\d{4})/g, function (m) {
       return '<a href="tel:' + m.replace(/[^\d]/g, "") + '">' + m + "</a>";
