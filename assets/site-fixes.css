@@ -65,3 +65,10 @@ main.cl-page{overflow-x:clip}
    Each page's hero sets --hero-sm (800px) and --hero-lg (1600px) inline. */
 .cl-hero{--hero:var(--hero-sm)}
 @media(min-width:761px){ .cl-hero{--hero:var(--hero-lg)} }
+
+/* --- 7. price range tables on service and town pages ------------------------ */
+.cl-prices{width:100%;max-width:640px;border-collapse:collapse;margin:1.2rem 0 .6rem;font-size:1rem}
+.cl-prices th,.cl-prices td{padding:.75rem .9rem;border-bottom:1px solid rgba(27,42,34,.14);text-align:left}
+.cl-prices th{font-weight:600;color:#1b2a22}
+.cl-prices td{color:#114327;font-weight:600;white-space:nowrap}
+.cl-price-note{font-size:.9rem;color:#5b6b63;max-width:640px}
