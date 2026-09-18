@@ -1,0 +1,217 @@
+/* ===========================================================================
+   refine.css — homepage refinement layer, 2026-09-17
+   Loaded AFTER revamp.css so it wins without anyone untangling theme.css.
+
+   Brief: the header wordmark clipped on small phones, "View Our Projects" was
+   invisible, the hero text fought the photo, the page read generic rather than
+   personal, portfolio photos were all one size, testimonials did not move, and
+   the footer listed only half the service areas.
+
+   Direction is high-end-contractor rather than tech-startup: a classical serif
+   for display type over the existing DM Sans body, a lot more white space, one
+   warm brass accent, and photographs given room to carry the page.
+   ======================================================================== */
+
+:root{
+  --rf-ink:#1b2a22;          /* body text - green-black, softer than pure black */
+  --rf-green:#114327;        /* the logo flower's dark green */
+  --rf-green-lift:#059669;   /* existing action green, kept for continuity */
+  --rf-brass:#b08d4f;        /* single warm accent - rules, eyebrows, hovers */
+  --rf-stone:#3d4a57;        /* header bluestone */
+  --rf-sage:#f3f6f4;         /* the very light section tint */
+  --rf-line:rgba(27,42,34,.14);
+  /* One line to change the display face for the whole page. */
+  --rf-display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+/* --- 2. display typography ------------------------------------------------ */
+.cl-page h1,.cl-page h2,.cl-page h3,
+.rf-sec h2,.rf-sec h3,.rf-hero h1{
+  font-family:var(--rf-display);
+  font-weight:600;
+  letter-spacing:.005em;
+  line-height:1.14;
+  color:var(--rf-ink);
+}
+.cl-page h2{font-size:clamp(1.9rem,3.4vw,3rem)}
+.cl-page h3{font-size:clamp(1.15rem,1.7vw,1.45rem);line-height:1.25}
+
+/* Eyebrow: small, letterspaced, brass, with a short rule under it. */
+.rf-eyebrow{
+  font-family:"DM Sans",system-ui,sans-serif;
+  font-size:.75rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--rf-brass);margin:0 0 .65rem;
+}
+.rf-rule{width:54px;height:1px;background:var(--rf-brass);border:0;margin:1.1rem 0 1.4rem}
+.rf-center .rf-rule,.cl-center .rf-rule{margin-left:auto;margin-right:auto}
+.rf-center{text-align:center;max-width:760px;margin:0 auto}
+.rf-lede{font-size:1.06rem;line-height:1.75;color:#41514a;max-width:62ch}
+.rf-center .rf-lede{margin-left:auto;margin-right:auto}
+
+/* --- 3. section rhythm ---------------------------------------------------- */
+.rf-sec{padding:clamp(3.5rem,7vw,6.5rem) 0;background:#fff}
+.rf-sec.tint{background:var(--rf-sage)}
+.rf-wrap{width:min(1180px,calc(100% - 2.5rem));margin:0 auto}
+
+/* --- 4. hero --------------------------------------------------------------
+   The old hero darkened only the left 45% with a horizontal gradient, so any
+   element sitting right of that - including the secondary button - was light
+   text on a bright photo. A full-width vertical scrim fixes the contrast
+   wherever content lands, and the copy column is capped so lines stay short. */
+.cl-page .cl-hero.split{position:relative;isolation:isolate;width:auto;margin-left:0;margin-right:0;
+  background-image:url('https://cramerslandscaping.com/wp-content/uploads/2025/10/GPTempDownload-6-scaled.jpg') !important;
+  background-size:cover;background-position:center 60%;
+  padding:clamp(5rem,11vw,8.5rem) 0 clamp(4rem,9vw,7rem) !important;
+  min-height:min(82vh,740px);display:flex;align-items:center}
+.cl-page .cl-hero.split::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    linear-gradient(180deg,rgba(10,20,15,.62) 0%,rgba(10,20,15,.34) 42%,rgba(10,20,15,.66) 100%),
+    linear-gradient(90deg,rgba(10,20,15,.42) 0%,rgba(10,20,15,0) 72%);
+}
+.cl-page .cl-hero.split .cl-hero-inner{display:block;width:min(1180px,calc(100% - 2.5rem));max-width:none;margin:0 auto}
+.cl-page .cl-hero.split .cl-hero-inner > *{max-width:760px}
+.cl-page .cl-hero.split h1{
+  color:#fff;font-size:clamp(2.3rem,5.2vw,4rem);
+  text-shadow:0 2px 26px rgba(0,0,0,.42);margin:0 0 1rem}
+.cl-page .cl-hero.split .rf-eyebrow{color:#e8d9b8}
+.cl-page .cl-hero.split p{
+  color:rgba(255,255,255,.94);font-size:clamp(1.02rem,1.5vw,1.2rem);
+  line-height:1.65;max-width:56ch;text-shadow:0 1px 16px rgba(0,0,0,.4)}
+
+/* --- 5. hero buttons ------------------------------------------------------
+   "View Our Projects" was a 20%-white wash with white text. Over the bright
+   side of the photo that is white on white. It is now a solid-bordered
+   button with its own backdrop, readable on any part of any image.         */
+.ib-kk-home-btn-container{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center;margin-top:1.9rem}
+.ib-kk-home-btn-1,.ib-kk-home-btn-2{margin:0}
+.ib-kk-home-btn-1 a,.ib-kk-home-btn-2 a{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.95rem 1.7rem;border-radius:999px;
+  font-family:"DM Sans",system-ui,sans-serif;
+  font-weight:600;font-size:1rem;text-decoration:none;
+  transition:transform .18s ease,background-color .18s ease,border-color .18s ease}
+.ib-kk-home-btn-1 a{background:var(--rf-green-lift);color:#fff;border:1.5px solid var(--rf-green-lift);
+  box-shadow:0 10px 26px rgba(5,150,105,.32)}
+.ib-kk-home-btn-1 a:hover{background:#047857;border-color:#047857;transform:translateY(-1px)}
+.ib-kk-home-btn-2{background:transparent !important}
+.ib-kk-home-btn-2 a{
+  background:rgba(12,22,17,.55);color:#fff;border:1.5px solid rgba(255,255,255,.8);
+  backdrop-filter:blur(3px)}
+.ib-kk-home-btn-2 a:hover{background:#fff;color:var(--rf-green);border-color:#fff;transform:translateY(-1px)}
+.rv-hero-contact{margin-top:1.5rem}
+
+/* --- 6. the family section (copy drawn from the About page) --------------- */
+.rf-family{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.rf-family-media{position:relative}
+.rf-family-media img{width:100%;height:clamp(340px,44vw,540px);object-fit:cover;border-radius:4px;
+  box-shadow:0 26px 60px rgba(17,67,39,.18)}
+.rf-family-media::after{content:"";position:absolute;inset:auto -14px -14px auto;
+  width:56%;height:46%;border:1px solid var(--rf-brass);border-radius:4px;z-index:-1}
+.rf-signature{font-family:var(--rf-display);font-style:italic;font-size:1.22rem;
+  color:var(--rf-green);margin-top:1.5rem}
+.rf-points{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:1.05rem}
+.rf-points li{padding-left:1.6rem;position:relative;line-height:1.6;color:#41514a}
+.rf-points li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;
+  border-radius:50%;background:var(--rf-brass)}
+.rf-points strong{color:var(--rf-ink);font-weight:600}
+@media(max-width:860px){ .rf-family{grid-template-columns:1fr} }
+
+/* --- 7. portfolio: mixed sizes -------------------------------------------
+   Was a single-height marquee, so every project read as the same size and
+   nothing looked like a feature. A grid with deliberate spans gives two large
+   anchors per row-block and lets the smaller frames support them.          */
+.rf-gallery{display:grid;grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:clamp(130px,15vw,200px);gap:clamp(10px,1.1vw,16px)}
+.rf-gallery figure{margin:0;overflow:hidden;border-radius:3px;background:#e7ece9;
+  grid-column:span 1;grid-row:span 1}
+.rf-gallery img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.rf-gallery figure:hover img{transform:scale(1.045)}
+.rf-gallery .lg{grid-column:span 2;grid-row:span 2}
+.rf-gallery .wide{grid-column:span 2;grid-row:span 1}
+.rf-gallery .tall{grid-column:span 1;grid-row:span 2}
+@media(max-width:900px){
+  .rf-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(120px,26vw,170px)}
+  .rf-gallery .lg{grid-column:span 2;grid-row:span 2}
+  .rf-gallery .wide{grid-column:span 2;grid-row:span 1}
+  .rf-gallery .tall{grid-column:span 1;grid-row:span 2}
+}
+
+/* --- 8. testimonials: a real carousel ------------------------------------ */
+.rf-quotes{position:relative}
+.rf-track{display:flex;gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;padding:.5rem .2rem 1.6rem;
+  scrollbar-width:none;-ms-overflow-style:none}
+.rf-track::-webkit-scrollbar{display:none}
+.rf-quote{scroll-snap-align:start;flex:0 0 min(560px,86%);
+  background:#fff;border:1px solid var(--rf-line);border-radius:4px;
+  padding:clamp(1.6rem,3vw,2.6rem);display:flex;flex-direction:column;gap:1rem}
+.rf-sec.tint .rf-quote{background:#fff}
+.rf-quote p{font-family:var(--rf-display);font-size:clamp(1.1rem,1.6vw,1.34rem);
+  line-height:1.6;color:var(--rf-ink);margin:0;font-style:italic}
+.rf-quote cite{font-family:"DM Sans",system-ui,sans-serif;font-style:normal;
+  font-weight:600;font-size:.94rem;color:var(--rf-green);letter-spacing:.02em}
+.rf-stars{color:var(--rf-brass);letter-spacing:.14em;font-size:.95rem}
+.rf-arrows{display:flex;gap:.7rem;justify-content:center;margin-top:.4rem}
+.rf-arrow{width:48px;height:48px;border-radius:50%;border:1px solid var(--rf-line);
+  background:#fff;color:var(--rf-green);cursor:pointer;display:grid;place-items:center;
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease,opacity .18s ease}
+.rf-arrow:hover:not(:disabled){background:var(--rf-green);color:#fff;border-color:var(--rf-green)}
+.rf-arrow:disabled{opacity:.34;cursor:default}
+.rf-arrow svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;
+  stroke-linecap:round;stroke-linejoin:round}
+.rf-arrow:focus-visible{outline:3px solid var(--rf-brass);outline-offset:3px}
+
+/* --- 9. scroll reveals ----------------------------------------------------
+   Anyone who prefers reduced motion gets the page with no movement at all,
+   and if the script never runs nothing is left invisible - see refine.js.  */
+@media(prefers-reduced-motion:no-preference){
+  .rf-js .rf-reveal{opacity:0;transform:translateY(22px);
+    transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
+  .rf-js .rf-reveal.rf-in{opacity:1;transform:none}
+  .rf-js .rf-reveal.d1{transition-delay:.09s}
+  .rf-js .rf-reveal.d2{transition-delay:.18s}
+  .rf-js .rf-reveal.d3{transition-delay:.27s}
+}
+
+/* --- 10. services as photo cards ---------------------------------------- */
+.rf-services{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2vw,1.6rem);margin-top:clamp(2rem,4vw,3rem)}
+.rf-svc{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.rf-svc figure{margin:0;overflow:hidden;border-radius:3px;aspect-ratio:4/5;background:#e7ece9}
+.rf-svc img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.rf-svc:hover img{transform:scale(1.045)}
+.rf-svc h3{margin:1.1rem 0 .4rem}
+.rf-svc p{margin:0;color:#41514a;line-height:1.6;font-size:.97rem}
+.rf-more{display:inline-block;margin-top:.8rem;font-weight:600;font-size:.9rem;color:var(--rf-green);letter-spacing:.02em}
+.rf-svc:hover .rf-more{color:var(--rf-brass)}
+.rf-also{margin:2.4rem auto 0;text-align:center;color:#41514a;line-height:1.9}
+.rf-also a{color:var(--rf-green);font-weight:600;text-decoration:none;border-bottom:1px solid var(--rf-line);margin:0 .35rem;white-space:nowrap}
+.rf-also a:hover{border-color:var(--rf-brass)}
+@media(max-width:980px){ .rf-services{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:520px){ .rf-services{grid-template-columns:1fr} .rf-svc figure{aspect-ratio:4/3} }
+
+/* --- 11. how we work: numbered steps, no stock imagery ------------------ */
+.rf-steps{list-style:none;margin:clamp(2rem,4vw,3rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.2rem,2.4vw,2.2rem);counter-reset:rf}
+.rf-steps li{counter-increment:rf;border-top:1px solid var(--rf-brass);padding-top:1.2rem}
+.rf-steps li::before{content:"0" counter(rf);display:block;font-family:var(--rf-display);font-size:2.4rem;line-height:1;color:var(--rf-brass);margin-bottom:.7rem}
+.rf-steps h3{margin:0 0 .45rem}
+.rf-steps p{margin:0;color:#41514a;line-height:1.65}
+@media(max-width:900px){ .rf-steps{grid-template-columns:repeat(2,1fr)} }
+@media(max-width:520px){ .rf-steps{grid-template-columns:1fr} }
+
+.rf-gallery{grid-auto-flow:dense}
+.rf-cta-line{text-align:center;margin-top:2rem}
+.rf-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.6rem;border-radius:999px;border:1.5px solid var(--rf-green);color:var(--rf-green);font-weight:600;text-decoration:none;transition:background-color .18s ease,color .18s ease}
+.rf-btn:hover{background:var(--rf-green);color:#fff}
+/* theme.css underlines and recolors every link inside .cl-page; the card and
+   button links carry their own styling, so opt them out explicitly. */
+.cl-page a.rf-svc,.cl-page a.rf-svc:hover,.cl-page a.rf-btn,.cl-page .rf-also a{text-decoration:none}
+.cl-page a.rf-svc{color:inherit}
+.cl-page a.rf-btn{color:var(--rf-green)}
+.cl-page a.rf-btn:hover{color:#fff}
+/* Equal-height cards with the name pinned to the bottom; a desktop shows two and a half so the
+   next one visibly peeks in, which is the cue that the row moves. */
+.rf-quote{flex-basis:min(440px,86%)}
+.rf-quote blockquote{margin:0}
+.rf-quote figcaption{margin-top:auto}
