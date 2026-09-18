@@ -49,8 +49,8 @@
       prev.disabled = track.scrollLeft <= 2;
       next.disabled = track.scrollLeft >= max;
     }
-    prev.addEventListener('click', function () { snapOn(); track.scrollBy({ left: -step(), behavior: 'smooth' }); });
-    next.addEventListener('click', function () { snapOn(); track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
     track.addEventListener('scroll', function () { window.requestAnimationFrame(sync); }, { passive: true });
     window.addEventListener('resize', sync);
     track.addEventListener('keydown', function (e) {
