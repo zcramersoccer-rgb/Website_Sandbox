@@ -60,3 +60,8 @@ main.cl-page{overflow-x:clip}
 .cl-work-grid figure a:hover img{transform:scale(1.04)}
 .cl-work-grid figcaption{font-size:.84rem;line-height:1.45;color:#41514a;margin-top:.45rem}
 @media(max-width:900px){ .cl-work-grid{grid-template-columns:repeat(2,minmax(0,1fr))} }
+
+/* --- 6. responsive hero photo --------------------------------------------
+   Each page's hero sets --hero-sm (800px) and --hero-lg (1600px) inline. */
+.cl-hero{--hero:var(--hero-sm)}
+@media(min-width:761px){ .cl-hero{--hero:var(--hero-lg)} }
