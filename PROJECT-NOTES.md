@@ -69,8 +69,8 @@ so roughly 75% of the colour was being lost. Re-encoded to proper bt709 SDR.
 
 | File | Before | After |
 |---|---|---|
-| hero-1080.mp4 | 8.59 MB, bt2020 HLG | 7.75 MB, bt709, cropped |
-| hero-720.mp4 | 4.21 MB, bt2020 HLG | 3.94 MB, bt709, cropped |
+| hero-1080.mp4 | 8.59 MB, bt2020 HLG | 8.42 MB, bt709, cropped, shot 2 swapped |
+| hero-720.mp4 | 4.21 MB, bt2020 HLG | 4.23 MB, bt709, cropped, shot 2 swapped |
 | hero-poster.webp | 207 KB | 189 KB, colour- and crop-matched |
 | hero-poster.jpg | 347 KB, unreferenced | deleted |
 
@@ -107,6 +107,41 @@ Re-encoded from the **v4 HLG master** (`git show c3923cd:assets/video/hero-1080.
 with crop, tone-map and encode in one pass, so it is still only one generation
 off the master rather than two. Poster regenerated with the same crop so it
 matches the video behind it.
+
+### Shot 2 replaced — fire bowls (2026-09-19)
+
+The Mount Pleasant pool pavilion shot was visibly soft: sharpness 13.89 against
+20.91 for the pergola opener, with smeared fence boards and chairs at 1:1. It
+looked upscaled from a smaller source. Replaced with the travertine pool and
+fire-bowl footage from the **v1 cut** (`git show 2e296d5:assets/video/hero-1080.mp4`,
+t=8.6-13.9), which measures 15.32 and brings colour, flame movement and a
+different property.
+
+The reel runs at half speed, so the v1 clip was slowed 2x with motion
+interpolation to match (`setpts=2*PTS,minterpolate=fps=30:mi_mode=mci:mc_mode=aobmc:vsbmc=1`)
+— about 100s to render 10.5s at 1080p.
+
+Assembled in one pass from the v4 master plus that clip: shot 1 (master 0-7.2),
+fire bowls, then shots 3-5 (master 16.2-37.2), joined with 1.2s crossfades to
+match the existing dissolves, then cropped and tone-mapped. Runs 36.3s, down
+from 37.2s. Files came out slightly larger (7.75 -> 8.42 MB) because flames and
+moving water are expensive to encode.
+
+Dissolve boundaries in the v4 master, if this needs redoing:
+shot1->2 spans 7.3-8.6, shot2->3 spans 14.6-16.0.
+
+**Current shot order:** pergola -> pool + fire bowls -> blue-house kitchen ->
+putting green patio -> porch fireplace.
+
+⚠️ **There is no pavilion shot in the hero any more.** Pavilions are the
+highest-ticket service ($30-90k+), so this is worth filling.
+
+### Footage wanted
+
+- **Golden hour cabana video** — Zach is shooting this (mentioned 2026-09-19).
+  Strong candidate to go back into the hero, and the obvious fix for the missing
+  pavilion coverage. The West Ashley cabana is the flagship project (haint blue
+  vaulted ceiling, cedar posts, TV wall).
 
 **Lesson for checking footage:** he was missed on the first pass because contact
 sheets were tiled at ~330px wide, where a figure at the extreme frame edge is a
