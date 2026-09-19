@@ -300,3 +300,7 @@
 .rf-feature-card .rf-eyebrow{margin:.9rem 0 .2rem;font-size:.7rem}
 .rf-feature-card h3{margin:0 0 .35rem}
 .rf-feature-card p:not(.rf-eyebrow){line-height:1.6}
+/* homepage service tiles: landscape frames suit the chosen photos; per-photo focal points */
+.rf-services-3 .rf-svc figure{aspect-ratio:4/3}
+.rf-services-3 img[src*="japanese-maple-fountain-oasis"]{object-position:50% 80%}
+.rf-services-3 img[src*="brick-steps-retaining-wall-curb-appeal"]{object-position:36% 50%}
