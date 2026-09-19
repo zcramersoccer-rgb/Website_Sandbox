@@ -639,11 +639,30 @@ compaction and a **root barrier**.
   **stone pedestals with a quartzite countertop**, with a **door to store the
   propane tank**, and the fire bowls sat on top.
 
+### Fire pits, continued (FP2, answered 2026-09-19)
+
+- **Built-in is ideal for people with the space.** Many don't have it, and prefer
+  a **freestanding pit they can move out of the way** so the patio can be used
+  for other things too.
+- **The fire bowls on pedestals are a different thing from fire pits** — don't
+  conflate them.
+- **A fire pit can be as cheap as $1,000 for a simple kit.** Custom ones in
+  higher-end materials cost more.
+
+### Photos chosen for the project stories
+
+- **Patios (PP5):** `summerville-marble-patio`
+- **Retaining walls (RW5):** `charleston-residential-driveway-retaining-wall-landscaping`
+
+⚠️ **Descriptions still needed for both.** Zach picked the photos but has not yet
+described either project, and nothing goes on a page unsourced.
+
+⚠️ **Only 5 retaining wall photos exist** in the whole library, and two of them
+are really fire-pit shots. Thin for a service page — worth a photo run.
+
 ### Still open
 
-- **PP5** patio project story — Zach wants photo options first
-- **RW5** retaining wall story — Zach wants photo options first
-- **FP2** built-in vs freestanding — question needs rewording
+- PP5 and RW5 project descriptions (photos chosen, stories not yet given)
 
 ---
 
