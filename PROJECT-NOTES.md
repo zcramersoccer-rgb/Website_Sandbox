@@ -69,9 +69,9 @@ so roughly 75% of the colour was being lost. Re-encoded to proper bt709 SDR.
 
 | File | Before | After |
 |---|---|---|
-| hero-1080.mp4 | 8.59 MB, bt2020 HLG | 8.31 MB, bt709 |
-| hero-720.mp4 | 4.21 MB, bt2020 HLG | 4.07 MB, bt709 |
-| hero-poster.webp | 207 KB | 216 KB, colour-matched |
+| hero-1080.mp4 | 8.59 MB, bt2020 HLG | 7.75 MB, bt709, cropped |
+| hero-720.mp4 | 4.21 MB, bt2020 HLG | 3.94 MB, bt709, cropped |
+| hero-poster.webp | 207 KB | 189 KB, colour- and crop-matched |
 | hero-poster.jpg | 347 KB, unreferenced | deleted |
 
 Recipe, if it ever needs redoing from the HLG master:
@@ -84,6 +84,35 @@ Recipe, if it ever needs redoing from the HLG master:
 
 **Use `tonemap=hable` with its default desaturation.** `desat=0` was tried and
 throws a magenta cast — white siding and pavers turn pink. Verified frame by frame.
+
+### Person removed from shot 3 (2026-09-19)
+
+A man in a grey t-shirt and white shorts, dragging a hose, walks out along the
+**left edge at the start of shot 3**, visible from the shot-2 dissolve at
+t≈15.0 until t≈17.8. He is in every cut from v4 back.
+
+He never reached further than **x≈110 of 1920** (under 6% of frame width), so
+instead of losing ~4s of footage he was cropped out with a small asymmetric
+punch-in, all taken off the left:
+
+```
+crop=1760:990:160:45,<tonemap chain>,scale=1920:1080
+```
+
+1760x990 is exactly 16:9, so there is no distortion. That is a 9.1% punch-in,
+applied to the whole video for uniform framing — checked shot by shot, nothing
+of value is lost at any edge. Full duration and both dissolves are preserved.
+
+Re-encoded from the **v4 HLG master** (`git show c3923cd:assets/video/hero-1080.mp4`),
+with crop, tone-map and encode in one pass, so it is still only one generation
+off the master rather than two. Poster regenerated with the same crop so it
+matches the video behind it.
+
+**Lesson for checking footage:** he was missed on the first pass because contact
+sheets were tiled at ~330px wide, where a figure at the extreme frame edge is a
+few pixels and blends into the tile border. When checking for people, scan the
+left and right 400-500px strips separately at high magnification, not just
+full-frame thumbnails.
 
 ### Things tried that did NOT help
 

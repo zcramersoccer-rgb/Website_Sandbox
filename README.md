@@ -51,4 +51,4 @@ Deliberate decisions:
 ## Publishing
 
 Settings → Pages → Deploy from a branch → `main` → `/ (root)`.
-Live at `https://landmaster9000.github.io/Website_Sandbox/`.
+Live at `https://zcramersoccer-rgb.github.io/Website_Sandbox/`.
