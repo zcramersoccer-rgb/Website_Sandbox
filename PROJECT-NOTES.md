@@ -359,7 +359,20 @@ here is still unverified — do not invent.
   things cost. After that they usually know how they want to use the space but
   need help with ideas on how to actually pull it off.
 
-### Pergola vs pavilion — ⚠️ CORRECTS WHAT THE SITE SAYS
+### Pergola vs pavilion — the definition (Zach, corrected 2026-09-19)
+
+**The dividing line is the roof form:**
+
+- **Pergola** = flat, open or **shed** roof. It can be left open to the sky, or built
+  with a solid roof, a finished ceiling, electrical and post and beam trim, and it is
+  still a pergola.
+- **Gable, hip or gambrel roof** = call it a **pavilion or a gazebo**.
+
+A pergola is also the smaller and less expensive of the two, which is why most
+clients choose one. Do not write that a pavilion "carries roof framing a pergola
+can't" — that was wrong and Zach corrected it.
+
+### Pergola vs pavilion — earlier framing, now superseded
 
 **The first question is how they want to use the space.**
 
@@ -464,6 +477,23 @@ from the description; photo sent 2026-09-19, awaiting his reply.
 Depends on how busy they are and whether permitting or HOA approval is needed.
 **Structures often take 1-2 months** to start. **Simple sod jobs they try to fit
 in within a few weeks at most.** Use the matching figure per service page.
+
+### ⚠️ Editing trap: FAQ text lives in TWO places
+
+Every FAQ answer appears **twice** in these pages: once in the visible
+`<details>` block, and once inside the `FAQPage` JSON-LD in `<head>`. The JSON-LD
+comes first in the file, so a naive `s.replace(old, new, 1)` silently edits the
+**schema** copy and leaves the visible answer stale — and regenerating the schema
+from the visible text then wipes the change entirely. This bit five answers on the
+blog and one on each structure page before it was caught.
+
+Always target the visible block, then rebuild the schema from it:
+
+```python
+pat = re.compile(r'(<summary>[^<]*'+re.escape(q)+r'[^<]*</summary><p>)(.*?)(</p>)', re.S)
+```
+
+Then verify schema and visible text agree before committing.
 
 ### Still unanswered
 
