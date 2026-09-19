@@ -14,19 +14,29 @@ interview answers and the first round of Semrush research.
 
 ### ⚠️ The branch trap
 
-**All current work is on `Site-revamp`, not `main`.**
-
-`main` is frozen at the 2026-09-15 Divi replica. `Site-revamp` is ~51 commits
-ahead. A fresh session may start you on a stale branch and everything will look
-like it vanished. First command of any session:
+**Work on `Site-revamp`.** A fresh session may start you on a stale or deleted
+branch and everything will look like it vanished. First command of any session:
 
 ```
 git fetch origin --prune && git checkout Site-revamp && git pull
 ```
 
-GitHub Pages still deploys from `main`, so the published sandbox does **not**
-show any of this work yet. That is deliberate — we are not publishing until the
-content pass is done.
+**Published 2026-09-19.** `main` was fast-forwarded to `Site-revamp`, so the two
+are identical and the live sandbox now shows all of this work, hero video
+included. Before that, `main` had been frozen at the 2026-09-15 Divi replica with
+no video files at all, 53 commits behind.
+
+Keep publishing the same way — it stays a clean fast-forward as long as nothing
+commits directly to `main`:
+
+```
+git checkout main && git merge --ff-only origin/Site-revamp && git push origin main
+```
+
+The sandbox is safe to publish at any time: `robots.txt` is `Disallow: /` and all
+60 pages carry `noindex`. Check both still hold before each publish. Note that
+this file is served publicly too (crawlers are blocked, but the URL is reachable),
+so keep anything genuinely sensitive out of it.
 
 ### What's done
 
