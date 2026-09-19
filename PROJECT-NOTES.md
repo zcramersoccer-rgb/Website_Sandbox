@@ -641,8 +641,17 @@ compaction and a **root barrier**.
   strength and size; **natural stone** is a premium for a specific look.
 - **Permits (RW3):** **at 6ft from the lowest point** a wall needs permitting.
   **Drainage and flood zones** can change the requirements too.
-- **Drainage (RW4):** improper drainage causes wall failure. Proper install is
-  **fabric and gravel behind the wall with weep holes** to let water out.
+- **Why walls fail (RW4, corrected 2026-09-19):** improper drainage *can* cause
+  failure, but the **more common causes are construction shortcuts**:
+  - **No rebar.**
+  - **CMU block left unfilled.** Beyond the strength it costs, it means the
+    **caps don't bond well** because there is so little surface area to bond to,
+    so the caps come loose before the wall does.
+  - **Bad stucco work.**
+  - Then drainage. Proper install is **fabric and gravel behind the wall with
+    weep holes** to let water out.
+
+  Do not write that drainage is the main cause &mdash; that was an earlier error.
 
 ### Fire pits
 
@@ -673,7 +682,9 @@ compaction and a **root barrier**.
 described either project, and nothing goes on a page unsourced.
 
 ⚠️ **Only 5 retaining wall photos exist** in the whole library, and two of them
-are really fire-pit shots. Thin for a service page — worth a photo run.
+are really fire-pit shots. The carousel was **removed from that page** rather
+than run a two-slide gallery. Put it back when there are photos to support it —
+worth a photo run on the next wall job.
 
 ### Project stories (answered 2026-09-19)
 
