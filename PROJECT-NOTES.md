@@ -337,6 +337,135 @@ for f in *.html; do printf '%-50s prices:%-3s names:%-3s nearme:%-3s faq:%s\n' "
 
 ---
 
+## ✅ Zach's answers — 2026-09-19 (VERIFIED SOURCE, use these)
+
+Everything below came directly from Zach. Safe to put on pages. Anything NOT
+here is still unverified — do not invent.
+
+### Cross-cutting (applies to every service page)
+
+- **The four figures are CONFIRMED correct**: pergola $10-30k, pavilion
+  $30-90k+, permits 4-6 weeks, pavilion build 6-8 weeks.
+- **Cheaper competing quotes** usually mean they are quoting something
+  different — cheaper materials, less trim or no trim. Response: we can design
+  within your budget.
+- **Top 3 phone questions**: timeline, price/design, and the
+  construction/landscaping process.
+- **Warranty/credentials confirmed accurate**: 1-year workmanship and plant
+  warranty, licensed residential builder, insured.
+- **What they push back on: rushing.** They would rather stage a project over
+  years than build something the client will not love.
+- **What people want first**: a rough budget, because they do not know what
+  things cost. After that they usually know how they want to use the space but
+  need help with ideas on how to actually pull it off.
+
+### Pergola vs pavilion — ⚠️ CORRECTS WHAT THE SITE SAYS
+
+**The first question is how they want to use the space.**
+
+A pergola is generally cheaper and smaller. **A pergola can be built with OR
+without a roof, ceiling, electrical and post-and-beam trim.** It can be a
+simple garden structure, or fully finished like the Summerville pergola
+kitchen — roof, ceiling, post and beam trim, kitchen underneath.
+
+A pavilion is a larger built structure, offering different roof framing styles
+and more amenities, at a higher cost.
+
+**Most people choose a pergola** — cheaper, and you still get the functionality
+of a covered roof structure.
+
+**No regrets reported**, which Zach attributes to the design process making
+sure it is built for their needs.
+
+> ⚠️ The old site copy said "a pergola filters light and keeps the space open;
+> a pavilion has a solid roof and keeps the rain off." **That is wrong** — a
+> pergola can have a solid roof and ceiling. The real distinction is scale,
+> structure and amenities, not open vs solid roof.
+
+### Materials and construction
+
+- Structures are **mainly framed in pressure-treated lumber**. Finish trim
+  boards can be various lumber types or **Hardie board**. **Cedar is a good
+  lumber option.**
+- **Metal-framed pergolas** are available: cost more, modern durable look, and
+  allow a large **cantilever-style** pergola.
+- Pavilion material choice comes down to **architectural style and budget**.
+- People like the **storage/bathroom area at the back** of pavilions — as in
+  the pool cabana and the Mount Pleasant pavilion.
+- Ceilings: they prefer **individual tongue-and-groove boards**; the budget
+  alternative is **T1-11 plywood**.
+
+### Finish and maintenance
+
+- **Stain**: reapply 8-12 months after the initial coat, then every few years
+  as needed.
+- **Paint**: every 5-10 years depending on product and exposure.
+- **Posts and fascia in direct exposure need more maintenance** than a covered
+  ceiling.
+- They offer **linseed oil paint** for exterior wood — natural, long lasting,
+  easy to maintain, costs more to install.
+- Want it natural? A **clear sealer** works but will not stop the wood greying.
+- **West Ashley pool cabana**: client wanted a natural cedar look, so they used
+  a stain with a little pigment matched to the cedar — keeps the natural colour
+  while protecting against greying.
+
+### Coastal and hurricane
+
+Builds are made to last through hurricanes and coastal weather. They add
+**hurricane strapping or structural screws that do the same job**. The paint
+and stain guidance above is also what protects against coastal weather.
+
+### What drives the price
+
+- **$10k pergola**: simple, no post/beam trim, no ceiling, maybe no roof.
+- **$30k pergola**: post and beam trim, ceiling, roof, electrical, maybe a kitchen.
+- **$30k pavilion**: small and bare bones.
+- **$80k+ pavilion**: like the West Ashley cabana — trim, speakers, accent
+  lighting, storage/bathroom at the back, larger size.
+- **Patio material matters**: salt-void concrete was the cheaper option at West
+  Ashley; Mount Pleasant used travertine.
+- **No single big cost driver** (maybe foundation/patio). It is mostly the
+  little things adding up — on complex structures with a bathroom and sauna
+  there are a lot of steps and different trades involved.
+
+### Timelines and permits
+
+- **Pergola build: one week to three weeks.**
+- **Almost all structures need permits**, except under a certain square footage
+  in certain towns — Isle of Palms was the example given.
+
+### The details that matter later (Zach's own list)
+
+- Positioning and layout relative to the yard, the sun and how it will be used
+- Planning ahead for a later kitchen project if the work is being staged
+- Using the **classical orders for proportioning**
+- Planning how electrical and other utilities are hidden
+- Knowing the **finish grade**
+- Making sure they have all the amenities they want — speakers, lights, sauna
+
+### Project stories
+
+**West Ashley pool cabana** — the showpiece is the trim. Cedar posts and beams
+**mitered tight**, then a colour-matched **Big Stretch caulk** to hide the seams
+as the wood moves over time. The **ridge and hip rafters were trimmed out larger**
+to frame the structure better. Plus the small details: lighting, speakers, and
+the trim on top of the beams where the rafters pass through.
+
+**Mount Pleasant pool pavilion** — had everything, but what set it apart was
+the **scale and the beams**. The **glulam beams cost $10k in material alone** and
+weighed a significant amount. More like a **timber-framed structure** than a
+traditional pavilion.
+
+**North Charleston (swing set around a fire pit)** — Zach did not recognise it
+from the description; photo sent 2026-09-19, awaiting his reply.
+
+### Still unanswered
+
+- A5: typical wait from signed quote to boots on the ground
+- B17 pergola/pavilion-specific objections beyond the budget answer above
+
+---
+
 ## Open interview — Part A: answer once, unlocks EVERY service page
 
 These are cross-cutting, so the answers get reused on all 20+ service pages.
