@@ -484,6 +484,29 @@ Depends on how busy they are and whether permitting or HOA approval is needed.
 **Structures often take 1-2 months** to start. **Simple sod jobs they try to fit
 in within a few weeks at most.** Use the matching figure per service page.
 
+### ⚠️ Editing trap: carousel slides encode their own position
+
+Each `<figure class="cl-slide">` carries its own `cl-prev` / `cl-next` labels and
+a `cl-count` span with absolute slide numbers. **Reordering or replacing a slide
+silently breaks navigation** — reordering scrambles the prev/next targets and the
+counters, and replacing a whole `<figure>` drops its controls, leaving a slide
+you can land on but cannot leave. Both happened on `pergolas.html`.
+
+After touching any slide, rebuild every figure's nav from its position:
+prev = n-1 (wrap to last), next = n+1 (wrap to 1), count = "n / total". Then walk
+the carousel in a browser and confirm the counter runs 1..n and wraps.
+
+### ⚠️ Image dimensions must match the file
+
+`width`/`height` attributes reserve layout space. Writing 1600x1200 on a 900x1600
+portrait causes layout shift and a wrong aspect box. After any image swap, re-derive
+both attributes from the actual WebP header and verify in a browser against
+`naturalWidth`/`naturalHeight`.
+
+Carousel frames are **4:3 with `object-fit: cover`**, so a tall portrait loses up to
+46% of its height and can sever posts at their base. Prefer images at or near 4:3
+for slides.
+
 ### ⚠️ Editing trap: FAQ text lives in TWO places
 
 Every FAQ answer appears **twice** in these pages: once in the visible
