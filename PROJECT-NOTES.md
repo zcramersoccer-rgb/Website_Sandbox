@@ -36,12 +36,64 @@ content pass is done.
 - All images local WebP, self-hosted fonts, one minified stylesheet per page
 - **`outdoor-kitchens.html` and `summerville-sc.html` rewritten from Zach's answers** — these are the quality bar
 - `pergola-pavilion-installation-charleston-sc.html` re-aimed at "pergola vs pavilion" (2026-09-19)
+- **Hero video finished (2026-09-19)** — see "Hero video" below
 
 ### What's next
 
 Rewriting every service page one at a time, in the house pattern below, from
 Zach's answers. **Currently mid-interview on Pergolas & Pavilions** — questions
 are in the section at the bottom of this file, awaiting answers.
+
+---
+
+## Hero video — done
+
+`assets/video/hero-1080.mp4` + `hero-720.mp4`, v4 cut, 37.2s silent loop.
+Fades in from black and out to black, so the loop is a clean symmetric
+fade-through-black. Poster is the opening frame (t=1.5s).
+
+**Fixed 2026-09-19:** the encode was tagged `bt2020nc / arib-std-b67` (HLG HDR)
+from the iPhone source. Any browser that does not tone-map HLG was showing it
+badly desaturated — measured mean saturation 16.8 untagged vs 29.6 tone-mapped,
+so roughly 75% of the colour was being lost. Re-encoded to proper bt709 SDR.
+
+| File | Before | After |
+|---|---|---|
+| hero-1080.mp4 | 8.59 MB, bt2020 HLG | 8.31 MB, bt709 |
+| hero-720.mp4 | 4.21 MB, bt2020 HLG | 4.07 MB, bt709 |
+| hero-poster.webp | 207 KB | 216 KB, colour-matched |
+| hero-poster.jpg | 347 KB, unreferenced | deleted |
+
+Recipe, if it ever needs redoing from the HLG master:
+
+```
+-vf "zscale=t=linear:npl=100,tonemap=hable,zscale=p=bt709:t=bt709:m=bt709:r=tv,format=yuv420p"
+-c:v libx264 -preset slow -crf 33 -pix_fmt yuv420p
+-colorspace bt709 -color_primaries bt709 -color_trc bt709 -movflags +faststart -g 60
+```
+
+**Use `tonemap=hable` with its default desaturation.** `desat=0` was tried and
+throws a magenta cast — white siding and pavers turn pink. Verified frame by frame.
+
+### Things tried that did NOT help
+
+- **VP9 / WebM** — came out *larger* than H.264 (crf 36 ≈ 11 MB vs 8.6 MB). The
+  cut is a half-speed interpolated recut, and the synthetic in-between frames
+  compress badly. Not worth a second source.
+- **Dropping frame rate** 30 → 24 or 20fps — saved only ~4%. x264 already encodes
+  near-duplicate interpolated frames almost for free.
+
+The existing encode was already efficient; there is no free size win left. Going
+below ~8.3 MB at 1080p means visible quality loss (crf 34 ≈ 6.6 MB) or a shorter
+cut. **Shortening from 37s to ~20s is the only large saving available, and that is
+an editorial call — ask Zach.**
+
+### Note for testing
+
+Playwright's bundled Chromium has no H.264 decoder (`canPlayType('avc1')` is
+empty) and the bundled ffmpeg is `--disable-everything`. Neither can play the
+hero video. Install a real one for video work:
+`npm i ffmpeg-static` in the scratch dir. Do not mistake either for a site bug.
 
 ---
 
