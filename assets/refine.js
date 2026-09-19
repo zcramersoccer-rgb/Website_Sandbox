@@ -5,7 +5,7 @@
   var root = document.documentElement;
 
   /* Hero video: visitors who ask for reduced motion get the still poster instead. */
-  var vid = document.querySelector('.rf-hero-video');
+  var vid = document.querySelector('.rf-hero-video, .rf-vhero-video');
   if (vid && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     vid.removeAttribute('autoplay'); vid.pause();
   }

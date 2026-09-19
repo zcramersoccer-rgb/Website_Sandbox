@@ -277,3 +277,22 @@
   .cl-page .cl-hero.split.rf-video-hero .cl-hero-inner{grid-column:1;grid-row:2;padding:2rem 1.25rem 2.5rem}
   .rf-video-hero .ib-kk-home-btn-container{max-width:none}
 }
+
+/* --- 14. full-width video hero with the banner below it (2026-09-18) -------
+   Zach wanted the video to fill the page width, so the headline, buttons and
+   contact details moved into a solid band underneath rather than over it. */
+.rf-vhero{position:relative;background:#1b2a22;line-height:0}
+.rf-vhero-video{display:block;width:100%;height:min(56.25vw,calc(100vh - 90px));min-height:240px;object-fit:cover}
+.rf-banner{background:var(--rf-green);color:#fff;padding:clamp(2.2rem,4.5vw,3.6rem) 0}
+.rf-banner-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.cl-page .rf-banner h1{color:#fff;font-size:clamp(2rem,3.6vw,3.2rem);margin:0 0 .8rem}
+.rf-banner .rf-eyebrow{color:#e8d9b8}
+.rf-banner-copy > p:last-child{color:rgba(255,255,255,.9);font-size:clamp(1rem,1.3vw,1.12rem);line-height:1.65;margin:0;max-width:56ch}
+.rf-banner .ib-kk-home-btn-container{flex-direction:column;align-items:stretch;margin-top:0}
+.rf-banner .ib-kk-home-btn-1 a,.rf-banner .ib-kk-home-btn-2 a{justify-content:center;width:100%;box-sizing:border-box}
+.rf-banner .ib-kk-home-btn-2 a{background:transparent;backdrop-filter:none}
+.rf-banner-meta{list-style:none;margin:1rem 0 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:.3rem 1.2rem;font-size:.92rem;color:rgba(255,255,255,.82)}
+.rf-banner-meta a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){ .rf-banner-grid{grid-template-columns:1fr} .rf-vhero-video{height:auto;aspect-ratio:16/9} }
+@media (prefers-reduced-motion: reduce){ .rf-vhero-video{animation:none} }
+.rf-banner + .rf-trust{border-top:1px solid rgba(255,255,255,.14);background:#0d3520}
