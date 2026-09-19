@@ -4,10 +4,28 @@
 (function () {
   var root = document.documentElement;
 
-  /* Hero video: visitors who ask for reduced motion get the still poster instead. */
-  var vid = document.querySelector('.rf-hero-video, .rf-vhero-video');
-  if (vid && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    vid.removeAttribute('autoplay'); vid.pause();
+  /* Hero video: the poster is the first paint (and the LCP image). The video file itself is only
+     attached once the page has finished loading, so it never competes with the first screen on phones.
+     Reduced-motion and data-saver visitors keep the still poster. */
+  var vid = document.querySelector('.rf-vhero-video');
+  if (vid) {
+    var keepStill = (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) ||
+                (navigator.connection && navigator.connection.saveData);
+    if (!keepStill) {
+      var startVideo = function () {
+        var small = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+        var go = function () { var p = vid.play(); if (p && p.catch) p.catch(function () {}); };
+        vid.muted = true;
+        vid.autoplay = true;
+        vid.preload = 'auto';
+        vid.src = small ? vid.getAttribute('data-src-sm') : vid.getAttribute('data-src-lg');
+        vid.addEventListener('canplay', go, { once: true });
+        document.addEventListener('visibilitychange', function () { if (!document.hidden && vid.paused) go(); });
+        vid.load();
+      };
+      if (document.readyState === 'complete') setTimeout(startVideo, 300);
+      else window.addEventListener('load', function () { setTimeout(startVideo, 300); });
+    }
   }
 
   /* Scroll reveals. Nothing is ever hidden up front (a page parked at opacity:0
