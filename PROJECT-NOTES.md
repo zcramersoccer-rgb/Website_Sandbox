@@ -532,6 +532,81 @@ Then verify schema and visible text agree before committing.
 
 ---
 
+## Semrush — hardscaping cluster (run 2026-09-19)
+
+| Keyword | Vol/mo | KD | Note |
+|---|---|---|---|
+| **pool deck resurfacing** | **5,400** | **15** | best opportunity in the cluster, $5.83 CPC |
+| **pool deck ideas** | **4,400** | **18** | |
+| retaining wall ideas | 8,100 | 33 | |
+| paver patio ideas | 6,600 | 39 | |
+| retaining wall cost | 1,900 | 30 | |
+| **travertine pool deck** | **1,900** | **8** | we built one at Mount Pleasant |
+| paver patio cost | 1,300 | 27 | |
+| how much does a retaining wall cost | 720 | 10 | |
+| stamped concrete cost | 720 | 20 | |
+| how much does a paver patio cost | 210 | 12 | |
+| do pavers need to be sealed | 110 | 9 | easy win, practical |
+| concrete pool deck cost | 70 | 8 | |
+
+**Too competitive, do not chase:** retaining wall (27,100 / KD 42), outdoor fire
+pit (18,100 / KD 47), patio pavers (14,800 / KD 40), fire pit ideas (14,800 /
+KD 46), paver patio (12,100 / KD 48), stamped concrete patio (12,100 / KD 43).
+
+**Order to rewrite the hardscape pages, by opportunity:**
+1. **Pool decks** — resurfacing 5,400/KD15 plus ideas 4,400/KD18 plus travertine
+   1,900/KD8. Nearly 12,000/mo of winnable volume, the highest-CPC terms in the
+   cluster, and Cramers has the Mount Pleasant travertine deck to show.
+2. **Patios & pavers** — the cost cluster is winnable; head terms are not.
+3. **Retaining walls** — cost cluster winnable, and it is the worst page on the
+   site (nine "near me" stuffs, zero specifics).
+4. **Fire pits** — head terms are hard and "built in fire pit cost" is only
+   20/mo. Lowest priority of the four.
+
+## Open interview — Part C: hardscaping (sent 2026-09-19)
+
+### Cross-cutting, all hardscape pages
+C1. What do you lay on — base prep. How deep, what material, what do cheap
+    installers skip that you don't?
+C2. Drainage: what goes wrong in the Lowcountry, and what do you do about it?
+C3. Do you seal pavers? If so when, how often, and is it worth it?
+C4. What fails here after a few years, and why? Settling, weeds, washout, roots?
+C5. Rough price per square foot, or however you actually quote it, for pavers
+    vs poured concrete vs travertine?
+C6. Which material do you steer people toward and why?
+
+### Pool decks (do first)
+P1. Resurfacing an existing deck vs tearing out and replacing — how do you
+    decide, and what does each cost?
+P2. What is wrong with most existing pool decks you are called out to?
+P3. Travertine vs salt-void concrete vs pavers around a pool — heat underfoot,
+    slip, salt, cost?
+P4. The Mount Pleasant travertine deck: why travertine there, and how did it
+    come out?
+P5. Anything specific about coping, drainage or the pool edge?
+
+### Patios & pavers
+PP1. Most common patio size and what it runs?
+PP2. Paver vs poured concrete vs stamped — when do you recommend each?
+PP3. Brands or paver lines you use, and any you avoid?
+PP4. Patterns, borders and banding — what actually looks good vs dated?
+PP5. A patio project you are proud of, and what made it work?
+
+### Retaining walls
+RW1. What does a wall actually cost, and what drives it — height, length, material?
+RW2. Block vs natural stone vs poured — when does each make sense?
+RW3. At what height does engineering or a permit kick in here?
+RW4. Drainage behind a wall: what do you do, and what happens when it is skipped?
+RW5. A wall you have built that you would point to.
+
+### Fire pits & fireplaces
+FP1. Gas vs wood — what do most people pick and what would you tell them?
+FP2. Built-in vs freestanding, and what does a built-in run?
+FP3. Placement mistakes — smoke, wind, distance from the house?
+FP4. The fire bowls on the pool wall in the hero video — whose project, what were they?
+
+---
+
 ## Open interview — Part A: answer once, unlocks EVERY service page
 
 These are cross-cutting, so the answers get reused on all 20+ service pages.
