@@ -532,6 +532,121 @@ Then verify schema and visible text agree before committing.
 
 ---
 
+## ✅ Zach's answers — hardscaping (2026-09-19, VERIFIED SOURCE)
+
+### Base prep (C1) — the core differentiator
+
+Poor base prep is what makes a pool deck sink and crack. The usual cause is the
+**backfill from the pool dig-out being poor dirt that was not compacted well
+enough**.
+
+- **Best method:** mortar-set the pavers on top of a **solid concrete base**.
+- **Alternatives:** compacted **ROC** base with mortar set on top, or sand /
+  granite fines on top.
+- Instead of ROC you can use **#57 stone**, and you can add **geotextile fabric**
+  underneath.
+- **#57 stone helps prevent tree roots** growing into the patio, because it
+  leaves air gaps.
+- Different systems suit different projects.
+
+### Drainage (C2)
+
+Proper **grading**, and/or **drain basins with piping** to carry water off.
+
+**Lowcountry towns are getting stricter about the amount of impermeable
+surface, so permeable pavers are becoming a necessity.** (Good, current, and
+nobody else is saying it.)
+
+### Sealing (C3)
+
+They seal pavers occasionally — check the **manufacturer's specs** for the
+process and maintenance rather than generalising.
+
+- **Travertine is porous** and hard to keep clean without a sealer.
+- They commonly use **rock glue** for gravel walkways and around stepping stones.
+
+### What fails (C4)
+
+**Settling and roots.** The fix is doing it right the first time: proper
+compaction and a **root barrier**.
+
+### Price (C5, C6)
+
+- **$18/sqft is a good starting point for patios.**
+- **Natural stone** (travertine, bluestone, marble) looks best and lasts longest,
+  costs the most.
+- **Concrete pavers** have their own range, cheap through pricey.
+- **Poured concrete is cheapest**, and **salt-void / tabby concrete looks great**.
+- Which one depends on the job and the budget, but natural stone is the best
+  looking and longest lasting.
+
+### Pool decks
+
+- **Resurface vs replace (P1):** resurfacing works **if the deck is structurally
+  OK**. Cracking and settling means replacement. **Concrete install around
+  $12/sqft** depending on the job; **removing the old concrete is extra**.
+  Coating cost depends on the deck's condition and which coating the customer wants.
+- **Why they fail (P2):** poor base prep and compaction causing settling and
+  cracking. For **resurfacing**, failures come from poor prep before the new
+  coating — the deck must be cleaned and any failing prior coating stripped off.
+- **Materials (P3):**
+  - **Travertine** — most expensive, elegant, stays fairly cool, higher
+    maintenance. Everything heats up in direct sun in our heat.
+  - **Salt-void** — cheapest.
+  - **Pavers** — vary by product.
+  - Salt-void and pavers are both concrete, so they heat up, but low maintenance.
+  - **Nothing they install is slippery.**
+  - **Pavers and travertine can be repaired piece by piece**; a cracked concrete
+    deck cannot.
+- **Mount Pleasant (P4):** travertine was the most expensive option but gave the
+  customer the best looks, heat resistance and that luxury feel.
+- **Coping (P5):** recommend **at least 1.5 inch thick coping, 2 inch is better**.
+
+### Patios and pavers
+
+- **Size (PP1):** no standard size, it depends on use and available space.
+  **10x10 is the smallest** they would recommend for chairs and a table. A fire
+  pit needs more, to move around it. **$18/sqft starting point.**
+- **Material (PP2):** natural stone pavers are the luxury choice. Poured
+  concrete is cheapest, and tabby or salt-void finishes look great, especially
+  **with brick borders**. Concrete pavers are a good middle ground and suit a
+  modern minimalist look.
+- **Brands (PP3):** **Techo-Bloc** is a good modern option and they like using
+  the **larger sizes**. Plenty of other brands worth exploring.
+- **Patterns (PP4):** borders look good. They have done tabby concrete with a
+  brick border **both around the outside and running through the middle to break
+  the patio into sections**. Most people like random patterns; **diamond patterns**
+  are popular too.
+
+### Retaining walls
+
+- **Cost (RW1):** start around **$50/sqft** for a **CMU block wall with a stucco
+  finish**. **Height and material** are the biggest factors in cost per sqft.
+- **Material (RW2):** block is most affordable; **poured** makes more sense for
+  strength and size; **natural stone** is a premium for a specific look.
+- **Permits (RW3):** **at 6ft from the lowest point** a wall needs permitting.
+  **Drainage and flood zones** can change the requirements too.
+- **Drainage (RW4):** improper drainage causes wall failure. Proper install is
+  **fabric and gravel behind the wall with weep holes** to let water out.
+
+### Fire pits
+
+- **Gas vs wood (FP1):** gas is more convenient; wood is the fun of setting up
+  and burning the logs, but more maintenance.
+- **Placement (FP3):** mostly about **flow and use of the yard**. Smoke is not an
+  issue **unless it is under a structure, and then it needs a chimney**.
+- **The hero video fire bowls (FP4):** a **Summerville** project. They built the
+  **stone pedestals with a quartzite countertop**, with a **door to store the
+  propane tank**, and the fire bowls sat on top.
+
+### Still open
+
+- **PP5** patio project story — Zach wants photo options first
+- **RW5** retaining wall story — Zach wants photo options first
+- **FP2** built-in vs freestanding — question needs rewording
+
+---
+
 ## Semrush — hardscaping cluster (run 2026-09-19)
 
 | Keyword | Vol/mo | KD | Note |
