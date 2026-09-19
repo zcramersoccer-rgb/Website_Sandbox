@@ -459,10 +459,17 @@ traditional pavilion.
 **North Charleston (swing set around a fire pit)** — Zach did not recognise it
 from the description; photo sent 2026-09-19, awaiting his reply.
 
+### Lead time from signed quote to start (A5)
+
+Depends on how busy they are and whether permitting or HOA approval is needed.
+**Structures often take 1-2 months** to start. **Simple sod jobs they try to fit
+in within a few weeks at most.** Use the matching figure per service page.
+
 ### Still unanswered
 
-- A5: typical wait from signed quote to boots on the ground
 - B17 pergola/pavilion-specific objections beyond the budget answer above
+- B16 North Charleston swing/fire pit: Zach did not recognise it and says not to
+  prioritise it. Substitute a different project if a page needs more content.
 
 ---
 
