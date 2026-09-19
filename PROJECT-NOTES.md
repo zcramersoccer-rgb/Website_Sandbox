@@ -44,7 +44,9 @@ so keep anything genuinely sensitive out of it.
 - Homepage rebuilt (hero video, trust strip, family intro, service tiles, featured projects)
 - Portfolio curated 192 → 51 photos, grouped by service
 - All images local WebP, self-hosted fonts, one minified stylesheet per page
-- **`outdoor-kitchens.html` and `summerville-sc.html` rewritten from Zach's answers** — these are the quality bar
+- **Rewritten from Zach's answers:** `outdoor-kitchens.html`, `summerville-sc.html`,
+  `pergolas.html`, `pergolas-pavilions.html`, `concrete-pool-decks.html`,
+  `patios-pavers.html`, `retaining-walls.html`
 - `pergola-pavilion-installation-charleston-sc.html` re-aimed at "pergola vs pavilion" (2026-09-19)
 - **Hero video finished (2026-09-19)** — see "Hero video" below
 
@@ -484,6 +486,19 @@ Depends on how busy they are and whether permitting or HOA approval is needed.
 **Structures often take 1-2 months** to start. **Simple sod jobs they try to fit
 in within a few weeks at most.** Use the matching figure per service page.
 
+### ⚠️ Splicing trap: rebuild the whole body, don't patch zones
+
+Patching several separate zones around kept sections went wrong on
+`retaining-walls.html` — it left two FAQ sections and dropped the process
+section. **Do one splice:** from the end of the tabs nav to the final CTA
+section, inserting all new content plus any kept widget (extract the carousel
+with a div-balancing scan, not a `</figure>` search — other figures exist in the
+page). Anchor on **tag-stripped text**, since headings like
+`<h2><span>Request a</span> Free ... Consultation</h2>` break literal searches.
+
+Afterwards check: div balance 0, exactly one "Frequently Asked", zero
+"near me/you", and walk the carousel in a browser.
+
 ### ⚠️ Editing trap: carousel slides encode their own position
 
 Each `<figure class="cl-slide">` carries its own `cl-prev` / `cl-next` labels and
@@ -660,9 +675,18 @@ described either project, and nothing goes on a page unsourced.
 ⚠️ **Only 5 retaining wall photos exist** in the whole library, and two of them
 are really fire-pit shots. Thin for a service page — worth a photo run.
 
-### Still open
+### Project stories (answered 2026-09-19)
 
-- PP5 and RW5 project descriptions (photos chosen, stories not yet given)
+**Summerville marble patio (PP5)** — `summerville-marble-patio`
+Installed with **mortar over a concrete slab**, which is what let them get a
+perfect install on the pavers with **crisp edges**. It has a **brick border**, and
+the marble is **tile imported from Italy**.
+
+**Charleston driveway retaining wall (RW5)** —
+`charleston-residential-driveway-retaining-wall-landscaping`
+**CMU block with rebar in every other void**, sitting on a **2ft wide
+foundation**. Finished with **stucco and a brick cap**, with **plantings to soften
+the wall**.
 
 ---
 
