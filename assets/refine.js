@@ -4,6 +4,12 @@
 (function () {
   var root = document.documentElement;
 
+  /* Hero video: visitors who ask for reduced motion get the still poster instead. */
+  var vid = document.querySelector('.rf-hero-video');
+  if (vid && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    vid.removeAttribute('autoplay'); vid.pause();
+  }
+
   /* Scroll reveals. Nothing is ever hidden up front (a page parked at opacity:0
      stops Chrome measuring Largest Contentful Paint). Sections already on screen
      at load are left alone; the rest get .rf-in just before they scroll into
