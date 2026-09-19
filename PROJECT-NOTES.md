@@ -359,18 +359,24 @@ here is still unverified — do not invent.
   things cost. After that they usually know how they want to use the space but
   need help with ideas on how to actually pull it off.
 
-### Pergola vs pavilion — the definition (Zach, corrected 2026-09-19)
+### Pergola vs pavilion vs gazebo — the definition (Zach, final wording)
 
-**The dividing line is the roof form:**
+Use this wording. Two earlier versions were wrong and were corrected.
 
-- **Pergola** = flat, open or **shed** roof. It can be left open to the sky, or built
-  with a solid roof, a finished ceiling, electrical and post and beam trim, and it is
-  still a pergola.
-- **Gable, hip or gambrel roof** = call it a **pavilion or a gazebo**.
+- **Pergola** — traditionally an **open** structure, with a **flat, slatted or
+  gently sloped roof**. Cramers also build them closed in (solid roof, finished
+  ceiling, electrical, post and beam trim) and it is **still a pergola**.
+  The least expensive of the three, which is why most clients choose one.
+- **Pavilion** — can have a flat or shed roof **as well**, but its options
+  **expand** to **gable, hip** and other pitched forms. Open-sided or
+  **partially enclosed**, and **generally larger**.
+- **Gazebo** — closer to a pergola in scale, a smaller garden structure, but
+  with more **decorative forms**, most recognisably a **domed roof**.
 
-A pergola is also the smaller and less expensive of the two, which is why most
-clients choose one. Do not write that a pavilion "carries roof framing a pergola
-can't" — that was wrong and Zach corrected it.
+**Do not write** that the split is open vs covered, that a pergola cannot have a
+roof, or that a pavilion is defined by a gable/hip/gambrel roof — a pavilion can
+have a flat or shed roof too. The distinction is the **range** of roof forms
+plus scale and enclosure.
 
 ### Pergola vs pavilion — earlier framing, now superseded
 
