@@ -72,3 +72,8 @@ main.cl-page{overflow-x:clip}
 .cl-prices th{font-weight:600;color:#1b2a22}
 .cl-prices td{color:#114327;font-weight:600;white-space:nowrap}
 .cl-price-note{font-size:.9rem;color:#5b6b63;max-width:640px}
+
+/* --- 8. service tab strips wrap instead of scrolling sideways --------------
+   The Landscaping strip has 10 services; hidden-offscreen tabs are easy to miss. */
+.cl-tabs ul{flex-wrap:wrap;justify-content:center;overflow:visible;row-gap:2px}
+@media(max-width:600px){ .cl-tabs a{padding:9px 11px;font-size:13.5px} }
