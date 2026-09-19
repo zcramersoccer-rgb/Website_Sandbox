@@ -701,6 +701,80 @@ the wall**.
 
 ---
 
+## Semrush — remaining services (run 2026-09-19)
+
+| Keyword | Vol/mo | KD | CPC |
+|---|---|---|---|
+| **sod installation** | **18,100** | **27** | $4.71 |
+| **outdoor fireplace** | **18,100** | **21** | $0.96 |
+| artificial turf installation | 9,900 | 39 | **$6.40** |
+| **sod installation cost** | **5,400** | **16** | $2.82 |
+| **outdoor shower ideas** | **5,400** | **24** | $0.35 |
+| concrete driveway cost | 4,400 | 21 | $3.67 |
+| stamped concrete driveway | 3,600 | 29 | $3.06 |
+| how much does sod cost | 2,900 | 28 | $0.80 |
+| artificial turf cost | 2,400 | 28 | $2.02 |
+| french drain cost | 2,400 | 18 | $4.13 |
+| yard drainage solutions | 2,400 | 43 | $3.58 |
+| sprinkler system cost | 1,300 | 19 | $2.26 |
+| irrigation system cost | 880 | 30 | $2.25 |
+| landscape design cost | 720 | 10 | $2.37 |
+| mulch installation cost | 720 | 7 | $2.29 |
+| how much does artificial turf cost | 590 | 20 | $1.76 |
+| outdoor fireplace cost | 210 | 5 | $1.51 |
+| landscape lighting cost | 110 | 12 | $2.86 |
+| landscape grading cost | 110 | 24 | $2.87 |
+
+**Too competitive:** landscape lighting (33,100 but KD 53).
+
+**Order for the rest, by opportunity:**
+1. **Sod** — 18,100 + 5,400 + 2,900, difficulty 16 to 28, $4.71 CPC. The biggest
+   remaining opening on the site.
+2. **Fireplaces and fire pits** — outdoor fireplace is 18,100 at difficulty 21,
+   which is unusual for that volume, plus outdoor fireplace cost at difficulty 5.
+   Partly answered already (FP1, FP3, FP4 and the built-in question).
+3. **Concrete and driveways** — driveway cost 4,400/21 and stamped 3,600/29.
+4. **Outdoor showers** — 5,400 at difficulty 24, and we have the photos.
+5. **Artificial turf** — installation is hard at 39, but it carries the highest
+   CPC on the site at $6.40, so the cost terms are worth having.
+6. **Drainage** (french drain cost 2,400/18), **irrigation** (1,300/19).
+7. **Mulch** (720/7) and **landscape design** (720/10) — small but nearly free.
+
+## Open interview — Part D (sent 2026-09-19)
+
+### Sod — do first
+S1. Which sod varieties do you install here, and which do you put where — sun,
+    shade, heavy foot traffic, pets?
+S2. What does sod cost installed? Per pallet, per sq ft, however you quote it.
+S3. What prep goes in before it is laid — grading, soil, killing the old grass?
+S4. What do you tell people about watering in the first few weeks?
+S5. Best and worst time of year to lay sod in Charleston?
+S6. Why does new sod fail when it fails?
+
+### Fireplaces and fire pits — finishing the set
+F1. Outdoor fireplace against fire pit: when do you recommend each, and what
+    does a fireplace cost?
+F2. What do you build fireplaces out of — stone, stucco, brick?
+F3. Draft and chimney: what do people get wrong?
+F4. Gas logs, wood, or both in a fireplace?
+
+### Concrete and driveways
+CD1. Driveway cost per sq ft, and what moves it?
+CD2. Stamped, broom, salt-void, exposed aggregate — when do you use each?
+CD3. Thickness, mesh or rebar, control joints. What do you do that cheaper
+     outfits skip?
+CD4. How long before you can drive on it?
+CD5. What cracks a driveway here?
+
+### Outdoor showers
+OS1. What does an outdoor shower cost?
+OS2. Hot and cold, or cold only — what do most people do?
+OS3. How do you handle drainage and privacy?
+OS4. Which materials survive out here, and which do not?
+OS5. Any code or permit issues?
+
+---
+
 ## Semrush — hardscaping cluster (run 2026-09-19)
 
 | Keyword | Vol/mo | KD | Note |
