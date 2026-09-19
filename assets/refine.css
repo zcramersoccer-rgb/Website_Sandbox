@@ -296,3 +296,7 @@
 @media(max-width:900px){ .rf-banner-grid{grid-template-columns:1fr} .rf-vhero-video{height:auto;aspect-ratio:16/9} }
 @media (prefers-reduced-motion: reduce){ .rf-vhero-video{animation:none} }
 .rf-banner + .rf-trust{border-top:1px solid rgba(255,255,255,.14);background:#0d3520}
+.rf-feature-text p + p{margin-top:.8rem}
+.rf-feature-card .rf-eyebrow{margin:.9rem 0 .2rem;font-size:.7rem}
+.rf-feature-card h3{margin:0 0 .35rem}
+.rf-feature-card p:not(.rf-eyebrow){line-height:1.6}
