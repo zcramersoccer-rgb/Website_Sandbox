@@ -255,3 +255,25 @@
 .rf-town-list{list-style:none;padding:0;margin:1.4rem auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem}
 .rf-town-list a,.rf-town-list span{display:inline-block;padding:.65rem 1.25rem;border:1px solid var(--rf-line);border-radius:999px;background:#fff;color:var(--rf-green);font-weight:600;text-decoration:none}
 .cl-page .rf-town-list a:hover{border-color:var(--rf-green);background:var(--rf-green);color:#fff}
+
+/* --- 13. video hero, split layout (2026-09-18) -----------------------------
+   Text laid over moving footage was hard to read, so the copy now sits on a
+   solid green panel beside the video instead of on top of it. Phones stack
+   the video above the copy. */
+.cl-page .cl-hero.split.rf-video-hero{display:grid;grid-template-columns:minmax(380px,40%) 1fr;align-items:stretch;
+  padding:0 !important;min-height:min(80vh,720px);background:var(--rf-green) !important}
+.cl-page .cl-hero.split.rf-video-hero::before{content:none}
+.cl-page .cl-hero.split.rf-video-hero > .rf-hero-video{position:relative;inset:auto;grid-column:2;grid-row:1;z-index:0;height:100%;min-height:100%}
+.cl-page .cl-hero.split.rf-video-hero .cl-hero-inner{grid-column:1;grid-row:1;align-self:center;width:auto;margin:0;
+  padding:clamp(2.5rem,5vw,5rem) clamp(1.5rem,3.5vw,3.5rem)}
+.cl-page .cl-hero.split.rf-video-hero h1{font-size:clamp(2.1rem,3.4vw,3.3rem);text-shadow:none}
+.cl-page .cl-hero.split.rf-video-hero p{text-shadow:none;font-size:clamp(1rem,1.3vw,1.12rem)}
+.rf-video-hero .ib-kk-home-btn-container{flex-direction:column;align-items:stretch;max-width:340px}
+.rf-video-hero .ib-kk-home-btn-1 a,.rf-video-hero .ib-kk-home-btn-2 a{justify-content:center;width:100%;box-sizing:border-box}
+.rf-video-hero .ib-kk-home-btn-2 a{background:transparent;backdrop-filter:none}
+@media(max-width:900px){
+  .cl-page .cl-hero.split.rf-video-hero{grid-template-columns:1fr;min-height:0}
+  .cl-page .cl-hero.split.rf-video-hero > .rf-hero-video{grid-column:1;grid-row:1;height:auto;min-height:0;aspect-ratio:16/9}
+  .cl-page .cl-hero.split.rf-video-hero .cl-hero-inner{grid-column:1;grid-row:2;padding:2rem 1.25rem 2.5rem}
+  .rf-video-hero .ib-kk-home-btn-container{max-width:none}
+}
