@@ -337,7 +337,26 @@ for f in *.html; do printf '%-50s prices:%-3s names:%-3s nearme:%-3s faq:%s\n' "
 
 ---
 
-## Open interview — Pergolas & Pavilions
+## Open interview — Part A: answer once, unlocks EVERY service page
+
+These are cross-cutting, so the answers get reused on all 20+ service pages.
+Worth getting first.
+
+A1. **Confirm the four unconfirmed figures** in the table above (pergola
+    $10-30k, pavilion $30-90k+, permits 4-6 weeks, pavilion build 6-8 weeks).
+    They are live on the sandbox and came from the kitchens interview, never
+    confirmed directly.
+A2. When someone has a cheaper quote in hand, what do you tell them? What do
+    you actually do differently?
+A3. What are the top 3 questions people ask on the phone, whatever the service?
+A4. What job or request do you turn down, or talk people out of?
+A5. From signed quote to boots on the ground, what is the typical wait?
+A6. The site claims a 1-year workmanship and plant warranty, licensed
+    residential builder, insured. All still accurate?
+
+---
+
+## Open interview — Part B: Pergolas & Pavilions
 
 Awaiting Zach's answers. **Highest value first:** Q8/Q9 (feeds a 390/mo query
 and the service page), Q11 (unlocks the ~590/mo permit cluster), Q1 (becomes a
