@@ -315,12 +315,12 @@ Bar to clear is `outdoor-kitchens.html`.
 | concrete-pool-decks.html | ✅ rewritten 2026-09-19 (Part C), retargeted to pool deck resurfacing |
 | fireplaces.html | ✅ rewritten 2026-09-20, retargeted to fireplaces only after the fire pit split |
 | fire-pits.html | ✅ NEW 2026-09-20 — split out per Zach; owns "fire pit contractor" |
-| fountain-water.html | ⬜ generic |
+| fountain-water.html | ✅ rewritten 2026-09-20 |
 | outdoor-structures.html | ⬜ generic |
 | plants.html | ✅ rewritten 2026-09-20 from Zach's plant palette |
-| mulching-bed-maintenance.html | ⬜ generic |
-| landscape-drainage-services-charleston-sc.html | ⬜ generic |
-| landscape-grading-services-charleston-sc.html | ⬜ generic |
+| mulching-bed-maintenance.html | ✅ rewritten 2026-09-20 |
+| landscape-drainage-services-charleston-sc.html | ✅ rewritten 2026-09-20 |
+| landscape-grading-services-charleston-sc.html | ✅ rewritten 2026-09-20 |
 | outdoor-shower-installation-charleston-sc.html | ✅ rewritten 2026-09-20 from Part D answers |
 
 Quick audit for whether a page has been done — generic pages score 0 on prices
