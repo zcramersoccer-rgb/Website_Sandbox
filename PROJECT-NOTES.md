@@ -1042,12 +1042,19 @@ which is exactly what wins these queries.
 The filenames and alt text lie. Verified visually 2026-09-20 — **do not put these
 on the sod page**, they are artificial turf:
 
-- `north-charleston-bluestone-patio-and-new-lawn` — turf, not a new lawn
-- `sullivans-island-waterfront-backyard-pool-and-lawn` — turf
-- `daniel-island-residential-turf-lawn-landscaping` — turf
+- ~~`north-charleston-bluestone-patio-and-new-lawn`~~ → renamed
+  `north-charleston-bluestone-patio-and-artificial-turf`
+- ~~`sullivans-island-waterfront-backyard-pool-and-lawn`~~ → renamed
+  `sullivans-island-waterfront-pool-and-artificial-turf`
+- ~~`daniel-island-residential-turf-lawn-landscaping`~~ → renamed
+  `daniel-island-artificial-turf-front-lawn`
 
-Also: `daniel-island-lawn-landscaping-brick-border` and
-`lawn-landscaping-brick-border-c7e5` are **byte-identical duplicates**. Use one.
+**Fixed 2026-09-20.** All three were renamed, their alt text and portfolio
+captions corrected, and they were pulled off the sod page.
+
+Also: `lawn-landscaping-brick-border-c7e5` was a byte-identical duplicate of
+`daniel-island-lawn-landscaping-brick-border`. Deleted 2026-09-20 with 71 others
+(see below).
 
 **The only genuine sod/lawn photos on the site (5 total):**
 
@@ -1073,3 +1080,77 @@ generic. **Get his actual number and rewrite that FAQ.**
 
 Related, if he wants to go further: what he tells people about fertilising after
 the install, and whether they offer a sod warranty.
+
+---
+
+## 🖼️ Image & alt-text conventions (established 2026-09-20)
+
+The whole image library was audited and normalised. **Keep to these rules** when
+adding the new cabana photos or anything else.
+
+### Filenames
+`<place>-<what-it-is>-<size>.webp`, all lowercase, hyphenated, e.g.
+`west-ashley-haint-blue-plywood-cabana-ceiling-1600.webp`.
+Two sizes per image: `-800` and `-1600`, where the number is the **long edge**,
+not the width. So a portrait shot at `-1600` is 1200×1600, and its `-800` is
+600×800 — that is why the `srcset` says `800w` on a file that is only 600px
+wide. That is the existing site-wide convention; do not "fix" it per-image.
+
+### `width` / `height` attributes
+Set them from the **`-1600` file's real dimensions**, which is what `src` points
+at. What matters is that the ratio is right, because that is what reserves the
+space and stops layout shift. Read them out of the WebP header — do **not**
+assume 1600×1200; eleven images were wrong that way before.
+
+### Alt text
+- One canonical alt per image file, used identically everywhere it appears.
+- Written as a readable phrase, not a keyword list. "Herringbone brick walkway
+  with brick edging between new planting beds in Charleston, SC", not
+  "Brick walkway edging modern plantings".
+- **Always ends in a place**: `... in <Town>, SC` or `... on <Island>, SC`.
+  Never "by Cramers Landscaping" — that names no location and wastes the slot.
+- **Islands and beaches take "on"**: Daniel Island, James Island, Johns Island,
+  Isle of Palms, Sullivan's Island, Kiawah Island, Folly Beach, Edisto.
+  **Mainland towns take "in"**: Charleston, North Charleston, Mount Pleasant,
+  West Ashley, Summerville, Awendaw.
+- Capitalise properly: Japanese maple, Adirondack, TV, BBQ.
+- Decorative icons keep `alt=""`. There are 397 of those; leave them.
+- **Describe what is actually in the photo.** Three images were captioned as
+  lawns for years and are artificial turf. Look at the picture before writing
+  the alt.
+
+### Figcaptions
+Derived from the alt: `Description &mdash; Place, SC`. Split at the **last**
+"in/on/at <Place>, SC", not the first, or you get
+"Backyard fire pit — artificial turf on Sullivan's Island, SC".
+
+### Cleanup done 2026-09-20
+- **72 duplicate files deleted** (12 MB). Every one was a byte-identical copy of
+  a properly-named file, distinguishable only by a 4-hex-digit suffix
+  (`-b815`, `-c7e5`, …) and carrying a location-less
+  "… by Cramers Landscaping" alt. 162 references across the nine location pages
+  were repointed at the canonical file first.
+- **196 alt attributes and 173 figcaptions** rewritten.
+- Verified afterwards: 0 broken image references, 0 alts without a location,
+  0 images with more than one alt, 17 pages rendered clean in a browser.
+
+**Checks to re-run after any image work:**
+```
+0 broken src/srcset (strip the ?v= query before checking the path)
+0 alts not matching  /\b(in|on) [A-Z][^,]*, SC$/
+0 files with more than one distinct alt
+no "by Cramers Landscaping" inside an alt attribute
+```
+
+---
+
+## ❓ Open question for Zach — "Sullivan's Island" spelling
+
+The site writes it **"Sullivans Island"** with no apostrophe, ~100 times, in
+page titles, H1s and body copy. The official name is **Sullivan's Island**.
+
+Alt text and figcaptions were switched to the apostrophe on 2026-09-20. The
+**page titles, H1s and prose were left alone**, because changing the H1 and
+title of `sullivans-island-sc.html` is a targeting decision, not a typo fix.
+Google treats the two forms nearly identically, so this is low-risk either way —
+but it should be one or the other, not both. **Ask Zach which he wants.**
