@@ -1225,14 +1225,32 @@ do not put two of one project in the same carousel):
 
 ---
 
-## ❓ Open question for Zach — fire pit clearance
+## ✅ Fire pit clearance — answered by Zach 2026-09-20
 
-`how far should a fire pit be from house` is ~1,030 searches a month at almost no
-competition, and we have no number from him. The page answers it honestly &mdash;
-placement is about flow and use of the yard, smoke only matters under a structure
-where you need a chimney, and we follow the manufacturer's clearances and local
-code. **A real number, or his rule of thumb, would make that answer much
-stronger.**
+**City of Charleston ordinance: 25 feet from the house for a WOOD-BURNING fire
+pit where the patio sits near the house. Gas can go closer.**
+
+This is the strongest single fact on the fireplaces page. `how far should a fire
+pit be from house` is ~1,030 searches a month at 0.03 competition, and almost
+every page answering it gives a vague "check your local code". A named
+municipality with a number beats all of them.
+
+It also does real work for the sales argument: on a small Charleston lot there
+often isn't 25 feet to give, so **gas isn't a compromise, it's what makes a fire
+pit possible at all.** That reframes the gas-vs-wood choice as a site
+constraint rather than a preference.
+
+Written up in two places on `fireplaces.html` — the gas-vs-wood section and the
+placement section — plus two FAQs.
+
+**Care taken:** attributed to the City of Charleston specifically, with a note
+that clearances are set locally and can differ between municipalities. Zach gave
+no number for gas, so the page says only that gas can go closer and that we
+confirm what applies to the address.
+
+**Still unknown:** the gas clearance figure, and whether Mount Pleasant,
+Summerville, North Charleston etc. differ from Charleston's 25 ft. Worth asking
+if we ever write a permits/code blog post.
 
 ---
 
@@ -1242,3 +1260,70 @@ Zach chose the apostrophe. 102 replacements across 59 pages, covering page
 titles, H1s, meta descriptions and body copy. Filenames, links and element ids
 are unchanged (`sullivans-island-sc.html`, `assets/work/sullivans-island-*`).
 House style is the entity: `Sullivan&rsquo;s Island`.
+
+---
+
+## ⚠️ OPERATIONAL: local Claude Code vs Claude Code on the web
+
+**These are different machines, and it changes what is possible.**
+
+Sessions on **2026-09-18** ran **locally on Zach's PC**. Commit `eb7d8e1` says it
+plainly: *"Found full-size originals for 7 of the 10 small photos on this PC
+(Downloads, OneDrive)"*. That session could read Downloads, OneDrive and Google
+Drive directly, which is how the 184 project photos got into `assets/work/`
+(commit `c9aaeea`).
+
+Sessions from **2026-09-19 onward** have run on **Claude Code on the web** — an
+isolated container in Anthropic's cloud (hostname `vm`, root user, no user home).
+From there:
+
+- There is **no access to Zach's filesystem**. No Downloads, no OneDrive.
+- **Google Drive file hosts are blocked** by the egress proxy: `drive.google.com`,
+  `drive.usercontent.google.com` and `lh3.googleusercontent.com` all return 000.
+  `www.googleapis.com` is reachable but needs an OAuth token we cannot get at.
+- The **Drive connector returns file content base64-inline into context**, so it
+  is useless for anything bigger than a few hundred KB. A 9 MB photo is roughly
+  3M tokens.
+
+**If a task needs files off Zach's machine, either run the session locally, or
+move the files through the repo.**
+
+### Getting large media in from a web session
+
+**Tested and working 2026-09-20.** GitHub hosts are reachable
+(`api.github.com` 200, `objects.githubusercontent.com` and
+`release-assets.githubusercontent.com` both resolve) and a release asset
+downloaded at about **10 MB/s**.
+
+Use a **GitHub Release**, not a commit:
+
+1. Zach zips the media and uploads it at
+   `https://github.com/zcramersoccer-rgb/Website_Sandbox/releases/new`
+2. `curl -sL` the asset here, process it, commit only the finished small files
+3. Delete the release afterwards
+
+**Why a release and not a push:** release assets allow **2 GB per file** and do
+**not** enter git history. The repo is already ~162 MB; 472 MB of raw phone video
+committed to it would live there permanently.
+
+**Limits worth knowing:** the GitHub **web uploader caps at 25 MB per file** —
+that is what blocked Zach, since 11 of the 15 night videos are over it. Plain
+`git push` accepts up to **100 MB per file**, so every one of those videos would
+have pushed; it is just the wrong place to put them.
+
+### The outstanding media (still not in the repo as of 2026-09-20)
+
+In Drive, folders "Cramers landscaping photos"
+(`1dPqV4Fmf722dfUzAsIQWTYo3bajZnxey`) and "Work videos"
+(`1wyxm1VRaU7_2cjbrnLWM6DS-UUi02fkh`), all uploaded 2026-09-20 01:11:
+
+- **9 night photos** of the West Ashley cabana, `PXL_20260919_2337*`–`2339*.jpg`,
+  8.6–9.6 MB each, ~82 MB total. **All under 25 MB, so these go through the web
+  uploader as-is** if the video is holding things up.
+- **15 night videos**, `PXL_20260919_2340*`–`2349*.mp4`, 10.6–61 MB each,
+  ~472 MB total. Largest is `PXL_20260919_234525373.mp4` at 61 MB.
+
+**The job once they land:** convert photos to WebP at 800/1600 with filenames and
+alt text per the image conventions above, and cut the night footage into the
+hero. Zach's instruction: **do not lean on the West Ashley cabana across the
+whole site** — it is already the most-used project.
