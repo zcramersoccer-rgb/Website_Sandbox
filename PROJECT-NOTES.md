@@ -55,6 +55,11 @@ so keep anything genuinely sensitive out of it.
 
 ### What's next
 
+**All 24 service pages are now written from Zach's answers (2026-09-20).** Nothing is left on the generic
+SearchXPro copy. Remaining work is corrections from Zach, the fire pit vs fireplace comparison blog post,
+and the town pages.
+
+
 Rewriting every service page one at a time, in the house pattern below, from
 Zach's answers. **Currently mid-interview on Pergolas & Pavilions** — questions
 are in the section at the bottom of this file, awaiting answers.
@@ -306,7 +311,7 @@ Bar to clear is `outdoor-kitchens.html`.
 | patios-pavers.html | ✅ rewritten 2026-09-19 (Part C) |
 | retaining-walls.html | ✅ rewritten 2026-09-19 (Part C). No carousel — only 5 wall photos exist and 2 are fire-pit shots. Restore one when more photos arrive. |
 | landscape-installation.html | ✅ rewritten 2026-09-20 from Zach's landscaping answers |
-| hardscape-installation.html | ⬜ generic |
+| hardscape-installation.html | ✅ rewritten 2026-09-20 — hub page, tiles to each sub-page |
 | landscape-lighting.html | ✅ rewritten 2026-09-20 |
 | artificial-turf-installation.html | ✅ rewritten 2026-09-20 |
 | charleston-sod-installation.html | ✅ rewritten 2026-09-20 (Part D). No carousel — only 5 real-sod photos exist. |
@@ -316,7 +321,7 @@ Bar to clear is `outdoor-kitchens.html`.
 | fireplaces.html | ✅ rewritten 2026-09-20, retargeted to fireplaces only after the fire pit split |
 | fire-pits.html | ✅ NEW 2026-09-20 — split out per Zach; owns "fire pit contractor" |
 | fountain-water.html | ✅ rewritten 2026-09-20 |
-| outdoor-structures.html | ⬜ generic |
+| outdoor-structures.html | ✅ rewritten 2026-09-20 — hub page, tiles to each sub-page |
 | plants.html | ✅ rewritten 2026-09-20 from Zach's plant palette |
 | mulching-bed-maintenance.html | ✅ rewritten 2026-09-20 |
 | landscape-drainage-services-charleston-sc.html | ✅ rewritten 2026-09-20 |
