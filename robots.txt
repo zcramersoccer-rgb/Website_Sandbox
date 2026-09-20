@@ -1,3 +1,4 @@
-# Review sandbox - not the real site. Keep it out of search engines.
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://cramerslandscaping.com/sitemap.xml
