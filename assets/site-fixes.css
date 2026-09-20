@@ -171,5 +171,6 @@ main.cl-page{overflow-x:clip}
    drawn at 240x54 for a 5:1 file (Lighthouse "incorrect aspect ratio"). Keep the box, stop the squash. */
 .site-logo img{object-fit:contain}
 /* The squash itself: site.css sets an explicit width:260px at the mobile breakpoint while the
-   max-height caps above stay in force, so the ratio could not be kept. With width:auto the caps size it. */
-.site-logo img{width:auto !important}
+   max-height caps above stay in force, so the ratio could not be kept. The footer logo shares the rule. With width:auto the caps size it. */
+.site-logo img,.foot-logo img{width:auto !important;height:auto}
+.foot-logo img{max-height:54px}   /* the header keeps its own per-breakpoint caps above */
