@@ -162,3 +162,7 @@ main.cl-page{overflow-x:clip}
 .rf-svc:hover figure img{transform:scale(1.045)}
 .rf-svc{padding:0 0 1.15rem;overflow:hidden}
 .rf-svc h3,.rf-svc p,.rf-svc .rf-more{padding-left:1.15rem;padding-right:1.15rem}
+
+/* Visually hidden text for controls that used aria-label on a <label> (prohibited) - 2026-09-20 audit.
+   Append new blocks below, never rewrite to end of file. */
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
