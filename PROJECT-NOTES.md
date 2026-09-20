@@ -701,6 +701,81 @@ the wall**.
 
 ---
 
+## ✅ Zach's answers — Part D (2026-09-19, VERIFIED SOURCE)
+
+### Sod
+
+- **Varieties:** zoysia and St Augustine are the most common. Zach says to use
+  publicly available horticultural information for the variety characteristics,
+  since it is readily available — but keep business claims to what is here.
+- **Price: $750 a pallet installed.** Moves up or down with job size.
+  **Does NOT include the dig-out or grading before the sod goes down.**
+- **Prep:** spray and kill the old grass if there is any, dig the old grass out,
+  regrade the yard as necessary, then lay the new sod.
+- **Watering:** every day for the first two weeks. **30 minutes is enough**,
+  depending on heat. **Avoid watering late in the day or at night** — sod that
+  stays wet can rot or pick up a fungus.
+- **Timing:** best is **mid-summer to early fall**. Worst is **February to March**,
+  as it is coming out of dormancy.
+- **Why new sod fails:** poor grading gives a lumpy yard — they **roll the sod
+  after install** to level it and put down a little fertiliser, fungicide and
+  pesticide depending on the season. Then improper watering; dogs or heavy
+  traffic in the first couple of weeks; and improper sunlight, from laying sod
+  where it will not grow.
+
+### Fireplaces and fire pits
+
+- **Which one:** both give heat and function. A **fire pit suits smaller yards**
+  and works where it sits toward the centre of the patio. With the space, a
+  **fireplace makes more of a statement, can act as a screen wall**, and works
+  well **built into a pavilion**.
+- **Price: a cheap fireplace kit from $8,000; custom builds $20,000+**, depending
+  on size, height, material, and gas against wood burning.
+- **Materials:** stone, stucco or brick. They also offer **microcement and
+  specialised lime plasters** as finishes — **and those work on outdoor kitchens
+  too**.
+- **Gas vs wood:** wood burning is great for people who want the experience, but
+  costs more because it needs a **real chimney**, and it is higher maintenance.
+  Gas is low maintenance. **Either way, use a blower** to push the hot air out and
+  actually get warmth off the fireplace.
+
+### Concrete and driveways
+
+- **Price: $12/sq ft.** Stamping, colorant and cut patterns add cost. Otherwise
+  it is mostly **prep** that moves the number: rebar, vapour barrier, wire mesh,
+  dig-out, or removing old concrete.
+- **Finishes:** **salt-void and tabby are the most popular.** Salt-void gives a
+  nice texture and a weathered look; **tabby is perfect for the coastal beach
+  vibe**.
+- **How it should be built — the detail that separates a good slab from a bad one:**
+  - **At least 4 inches thick.** Many companies frame with **2x4, which is only
+    3.5 inches**, so if they dig out only to the bottom of the form the slab is
+    under thickness.
+  - **Mesh** holds it together; **rebar** resists bending and prevents cracking.
+  - **Control joints no more than 15 ft apart**, and **no panel over 300 sq ft**.
+  - A slab between other concrete or a building needs an **expansion board**.
+  - **Fibre, and wetting the concrete as it cures**, helps curing and strength.
+- **Cure times:** walk on it within **1 to 2 days**, wait **1 week before
+  driving**. Cold and rainy weather extends that.
+- **Why driveways crack:** improper install — **too wet a mix, too thin, no
+  reinforcement** where it was needed. **Tree roots cause the most problems**,
+  along with a base that has settled over time.
+
+### Outdoor showers
+
+- **Price: $8,000 to $15,000**, on size and material. Pressure-treated lumber is
+  cheap, **sapele is expensive**. The hardscape material and the shower fixture
+  also move the price.
+- **Hot and cold**, not cold only.
+- **Drainage: most outdoor showers use a dry well.**
+- **Enclosure** is built from pressure-treated or **sapele** lumber.
+- **Any material survives with proper maintenance, but hardwoods like sapele
+  offer the best longevity.**
+- **No permit required.** Some **HOAs need approval**, especially if the shower is
+  visible from the street.
+
+---
+
 ## Semrush — remaining services (run 2026-09-19)
 
 | Keyword | Vol/mo | KD | CPC |
