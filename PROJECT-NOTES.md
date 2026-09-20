@@ -270,20 +270,24 @@ record findings in this file. `phrase_questions` costs ~1600 API units per call,
 
 ---
 
-## ⚠️ Facts that need Zach's confirmation
+## ✅ Prices and timelines — CONFIRMED by Zach 2026-09-20
 
-These were contradictions between pages. Each was resolved in favour of the
-figure sourced from Zach's interview (on `outdoor-kitchens.html`), but **none of
-them has been confirmed directly.** Ask before publishing.
+Zach: "use the numbers from the updated pergola and pavilion pages." Those pages are now
+the single source of truth for structures:
 
-| Fact | Now says | Previously said elsewhere |
-|---|---|---|
-| Pergola cost | $10,000–$30,000 | $8,000–$40,000+ (3 tiers) |
-| Pavilion cost | $30,000–$90,000+ | $18,000–$100,000+ |
-| Permit timeline | 4–6 weeks | 2–4 weeks |
-| Pavilion build time | 6–8 weeks | 1–2 weeks |
+| Fact | Confirmed value |
+|---|---|
+| Pergola | $10,000 – $30,000 (at $10k: no post/beam trim, no ceiling, maybe no roof; at $30k: trim, ceiling, roof, electrical, possibly a kitchen under it) |
+| Pavilion | $30,000 – $90,000+ ($30k bare bones; $80k+ is West Ashley cabana level — full trim, speakers, accent lighting, storage/bathroom) |
+| Permitting | 4–6 weeks before work starts |
+| Pergola build | 1–3 weeks |
+| Pavilion build | 6–8 weeks |
+| Start after signing | 1–2 months |
 
----
+`pool-pavilion-charleston-sc.html` was contradicting all of this ($40k base, $75–100k loaded,
+"four to eight weeks", meta "$15k–$75k+") and was aligned 2026-09-20. Its kitchen and fireplace
+add-on figures were also pulled into line with Part D ($8k–$20k+ kitchens; fireplace $8k kit /
+$20k+ custom).
 
 ## Page status
 
