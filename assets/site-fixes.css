@@ -148,3 +148,17 @@ main.cl-page{overflow-x:clip}
   .pv-grid{grid-template-columns:1fr;gap:1.2rem}
   .pv-col + .pv-col{border-left:0;border-top:1px solid rgba(27,42,34,.12);padding-top:1.2rem}
 }
+
+/* "What We Build" card grids on the two overview pages (2026-09-20).
+   Zach: these sections were "hard to read and easily skipped". Two causes: the cards were text only,
+   and `.cl-page a{text-decoration:underline}` outranks `.rf-svc{text-decoration:none}`, so every word
+   in every card rendered underlined. The homepage escaped both because it loads refine.css.
+   Append new blocks below, never rewrite to end of file. */
+.cl-page a.rf-svc,.cl-page a.rf-svc:hover{text-decoration:none;color:inherit}
+.cl-page a.rf-svc h3{text-decoration:none}
+.rf-svc figure{margin:0 0 .9rem;overflow:hidden;border-radius:8px;aspect-ratio:4/3;background:#e7ece9}
+.rf-svc figure img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.rf-svc:hover figure img{transform:scale(1.045)}
+.rf-svc{padding:0 0 1.15rem;overflow:hidden}
+.rf-svc h3,.rf-svc p,.rf-svc .rf-more{padding-left:1.15rem;padding-right:1.15rem}
