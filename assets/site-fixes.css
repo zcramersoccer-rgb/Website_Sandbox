@@ -86,36 +86,29 @@ main.cl-page{overflow-x:clip}
 .pf-group h3{margin:0 0 .3rem;font-size:clamp(1.3rem,2vw,1.7rem)}
 .pf-group > p{margin:0;color:#5b6b63}
 
-/* --- mobile Services menu (recovered 2026-09-20) ---------------------------
-   Under 980px the Services submenu was hidden entirely, so a phone could not reach
-   Landscaping, Hardscaping or Outdoor Structures at all. It renders instead as tappable
-   chips inside the header, anchored to the bottom of reserved space so it cannot spill
-   onto the hero. Written by the web session into the built bundle; moved here into the
-   source, because perf_bundle.py regenerates main.css/home.css and dropped it. Edit CSS
-   here, never in assets/main.css or assets/home.css. */
+/* --- mobile Services menu: tap to open (2026-09-20) -----------------------
+   Under 980px the submenu used to sit in the header permanently. Zach wants the desktop
+   behaviour: tap Services, the list drops down. Done with a hidden checkbox and a label
+   overlaying the pill, so no page needs JavaScript. The menu markup comes from menu_mobile.py.
+   Edit CSS here, never in assets/main.css or home.css — those are built by perf_bundle.py. */
+.svc-all{display:none}
+.svc-tap{display:none}
 @media(max-width:980px){
-  .site-nav{position:relative;padding-bottom:78px}
+  .site-nav{position:relative}
   .site-nav > li{position:static}
-  .mega{display:flex;position:absolute;left:0;right:0;bottom:0;top:auto;margin:0;padding:0;min-width:0;
-    opacity:1;visibility:visible;transform:none;background:transparent;box-shadow:none;border-radius:0}
-  .mega ul{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;width:100%}
+  .site-nav > li.svc{position:relative}
+  /* the label covers the Services pill, so a tap toggles instead of navigating */
+  .svc-tap{display:block;position:absolute;inset:0;z-index:2;cursor:pointer;border-radius:999px}
+  .svc-all{display:list-item}
+  .mega{display:none;position:absolute;left:50%;transform:translateX(-50%);top:calc(100% + 8px);
+    width:min(320px,calc(100vw - 2.5rem));margin:0;padding:8px;min-width:0;opacity:1;visibility:visible;
+    background:#fff;border-radius:12px;box-shadow:0 18px 40px rgba(0,0,0,.28);z-index:40}
+  .svc-toggle:checked ~ .mega{display:block}
+  .mega ul{display:block;width:100%}
+  .mega li + li{border-top:1px solid rgba(27,42,34,.08)}
   .mega img{display:none}
-  .mega a{gap:0;padding:6px 11px;font-size:12.5px;font-weight:600;color:#e2e8f0;
-    background:rgba(255,255,255,.10);border-radius:999px;white-space:nowrap;line-height:1.25}
+  .mega a{display:block;gap:0;padding:12px 14px;font-size:15px;font-weight:600;color:#114327;
+    background:transparent;border-radius:8px;white-space:normal;line-height:1.3}
   .mega a:hover,.mega a:active,.mega a:focus{color:#fff;background:#059669}
+  .site-logo img,.foot-logo img{width:240px}
 }
-
-/* --- service tile grids on the overview pages (2026-09-20) -----------------
-   The homepage's .rf-services / .rf-svc rules live in refine.css, which only the homepage
-   bundle includes. The hardscaping and structures hub pages use the same tiles as text
-   cards (no photo), so these are the text-only rules, shared by every page. */
-.rf-services{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.6rem);margin-top:clamp(1.6rem,3vw,2.4rem)}
-.rf-svc{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;
-  border:1px solid rgba(27,42,34,.12);border-radius:10px;padding:1.2rem 1.3rem;transition:border-color .2s ease,transform .2s ease}
-.rf-svc:hover{border-color:#114327;transform:translateY(-2px)}
-.rf-svc h3{margin:0 0 .45rem;font-size:1.12rem;color:#114327}
-.rf-svc p{margin:0 0 .8rem;color:#41514a;line-height:1.6;font-size:.95rem}
-.rf-svc .rf-more{margin-top:auto;font-weight:600;font-size:.9rem;color:#059669}
-.rf-svc:hover .rf-more{color:#b08d4f}
-@media(max-width:900px){ .rf-services{grid-template-columns:1fr 1fr} }
-@media(max-width:560px){ .rf-services{grid-template-columns:1fr} }
