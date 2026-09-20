@@ -85,3 +85,22 @@ main.cl-page{overflow-x:clip}
 .pf-group{scroll-margin-top:90px;margin-top:clamp(2rem,4vw,3.2rem)}
 .pf-group h3{margin:0 0 .3rem;font-size:clamp(1.3rem,2vw,1.7rem)}
 .pf-group > p{margin:0;color:#5b6b63}
+
+/* --- mobile Services menu (recovered 2026-09-20) ---------------------------
+   Under 980px the Services submenu was hidden entirely, so a phone could not reach
+   Landscaping, Hardscaping or Outdoor Structures at all. It renders instead as tappable
+   chips inside the header, anchored to the bottom of reserved space so it cannot spill
+   onto the hero. Written by the web session into the built bundle; moved here into the
+   source, because perf_bundle.py regenerates main.css/home.css and dropped it. Edit CSS
+   here, never in assets/main.css or assets/home.css. */
+@media(max-width:980px){
+  .site-nav{position:relative;padding-bottom:78px}
+  .site-nav > li{position:static}
+  .mega{display:flex;position:absolute;left:0;right:0;bottom:0;top:auto;margin:0;padding:0;min-width:0;
+    opacity:1;visibility:visible;transform:none;background:transparent;box-shadow:none;border-radius:0}
+  .mega ul{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;width:100%}
+  .mega img{display:none}
+  .mega a{gap:0;padding:6px 11px;font-size:12.5px;font-weight:600;color:#e2e8f0;
+    background:rgba(255,255,255,.10);border-radius:999px;white-space:nowrap;line-height:1.25}
+  .mega a:hover,.mega a:active,.mega a:focus{color:#fff;background:#059669}
+}

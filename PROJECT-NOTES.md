@@ -313,7 +313,8 @@ Bar to clear is `outdoor-kitchens.html`.
 | irrigation-system-installation.html | ⬜ generic |
 | concrete-services.html | ✅ rewritten 2026-09-20 (Part D). Retargeted to concrete driveways. No carousel — only 4 usable poured-concrete photos. |
 | concrete-pool-decks.html | ✅ rewritten 2026-09-19 (Part C), retargeted to pool deck resurfacing |
-| fireplaces.html | ✅ rewritten 2026-09-20 (Part C + D fire answers) |
+| fireplaces.html | ✅ rewritten 2026-09-20, retargeted to fireplaces only after the fire pit split |
+| fire-pits.html | ✅ NEW 2026-09-20 — split out per Zach; owns "fire pit contractor" |
 | fountain-water.html | ⬜ generic |
 | outdoor-structures.html | ⬜ generic |
 | plants.html | ⬜ generic |
@@ -528,6 +529,14 @@ both attributes from the actual WebP header and verify in a browser against
 Carousel frames are **4:3 with `object-fit: cover`**, so a tall portrait loses up to
 46% of its height and can sever posts at their base. Prefer images at or near 4:3
 for slides.
+
+### ⚠️ Editing trap: never edit assets/main.css or assets/home.css
+
+Those two are **built files**. `site-build/perf_bundle.py` regenerates them from the real sources
+(`site.css`, `theme.css`, `revamp.css`, `site-fixes.css`, `refine.css`) and will silently drop anything
+written straight into the bundle. That is exactly what happened to the mobile Services menu: it was written
+into `main.css` on 2026-09-20, a later bundle rebuild wiped it, and the phone dropdown went dead. The rules
+now live in `site-fixes.css` and survive rebuilds. **Edit source CSS, then re-run perf_bundle.py.**
 
 ### ⚠️ Editing trap: FAQ text lives in TWO places
 
@@ -1540,5 +1549,7 @@ buying decision. Each page leads with its own product and owns its own head term
 post** linking up to both service pages — exactly the pattern used for
 `pergola vs pavilion`.
 
-**Not built yet** — it needs a new `fire-pits.html`, the hardscape tab repointed,
-and internal links updated. Awaiting Zach's go-ahead.
+**BUILT 2026-09-20** on Zach's go-ahead. `fire-pits.html` carries prices, materials, gas vs wood,
+sizing, the IFC setback table and the Edisto story; `fireplaces.html` was trimmed to fireplaces only
+(8 fire-pit mentions left, all pointers). Hardscape tabs, the services page and 19 internal links
+repointed. The "which should I get" comparison still belongs in ONE blog post — not yet written.
