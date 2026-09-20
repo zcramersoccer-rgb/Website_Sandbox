@@ -1446,3 +1446,92 @@ walls and sod). Used: `mount-pleasant-residential-concrete-driveway-installation
 **Ask Zach for:** a pour in progress showing the dig-out depth and the steel in
 place. That photo would carry the thickness section, which is the most valuable
 content on the site, and right now it has no picture of its own.
+
+---
+
+## ✍️ House style: US spelling
+
+**The site is a US business. Use US spellings.** A batch of British forms crept in
+across the rewrites and were fixed 2026-09-20 (19 replacements, 5 pages):
+
+fibre → **fiber**, colour → **color**, fertiliser → **fertilizer**,
+specialised → **specialized**, grey → **gray**, greying → **graying**.
+
+Also watch: labour → labor, neighbour → neighbor, metre → meter, centre → center,
+-ise/-isation → -ize/-ization, travelling → traveling, licence (noun) → license.
+
+Quick check:
+```
+for w in fibre colour fertiliser specialised grey labour metre centre; do
+  grep -oi "\b$w\b" *.html | wc -l; done
+```
+
+## 🔧 Tooling fix: the FAQ schema comparator was too strict
+
+`faqedit.rebuild_schema` compared the JSON-LD against the visible HTML **byte for
+byte**, which flagged four pages that were actually fine: JSON-LD holds **plain
+text**, the page holds **HTML**, so a real `—` in the schema and `&mdash;` in the
+page are both correct. The comparator now decodes entities and strips tags before
+comparing (`_norm`). Confirmed afterwards: **0 real mismatches across all 60
+pages.**
+
+## 📱 Mobile: Services submenu is now reachable
+
+Under 980px the mega menu was `display:none`, so a phone could reach
+`services.html` but **not** Landscape Design / Hardscaping / Outdoor Structures
+directly. It now renders as a row of tappable chips inside the header.
+
+**The trick that made it work:** the chips are absolutely positioned against
+`.site-nav` (which gets `position:relative` and `padding-bottom:78px`), anchored
+with **`bottom:0`, not `top:100%`**. `top:100%` sits below the padded box and
+spills the chips onto the hero; `bottom:0` puts them inside the reserved space.
+
+Edit **both** `assets/main.css` (58 pages) and **`assets/home.css`** — the
+homepage loads only `home.css` and is easy to miss. `landscape-design.html` is a
+redirect stub with no header.
+
+Verified at 320/360/390/430/540/768/980px (chips visible and contained, no
+horizontal overflow) and 1024/1280px (desktop hover behaviour unchanged).
+
+---
+
+## ❓ Should fire pits and fireplaces be separate pages? — YES
+
+Zach asked. The numbers say split them, and the nav already implies it: the
+hardscape tab calls it **"Fire Pits"** and the structures tab calls it
+**"Fireplaces"**, both pointing at `fireplaces.html`.
+
+| Fire pit terms | Vol/mo | CPC | Comp |
+|---|---|---|---|
+| fire pit installation | 1,600 | $2.59 | 0.35 |
+| custom fire pit | 880 | $0.98 | 1 |
+| **fire pit contractor** | **720** | **$6.66** | **0.04** |
+| fire pit builder | 390 | $2.79 | 0.62 |
+| built in fire pit | 320 | $1.57 | 1 |
+| fire pit cost | 210 | | |
+| fire pit installation cost | 140 | $1.28 | 0.06 |
+| gas fire pit installation | 110 | $4.99 | 0.48 |
+| **total** | **≈4,370** | | |
+
+| Fireplace terms | Vol/mo | CPC | Comp |
+|---|---|---|---|
+| outdoor fireplace installation | 880 | **$4.68** | 0.16 |
+| outdoor fireplace builder | 480 | $4.03 | 0.64 |
+| outdoor fireplace cost | 210 | $1.51 | KD 5 |
+| cost questions (3 variants) | ~280 | | |
+| **total** | **≈1,850** | | |
+
+**`fire pit contractor` at 720/mo, $6.66 CPC and 0.04 competition is the single
+most valuable untapped term found on this project.**
+
+**Why they will not cannibalise, if done right:** different price points
+($1,000–$3,000+ vs $8,000–$20,000+), different fuel and setback rules, different
+buying decision. Each page leads with its own product and owns its own head terms.
+
+**The one thing that WOULD cause cannibalisation** is both pages carrying the
+"which should I get" comparison. Per Zach's own rule, that belongs in **one blog
+post** linking up to both service pages — exactly the pattern used for
+`pergola vs pavilion`.
+
+**Not built yet** — it needs a new `fire-pits.html`, the hardscape tab repointed,
+and internal links updated. Awaiting Zach's go-ahead.
