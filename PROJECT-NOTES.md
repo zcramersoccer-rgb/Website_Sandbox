@@ -339,6 +339,17 @@ for f in *.html; do printf '%-50s prices:%-3s names:%-3s nearme:%-3s faq:%s\n' "
 
 ### Known structural issues
 
+- **Site audit run 2026-09-20** (`site-build/audit.py` for the static pass, Lighthouse for
+  performance/a11y). Mechanical fixes applied by `site-build/audit_fixes.py`; re-run both after any
+  large change. What is deliberate and must be handled at go-live, not "fixed" in the sandbox:
+  `<meta name="robots" noindex>` (data-rv), `robots.txt Disallow: /`, the `.sbx` sandbox bar, and the
+  `_all-pages.html` index. Canonicals, og:url and `sitemap.xml` already use the live URL structure
+  (verified: `/` is the homepage, `/homepage/` redirects to it, every other page at `/<slug>/`).
+  og:image and srcset point at `/assets/work/...`, so those files must exist at that path on the live
+  host. Open judgment calls are in the audit report given to Zach the same day: brand-colour contrast
+  (#059669 and #b08d4f both fail WCAG AA for text), the 3.8 MB hero video on mobile, and inlining
+  critical CSS.
+
 - **All 21 blogs rewritten** (2026-09-20, design-first per Zach). Built with
   `site-build/blog_page.py` — one script per post under `site-build/blog_*.py`.
 - **Markup validity is now clean on all 61 pages** and worth keeping that way.
