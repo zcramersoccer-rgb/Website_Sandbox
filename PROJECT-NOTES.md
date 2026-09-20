@@ -307,10 +307,10 @@ Bar to clear is `outdoor-kitchens.html`.
 | retaining-walls.html | ✅ rewritten 2026-09-19 (Part C). No carousel — only 5 wall photos exist and 2 are fire-pit shots. Restore one when more photos arrive. |
 | landscape-installation.html | ✅ rewritten 2026-09-20 from Zach's landscaping answers |
 | hardscape-installation.html | ⬜ generic |
-| landscape-lighting.html | ⬜ generic |
-| artificial-turf-installation.html | ⬜ generic |
+| landscape-lighting.html | ✅ rewritten 2026-09-20 |
+| artificial-turf-installation.html | ✅ rewritten 2026-09-20 |
 | charleston-sod-installation.html | ✅ rewritten 2026-09-20 (Part D). No carousel — only 5 real-sod photos exist. |
-| irrigation-system-installation.html | ⬜ generic |
+| irrigation-system-installation.html | ✅ rewritten 2026-09-20 |
 | concrete-services.html | ✅ rewritten 2026-09-20 (Part D). Retargeted to concrete driveways. No carousel — only 4 usable poured-concrete photos. |
 | concrete-pool-decks.html | ✅ rewritten 2026-09-19 (Part C), retargeted to pool deck resurfacing |
 | fireplaces.html | ✅ rewritten 2026-09-20, retargeted to fireplaces only after the fire pit split |
@@ -722,6 +722,58 @@ the marble is **tile imported from Italy**.
 **CMU block with rebar in every other void**, sitting on a **2ft wide
 foundation**. Finished with **stucco and a brick cap**, with **plantings to soften
 the wall**.
+
+---
+
+## ✅ Zach's answers — Part E (2026-09-20, VERIFIED SOURCE)
+
+**⚠️ Standing correction from Zach:** *"Remove any mention of us using pre emergent fertilizer fungicide and
+pesticide."* Done on the sod page (body, FAQ and schema) 2026-09-20. Do not reintroduce it anywhere.
+
+### Landscape lighting
+- **About $200 a light** is a good starting point; size of job and fixture affect it. **A transformer is
+  needed at additional cost.**
+- Order: **pathway and stairs first** (functionality and aesthetics), **then trees** up and down lighting,
+  **then accent lighting** on columns, the house and focal points.
+- **Low voltage. Aluminum or brass.** A transformer and timer are needed; types vary and **the nicer ones
+  have app control.**
+
+### Artificial turf
+- **$13/sq ft covers everything** from base prep to install. Size, shape, the specific turf and the amount
+  of prep affect cost.
+- Base: **crush and run with granite fines on top.** Infill: **sand, or antimicrobial sand for pets.**
+- **Lasts 15-25 years**, longer depending on use and maintenance.
+- **It does get hot** — they have installed a sprinkler system to spray and cool it.
+- Cleaning is **a hose**. Main concern is **dirt and leaf build-up**: wash and power broom, then add new sand
+  if needed.
+
+### Irrigation
+- **$1,000 per zone. Average lot needs 5 zones. Backflow and timer $1,500.**
+- Zones are calculated from **water pressure and volume**.
+- **Rain Bird controllers**; phone access available at extra cost. **City or well water.**
+- **Most mistakes come from poor design**: precipitation rates, the right type of watering, and spacing.
+- **Freeze protection: insulation bag over the backflow, pipes buried at proper depth. Rain sensors
+  recommended.**
+
+### Drainage and grading
+- Solutions: **French drains, basins, piping off gutters, channel drains** — many options depending on the
+  yard. **Proper drainage needs proper grading, or a drainage system.**
+- **Grading is preferred** when the yard is bumpy or slopes toward the house. **Houses that sit low** and
+  cannot have slope away from them **need a drainage system instead.** Adding drainage rather than regrading
+  **can save redoing the landscaping** in certain yards. Cost varies with the problem and the possible fixes.
+
+### Mulch and beds
+- **$105 a yard for mulch** (⚠️ Zach wrote "square yard" — assumed the trade's cubic yard; CONFIRM).
+- **Mulch once a year; pine straw 2-3 times a year.**
+- It needs to **cover the ground but not be built up around tree trunks.**
+- They install **steel, plastic and brick edging.**
+
+### Water features
+- Custom fountains: **poured solid concrete**, then a **tile, stucco, tabby or other finish** on top.
+- **CMU block fountains tend to leak** or need more maintenance on the waterproofing membrane.
+- Maintenance: **clean it out once a year.**
+- **Simple fountain kit $1,000. Custom fountain with multiple layers or a built-in fire feature up to
+  $30,000.**
 
 ---
 
