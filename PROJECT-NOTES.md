@@ -304,7 +304,7 @@ Bar to clear is `outdoor-kitchens.html`.
 | artificial-turf-installation.html | ⬜ generic |
 | charleston-sod-installation.html | ✅ rewritten 2026-09-20 (Part D). No carousel — only 5 real-sod photos exist. |
 | irrigation-system-installation.html | ⬜ generic |
-| concrete-services.html | ⬜ generic |
+| concrete-services.html | ✅ rewritten 2026-09-20 (Part D). Retargeted to concrete driveways. No carousel — only 4 usable poured-concrete photos. |
 | concrete-pool-decks.html | ✅ rewritten 2026-09-19 (Part C), retargeted to pool deck resurfacing |
 | fireplaces.html | ✅ rewritten 2026-09-20 (Part C + D fire answers) |
 | fountain-water.html | ⬜ generic |
@@ -1370,3 +1370,79 @@ In Drive, folders "Cramers landscaping photos"
 alt text per the image conventions above, and cut the night footage into the
 hero. Zach's instruction: **do not lean on the West Ashley cabana across the
 whole site** — it is already the most-used project.
+
+---
+
+## Semrush — concrete driveways (run 2026-09-20)
+
+**The best-shaped cluster on the site so far**, because unlike fireplaces the
+buyer questions are large *and* there is a near-empty niche we can own outright.
+
+### Cost cluster — commercial, high CPC
+| Keyword | Vol/mo | CPC |
+|---|---|---|
+| concrete driveway cost (head term) | 4,400 | $3.67 |
+| how much does a concrete driveway cost | 1,000 | $2.72 |
+| how much is a concrete driveway | 720 | $2.41 |
+| how much does it cost to concrete a driveway | 480 | — |
+| how much to concrete a driveway | 320 | $2.25 |
+| how much to concrete driveway | 260 | $2.25 |
+
+### 🎯 Thickness cluster — the opening
+| Keyword | Vol/mo | Competition | CPC |
+|---|---|---|---|
+| how thick should a concrete driveway be | 720 | **0.02** | $1.83 |
+| how thick should concrete be for a driveway | 480 | **0.02** | $1.83 |
+| how deep for concrete driveway | 260 | **0.01** | **$3.16** |
+| how thick is a driveway concrete | 260 | **0.02** | **$4.27** |
+| how thick is driveway concrete | 260 | **0.02** | **$4.27** |
+| how thick should driveway concrete be | 260 | **0.02** | $3.05 |
+
+**~2,240 searches a month at 0.01–0.02 competition, with CPC up to $4.27.** That
+combination barely exists. And Zach has the insider answer that nobody else is
+publishing: 4 inches minimum, **but plenty of companies frame with 2x4, which is
+3.5 inches, so if the dig-out only goes to the bottom of the form you get a
+3.5-inch slab that was sold as 4.**
+
+That single fact is the best piece of content on the whole site. It answers the
+highest-value low-competition query, it is checkable, it gives the reader
+something to *do* (ask how deep the dig-out goes, not what the forms are), and it
+reframes a cheap quote as a thin slab. **Its own blog post is worth writing.**
+
+### Deliberately not chased
+- **Repair/DIY:** how to repair cracks (880), how to fix cracks (720), resurface
+  (260) — roughly 2,760/mo, but it is repair intent and **we have no answer from
+  Zach that Cramers does crack repair**. The page owns *why* driveways crack,
+  which serves someone choosing an installer; it does not claim repair work.
+- **Maintenance:** oil stains, sealing, cleaning — ~2,500/mo of homeowner DIY.
+  Not a buyer.
+
+### Cannibalisation
+`concrete-pool-decks.html` owns pool decks and resurfacing; `patios-pavers.html`
+owns patios. This page is now **driveway-led** in title and H1 and links out to
+both rather than competing. The $12/sq ft figure appears on the pool deck page
+too — same price, different application, fine.
+
+---
+
+## ⚠️ Photo note: concrete
+
+Only **4 usable poured-concrete photos**, so no carousel (same call as retaining
+walls and sod). Used: `mount-pleasant-residential-concrete-driveway-installation`,
+`charleston-custom-concrete-driveway-brick-borders`,
+`mount-pleasant-exposed-aggregate-driveway-landscaping`,
+`charleston-brick-and-tabby-side-yard-walkway`. Hero stays
+`mount-pleasant-concrete-driveway-installation`.
+
+**Not used, and why:**
+- `summerville-flagstone-driveway` — it is irregular flagstone, not poured
+  concrete, and it does not read as a driveway. **Filename is misleading;**
+  verify before using it anywhere.
+- `awendaw-historic-brick-driveway` / `-brick-paver-driveway-installation` — brick
+  pavers, belongs on the pavers page.
+- `charleston-tabby-concrete-patio` — a narrow side walkway rather than a patio,
+  weak as a tabby showcase.
+
+**Ask Zach for:** a pour in progress showing the dig-out depth and the steel in
+place. That photo would carry the thickness section, which is the most valuable
+content on the site, and right now it has no picture of its own.
