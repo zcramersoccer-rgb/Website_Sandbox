@@ -1225,32 +1225,75 @@ do not put two of one project in the same carousel):
 
 ---
 
-## ✅ Fire pit clearance — answered by Zach 2026-09-20
+## ✅ Fire pit clearance — Zach 2026-09-20, verified against the code
 
-**City of Charleston ordinance: 25 feet from the house for a WOOD-BURNING fire
-pit where the patio sits near the house. Gas can go closer.**
+Zach's numbers were right, and he asked for them to be checked before publishing.
+They were. **Two things changed as a result of the check.**
 
-This is the strongest single fact on the fireplaces page. `how far should a fire
-pit be from house` is ~1,030 searches a month at 0.03 competition, and almost
-every page answering it gives a vague "check your local code". A named
-municipality with a number beats all of them.
+### What the code actually says
 
-It also does real work for the sales argument: on a small Charleston lot there
-often isn't 25 feet to give, so **gas isn't a compromise, it's what makes a fire
-pit possible at all.** That reframes the gas-vs-wood choice as a site
-constraint rather than a preference.
+South Carolina adopted the **2021 International Fire Code**, effective for local
+enforcement **1 January 2023**. That is why Charleston, Mount Pleasant and
+Summerville land on the same figures &mdash; it is one state-adopted code, not three
+separate town ordinances. **Say it that way: it is a stronger and more accurate
+claim, and it covers every town we work in.**
 
-Written up in two places on `fireplaces.html` — the gas-vs-wood section and the
-placement section — plus two FAQs.
+| Situation | Setback | Source |
+|---|---|---|
+| Open wood-burning / recreational fire | **25 ft** from a structure or combustible material | IFC **307.4.2** |
+| Portable outdoor fireplace (moveable pit, chiminea) | **15 ft** | IFC **307.4.3** |
+| Permanently piped gas fire pit | **manufacturer's listed clearances** | listed appliance, fuel gas code &mdash; *not* IFC 307 |
 
-**Care taken:** attributed to the City of Charleston specifically, with a note
-that clearances are set locally and can differ between municipalities. Zach gave
-no number for gas, so the page says only that gas can go closer and that we
-confirm what applies to the address.
+North Charleston's open-burning ordinance mirrors the IFC recreational-fire
+language exactly (3 ft diameter, 2 ft height, 25 ft from a structure), which is a
+useful local confirmation.
 
-**Still unknown:** the gas clearance figure, and whether Mount Pleasant,
-Summerville, North Charleston etc. differ from Charleston's 25 ft. Worth asking
-if we ever write a permits/code blog post.
+### The two corrections
+
+1. **It is not "the City of Charleston's ordinance."** It is the state-adopted
+   IFC. The first draft of the page said Charleston, which undersold it and was
+   not quite right.
+2. **IFC 307.4.3 has an Exception for one- and two-family dwellings** &mdash; i.e. the
+   15 ft does not technically apply at most of our customers' houses. **The page
+   does NOT lean on that**, because local fire marshals commonly enforce it
+   anyway and the AHJ has the final say. Page wording: the carve-out exists, but
+   we do not design as though it is not there.
+
+### Why gas really can go closer — the technical basis
+A permanently piped gas fire pit is a **listed appliance**. It is installed to the
+clearances in that specific unit's instructions under the fuel gas code, not to
+the 25-foot open-fire setback in IFC 307. Manufacturer clearances are enforceable
+and supersede a generic rule of thumb. That is the correct reason, and it is a
+better answer than "gas can go closer."
+
+### SC Forestry Commission — no burn notification needed
+Fires in portable outdoor fireplaces, chimineas, or **permanent fire pits of
+stone, masonry, metal or other noncombustible material** that conform to SC fire
+codes do not require burn notification, provided the area is cleared and
+suppression equipment is on hand. Useful for a permits blog post.
+
+### Standing rule for this site
+**Never publish a code number without checking it, and never publish one without
+saying the AHJ decides.** Every code statement on the site carries: the number,
+what it applies to, and a line that towns can be stricter and Cramers confirms
+per address. A wrong number a customer relies on is Cramers' liability.
+
+### Sources
+- IFC 307.4.2 / 307.4.3 text and the one/two-family Exception &mdash; ICC Digital Codes
+  and UpCodes
+- SC adoption of the 2021 codes, effective 2023-01-01 &mdash; SC Building Codes Council
+  adoption notice
+- North Charleston open-burning ordinance
+- SC Forestry Commission, notification exemptions
+
+### Still unknown
+Whether Mount Pleasant, Summerville, Charleston or the counties have adopted
+**local amendments** stricter than the IFC baseline. The town code libraries
+(amlegal) and ICC's own site are **blocked by this container's egress proxy**, so
+primary text could not be read directly from here &mdash; the above is from search
+results plus the state adoption notice. **Worth Zach confirming with a fire
+marshal**, and worth re-checking from a local session where those sites are
+reachable.
 
 ---
 
