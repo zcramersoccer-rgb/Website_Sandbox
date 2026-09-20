@@ -44,6 +44,9 @@ so keep anything genuinely sensitive out of it.
 - Homepage rebuilt (hero video, trust strip, family intro, service tiles, featured projects)
 - Portfolio curated 192 → 51 photos, grouped by service
 - All images local WebP, self-hosted fonts, one minified stylesheet per page
+- **Page builder:** `site-build/service_page.py` + one `page_<name>.py` per page. It keeps the hero,
+  tab strip, areas list and form, and regenerates body + FAQ + FAQPage schema together (so the
+  two-places FAQ trap cannot bite).
 - **Rewritten from Zach's answers:** `outdoor-kitchens.html`, `summerville-sc.html`,
   `pergolas.html`, `pergolas-pavilions.html`, `concrete-pool-decks.html`,
   `patios-pavers.html`, `retaining-walls.html`
@@ -317,7 +320,7 @@ Bar to clear is `outdoor-kitchens.html`.
 | mulching-bed-maintenance.html | ⬜ generic |
 | landscape-drainage-services-charleston-sc.html | ⬜ generic |
 | landscape-grading-services-charleston-sc.html | ⬜ generic |
-| outdoor-shower-installation-charleston-sc.html | ⬜ generic |
+| outdoor-shower-installation-charleston-sc.html | ✅ rewritten 2026-09-20 from Part D answers |
 
 Quick audit for whether a page has been done — generic pages score 0 on prices
 and have no FAQ schema:
