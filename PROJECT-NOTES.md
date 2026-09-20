@@ -306,7 +306,7 @@ Bar to clear is `outdoor-kitchens.html`.
 | irrigation-system-installation.html | ⬜ generic |
 | concrete-services.html | ⬜ generic |
 | concrete-pool-decks.html | ✅ rewritten 2026-09-19 (Part C), retargeted to pool deck resurfacing |
-| fireplaces.html | ⬜ generic |
+| fireplaces.html | ✅ rewritten 2026-09-20 (Part C + D fire answers) |
 | fountain-water.html | ⬜ generic |
 | outdoor-structures.html | ⬜ generic |
 | plants.html | ⬜ generic |
@@ -1154,3 +1154,91 @@ Alt text and figcaptions were switched to the apostrophe on 2026-09-20. The
 title of `sullivans-island-sc.html` is a targeting decision, not a typo fix.
 Google treats the two forms nearly identically, so this is low-risk either way —
 but it should be one or the other, not both. **Ask Zach which he wants.**
+
+---
+
+## Semrush — fire features (run 2026-09-20)
+
+**The head terms are a trap.** `outdoor fireplace` is 18,100/mo at difficulty 21,
+which looked like the best remaining opening on the site. It is not, because of
+what people actually type after it:
+
+| Question | Vol/mo | Who is asking |
+|---|---|---|
+| how to build an outdoor fireplace | 880 | DIY |
+| how to make an outdoor fireplace | 720 | DIY |
+| do it yourself outdoor fireplace | 480 | DIY |
+| how to build outdoor fireplace | 320 | DIY |
+| how do you build an outdoor fireplace | 210 | DIY |
+| **how much does an outdoor fireplace cost** | **140** | **buyer** |
+| **how much does it cost to build an outdoor fireplace** | **90** | **buyer** |
+| **how much is an outdoor fireplace** | **50** | **buyer** |
+
+Same story on fire pits: `how to build a fire pit` is **90,500/mo**, and the rest
+of the cluster is smokeless-pit product questions, how to light a fire, and what
+to do with the ashes. **None of that is a customer.**
+
+**So the page does not chase the head terms.** It targets:
+- the **cost cluster** &mdash; `outdoor fireplace cost` (210/mo, **KD 5**) plus the
+  three buyer questions above, roughly **490/mo of genuinely commercial volume at
+  very low difficulty**. Zach's numbers ($8k kit, $20k+ custom, $1k fire pit kit)
+  answer it with figures competitors do not publish.
+- **`how far should a fire pit be from house`** &mdash; 390 + 320 + 320 =
+  **~1,030/mo at 0.03 competition**, and a placement question a builder can
+  legitimately own.
+- the **decision queries** (fireplace vs fire pit, gas vs wood, built-in vs
+  freestanding). No volume data needed &mdash; these are what people ask on the phone.
+
+**Do not write DIY how-to content to chase the 18,100.** It would rank for people
+who have already decided not to hire anyone.
+
+### The differentiator on this page
+**The blower.** Zach's point that without one you get a fire you can look at
+rather than a fire you can feel is not on competitor pages, and it is the kind
+of specific, useful thing that wins a page trust. Same with fire bowls being a
+different product from fire pits.
+
+---
+
+## ⚠️ Photo trap: a half-built fireplace was the lead carousel image
+
+`summerville-modern-fireplace` is a **construction shot** &mdash; the fireplace is
+wrapped in black weather barrier with the gas firebox just set in. It was
+**slide 1 of the fireplaces carousel**, captioned "Modern fireplace in
+Summerville, SC". Removed from the page 2026-09-20. The file is still in
+`assets/work/` and is now used nowhere; leave it unless Zach wants a
+before/after somewhere, and if it is ever used again, caption it as in progress.
+
+**Fire photos, grouped by project** (several are the same job from two angles &mdash;
+do not put two of one project in the same carousel):
+
+| Project | Files |
+|---|---|
+| Summerville stacked-stone fireplace (best shot on the page) | `summerville-rustic-stone-fireplace` (hero), `summerville-stone-outdoor-fireplace-patio-landscaping` |
+| Charleston brick back-porch fireplace | `charleston-back-porch-fireplace-design` |
+| Charleston tabby fire pit | `charleston-tabby-fire-pit-with-adirondack-seating`, `charleston-tabby-firepit-retaining-wall` |
+| Mount Pleasant block fire pit + wall | `mount-pleasant-modern-fire-pit-retaining-wall`, `mount-pleasant-backyard-retaining-wall-fire-pit` |
+| West Ashley cabana fire table | `west-ashley-backyard-hardscape-fire-pit-and-pavilion`, `west-ashley-patio-fire-table-adirondack-chairs` &mdash; **use sparingly, Zach asked not to lean on this project** |
+| Summerville fire bowls (the project story) | `summerville-custom-pool-fire-features-landscape` |
+| Singles | `edisto-backyard-fire-pit-paver-patio`, `summerville-paver-patio-fire-pit`, `summerville-fire-pit-patio-with-pergola`, `daniel-island-tabby-fire-pit-sitting-wall`, `sullivans-island-backyard-fire-pit-on-artificial-turf`, `mount-pleasant-fire-feature-fountain` |
+| Deprioritised | `north-charleston-pergola-swing-set-around-a-fire-pit` &mdash; Zach did not recognise it and said not to prioritise it |
+
+---
+
+## ❓ Open question for Zach — fire pit clearance
+
+`how far should a fire pit be from house` is ~1,030 searches a month at almost no
+competition, and we have no number from him. The page answers it honestly &mdash;
+placement is about flow and use of the yard, smoke only matters under a structure
+where you need a chimney, and we follow the manufacturer's clearances and local
+code. **A real number, or his rule of thumb, would make that answer much
+stronger.**
+
+---
+
+## ✅ Sullivan's Island apostrophe — resolved 2026-09-20
+
+Zach chose the apostrophe. 102 replacements across 59 pages, covering page
+titles, H1s, meta descriptions and body copy. Filenames, links and element ids
+are unchanged (`sullivans-island-sc.html`, `assets/work/sullivans-island-*`).
+House style is the entity: `Sullivan&rsquo;s Island`.
