@@ -170,3 +170,6 @@ main.cl-page{overflow-x:clip}
 /* Logo: site.css sets a width and revamp.css sets a height at the mobile breakpoint, so the image was
    drawn at 240x54 for a 5:1 file (Lighthouse "incorrect aspect ratio"). Keep the box, stop the squash. */
 .site-logo img{object-fit:contain}
+/* The squash itself: site.css sets an explicit width:260px at the mobile breakpoint while the
+   max-height caps above stay in force, so the ratio could not be kept. With width:auto the caps size it. */
+.site-logo img{width:auto !important}
