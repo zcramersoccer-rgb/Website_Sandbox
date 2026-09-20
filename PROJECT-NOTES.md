@@ -339,6 +339,17 @@ for f in *.html; do printf '%-50s prices:%-3s names:%-3s nearme:%-3s faq:%s\n' "
 
 ### Known structural issues
 
+- **All 21 blogs rewritten** (2026-09-20, design-first per Zach). Built with
+  `site-build/blog_page.py` — one script per post under `site-build/blog_*.py`.
+- **Markup validity is now clean on all 61 pages** and worth keeping that way.
+  Quick check:
+  a small HTMLParser stack walk catches unclosed tags; two real bugs turned up
+  this way. (1) `blog_page.py` used to keep only up to the first `</div>` after
+  the `<h1>`, which is the breadcrumb's, so every rebuilt blog silently lost the
+  `</div>` closing `.cl-hero`; it now uses `close_div()`, which matches nesting.
+  (2) 1,029 dead `font-weight: 400` tags/attributes from the old vendor were
+  stripped, several of which were unclosed `<span>`s.
+
 - **Four pages cover pergolas/pavilions.** `pergolas.html` and
   `pergolas-pavilions.html` are service pages (14 inbound links each);
   `pergola-pavilion-installation-charleston-sc.html` and
