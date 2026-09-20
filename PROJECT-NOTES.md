@@ -317,7 +317,7 @@ Bar to clear is `outdoor-kitchens.html`.
 | fire-pits.html | ✅ NEW 2026-09-20 — split out per Zach; owns "fire pit contractor" |
 | fountain-water.html | ⬜ generic |
 | outdoor-structures.html | ⬜ generic |
-| plants.html | ⬜ generic |
+| plants.html | ✅ rewritten 2026-09-20 from Zach's plant palette |
 | mulching-bed-maintenance.html | ⬜ generic |
 | landscape-drainage-services-charleston-sc.html | ⬜ generic |
 | landscape-grading-services-charleston-sc.html | ⬜ generic |
