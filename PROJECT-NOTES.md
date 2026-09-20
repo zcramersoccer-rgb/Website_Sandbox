@@ -295,17 +295,17 @@ Bar to clear is `outdoor-kitchens.html`.
 | summerville-sc.html | ✅ done — from Zach's answers |
 | pergola-pavilion-installation-charleston-sc.html | ✅ blog re-aimed at "pergola vs pavilion" |
 | pergolas.html | 🔄 **in progress** — interview sent, awaiting answers |
-| pergolas-pavilions.html | 🔄 **in progress** — same interview |
-| patios-pavers.html | ⬜ generic |
-| retaining-walls.html | ⬜ generic — worst page on the site, 9× "near me" keyword stuffing |
+| pergolas-pavilions.html | ✅ rewritten 2026-09-19 (Part B) |
+| patios-pavers.html | ✅ rewritten 2026-09-19 (Part C) |
+| retaining-walls.html | ✅ rewritten 2026-09-19 (Part C). No carousel — only 5 wall photos exist and 2 are fire-pit shots. Restore one when more photos arrive. |
 | landscape-installation.html | ⬜ generic — carries most internal link weight |
 | hardscape-installation.html | ⬜ generic |
 | landscape-lighting.html | ⬜ generic |
 | artificial-turf-installation.html | ⬜ generic |
-| charleston-sod-installation.html | ⬜ generic |
+| charleston-sod-installation.html | ✅ rewritten 2026-09-20 (Part D). No carousel — only 5 real-sod photos exist. |
 | irrigation-system-installation.html | ⬜ generic |
 | concrete-services.html | ⬜ generic |
-| concrete-pool-decks.html | ⬜ generic |
+| concrete-pool-decks.html | ✅ rewritten 2026-09-19 (Part C), retargeted to pool deck resurfacing |
 | fireplaces.html | ⬜ generic |
 | fountain-water.html | ⬜ generic |
 | outdoor-structures.html | ⬜ generic |
@@ -997,3 +997,79 @@ Distinct projects worth telling stories about:
 
 - **Do you need a permit for a pergola in Charleston County?** — ~590/mo, KD 6–9, our moat
 - Pergola cost deep-dive — 390/mo, links back to `pergolas.html`
+
+---
+
+## Semrush — sod question cluster (run 2026-09-20)
+
+Do **not** run `phrase_questions` on the bare word "sod" — the results come back
+almost entirely as "soda" (dirty soda, baking soda, club soda). Use "new sod",
+"sod installation" or "laying sod" instead.
+
+Useful from `phrase_questions` on **"sod"**:
+
+| Keyword | Vol/mo |
+|---|---|
+| what is sod | 6,600 |
+| how to lay sod | 4,400 |
+| how to put sod grass / sod lawn | 3,600 each |
+| how much does sod cost | 2,900 |
+| how much is sod | 2,900 |
+
+From `phrase_questions` on **"new sod"** — this is the real opportunity. Three
+clusters dominate, and Zach has answered two of them outright:
+
+| Cluster | Combined vol/mo (approx) | Do we have the answer? |
+|---|---|---|
+| **Watering** — how often / how long / how much to water new sod | **~4,500** | ✅ every day, 2 weeks, 30 min, never at night |
+| **Mowing** — when to mow / cut new sod, how long to wait | **~2,500** | ❌ **no timing from Zach — open question** |
+| **Fertilising** — when / should I / can I fertilize new sod | **~1,500** | ✅ a little at install, season-dependent |
+| Care generally — how to care for / take care of new sod | ~1,000 | ✅ partly |
+
+Top single terms: how often to water new sod (1,300), how long to water new sod
+(1,000), when to mow new sod (720), how much to water new sod (590), how often
+should you water new sod (590).
+
+**The "don't water at night" answer is the differentiator.** Every competing page
+says "water twice a day". Zach's answer (30 minutes, morning only, because wet
+sod rots or gets a fungus) is more specific and contradicts the generic advice,
+which is exactly what wins these queries.
+
+---
+
+## ⚠️ Photo trap: three "lawn" images are artificial turf
+
+The filenames and alt text lie. Verified visually 2026-09-20 — **do not put these
+on the sod page**, they are artificial turf:
+
+- `north-charleston-bluestone-patio-and-new-lawn` — turf, not a new lawn
+- `sullivans-island-waterfront-backyard-pool-and-lawn` — turf
+- `daniel-island-residential-turf-lawn-landscaping` — turf
+
+Also: `daniel-island-lawn-landscaping-brick-border` and
+`lawn-landscaping-brick-border-c7e5` are **byte-identical duplicates**. Use one.
+
+**The only genuine sod/lawn photos on the site (5 total):**
+
+| File | Size | What it shows |
+|---|---|---|
+| `daniel-island-stepping-stone-lawn-pathway` | 1600×1400 | best one — real lawn, stepping stones (sod page hero) |
+| `daniel-island-lawn-landscaping-brick-border` | 1400×1600 | established lawn, brick border, mulch bed |
+| `charleston-sod-installation-and-landscape-edging` | 1200×1600 | fresh sod, seams visible, commercial |
+| `charleston-fresh-sod-turf-and-mulch-landscaping` | 1600×1200 | same job, wider landscape framing |
+| `mount-pleasant-luxury-modern-home-backyard-lawn` | 1600×900 | big lawn, modern house, backlit/dark |
+
+Ask Zach for more sod photos — especially a pallet being laid, a roller in use,
+and a before/after of a regraded yard. That would unlock a carousel.
+
+---
+
+## ❓ Open question for Zach — sod
+
+**When can someone mow new sod?** ~2,500 searches a month ask this and we have no
+answer from him. The FAQ currently answers it with the root-tug test (lift a
+corner, if it resists it has rooted) and no week number, which is true but
+generic. **Get his actual number and rewrite that FAQ.**
+
+Related, if he wants to go further: what he tells people about fertilising after
+the install, and whether they offer a sod warranty.
