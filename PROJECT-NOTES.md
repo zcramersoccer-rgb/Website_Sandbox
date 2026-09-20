@@ -305,7 +305,7 @@ Bar to clear is `outdoor-kitchens.html`.
 | pergolas-pavilions.html | ✅ rewritten 2026-09-19 (Part B) |
 | patios-pavers.html | ✅ rewritten 2026-09-19 (Part C) |
 | retaining-walls.html | ✅ rewritten 2026-09-19 (Part C). No carousel — only 5 wall photos exist and 2 are fire-pit shots. Restore one when more photos arrive. |
-| landscape-installation.html | ⬜ generic — carries most internal link weight |
+| landscape-installation.html | ✅ rewritten 2026-09-20 from Zach's landscaping answers |
 | hardscape-installation.html | ⬜ generic |
 | landscape-lighting.html | ⬜ generic |
 | artificial-turf-installation.html | ⬜ generic |
@@ -529,6 +529,14 @@ both attributes from the actual WebP header and verify in a browser against
 Carousel frames are **4:3 with `object-fit: cover`**, so a tall portrait loses up to
 46% of its height and can sever posts at their base. Prefer images at or near 4:3
 for slides.
+
+### ⚠️ Builder trap, fixed: the areas section
+
+`service_page.py` used to locate the "Areas We Serve" block by searching *forward* from 400 chars before
+`cl-locations`. On pages where that section opens earlier than 400 chars, the search landed past it and the
+whole block was silently dropped — it ate the areas list on fire-pits and fireplaces before it was caught by
+a second run failing. It now searches backwards (`rfind`) and asserts. If a rebuilt page is missing its
+areas list, that is the bug to look for.
 
 ### ⚠️ Editing trap: never edit assets/main.css or assets/home.css
 
