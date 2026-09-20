@@ -112,3 +112,20 @@ main.cl-page{overflow-x:clip}
   .mega a:hover,.mega a:active,.mega a:focus{color:#fff;background:#059669}
   .site-logo img,.foot-logo img{width:240px}
 }
+
+/* --- service tile grids on the hub pages (2026-09-20) ----------------------
+   The homepage's .rf-services / .rf-svc rules live in refine.css, which only the homepage
+   bundle includes. The hardscaping and structures hubs use the same tiles as text cards,
+   so these are the text-only rules, shared by every page. (Re-added after a careless
+   replace in this file truncated them — append new blocks, never rewrite to end of file.) */
+.rf-services{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.9rem,1.8vw,1.4rem);margin-top:clamp(1.6rem,3vw,2.4rem)}
+.rf-svc{display:flex;flex-direction:column;text-decoration:none;color:inherit;background:#fff;
+  border:1px solid rgba(27,42,34,.12);border-radius:12px;padding:1.15rem 1.25rem;
+  box-shadow:0 1px 2px rgba(16,32,24,.04);transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.rf-svc:hover{border-color:#114327;box-shadow:0 10px 28px rgba(16,32,24,.10);transform:translateY(-2px)}
+.rf-svc h3{margin:0 0 .4rem;font-size:1.1rem;color:#114327;line-height:1.25}
+.rf-svc p{margin:0 0 .9rem;color:#41514a;line-height:1.55;font-size:.94rem}
+.rf-svc .rf-more{margin-top:auto;font-weight:600;font-size:.88rem;color:#059669;letter-spacing:.01em}
+.rf-svc:hover .rf-more{color:#b08d4f}
+@media(max-width:900px){ .rf-services{grid-template-columns:1fr 1fr} }
+@media(max-width:560px){ .rf-services{grid-template-columns:1fr} }
