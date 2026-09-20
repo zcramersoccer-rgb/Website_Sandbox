@@ -129,3 +129,22 @@ main.cl-page{overflow-x:clip}
 .rf-svc:hover .rf-more{color:#b08d4f}
 @media(max-width:900px){ .rf-services{grid-template-columns:1fr 1fr} }
 @media(max-width:560px){ .rf-services{grid-template-columns:1fr} }
+
+/* --- pergola vs pavilion card (2026-09-20) --------------------------------
+   Was a centred paragraph of running text at the top of both structure pages; Zach wanted it to look
+   finished. Two panels, each with its own price, so the choice reads at a glance. */
+.pv-compare{background:#fff;border:1px solid rgba(27,42,34,.12);border-radius:14px;
+  padding:clamp(1.2rem,2.5vw,2rem);box-shadow:0 1px 2px rgba(16,32,24,.04);max-width:980px;margin:0 auto}
+.pv-title{margin:0 0 1rem;text-align:center;font-weight:600;color:#114327;font-size:1.05rem;
+  letter-spacing:.02em;text-transform:uppercase}
+.pv-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2.5vw,2rem)}
+.pv-col{padding:0 clamp(.2rem,1vw,.8rem)}
+.pv-col + .pv-col{border-left:1px solid rgba(27,42,34,.12)}
+.pv-col h3{margin:0 0 .2rem;color:#114327;font-size:1.25rem}
+.pv-price{margin:0 0 .6rem;color:#059669;font-weight:600}
+.pv-col p{margin:0;line-height:1.6;color:#41514a;font-size:.96rem}
+.pv-more{margin:1.2rem 0 0;text-align:center}
+@media(max-width:700px){
+  .pv-grid{grid-template-columns:1fr;gap:1.2rem}
+  .pv-col + .pv-col{border-left:0;border-top:1px solid rgba(27,42,34,.12);padding-top:1.2rem}
+}
