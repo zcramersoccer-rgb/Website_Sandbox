@@ -200,3 +200,9 @@ main.cl-page{overflow-x:clip}
 .cl-sum-note{display:block;font-weight:400;font-size:.88rem;color:#4a5a50;margin-top:.15rem}
 .cl-sum-total th,.cl-sum-total td{border-top:2px solid #114327;border-bottom:none;font-weight:700;color:#114327}
 @media (max-width:560px){.cl-tiers th{white-space:normal;width:38%}}
+
+/* turf savings post, 2026-09-21: multi-column rate tables. Scroll inside the table on a phone, never the page. */
+.cl-rates{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.cl-rates th,.cl-rates td{white-space:nowrap;width:auto}
+.cl-rates thead th{font-weight:700;color:#1b2a22;border-bottom:2px solid #114327;font-size:.92rem}
+.cl-rates td{font-weight:600;color:#114327}
