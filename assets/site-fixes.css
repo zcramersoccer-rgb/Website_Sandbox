@@ -206,3 +206,11 @@ main.cl-page{overflow-x:clip}
 .cl-rates th,.cl-rates td{white-space:nowrap;width:auto}
 .cl-rates thead th{font-weight:700;color:#1b2a22;border-bottom:2px solid #114327;font-size:.92rem}
 .cl-rates td{font-weight:600;color:#114327}
+
+/* pay-invoice page, 2026-09-21 */
+.cl-pay{max-width:760px;margin:0 auto}
+.cl-pay-steps{margin:1.6rem auto;padding-left:1.4rem;line-height:1.65}
+.cl-pay-steps li{margin:.7rem 0}
+.cl-pay-button{display:inline-block;margin:1.2rem 0 .6rem;padding:1rem 2.2rem;font-size:1.1rem;text-decoration:none}
+.cl-pay-button.is-disabled{opacity:.45;cursor:not-allowed}
+.cl-pay-secure{font-size:.9rem;color:#4a5a50;text-align:center;margin-top:1rem}
