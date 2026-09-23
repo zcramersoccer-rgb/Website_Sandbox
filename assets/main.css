@@ -42,6 +42,9 @@
 .pj-back{font-weight:700}
 @media(max-width:700px){.pj-card,.pj-gallery figure{flex-basis:100%}.pj-gallery .pj-full{aspect-ratio:4/3}.pj-gallery{gap:14px}.pj-story>p{font-size:17px}}
 /* /project-pages */
+
+
+
 /* nav-money-pages */
 .site-nav .tel>a{display:flex;align-items:center;gap:8px}
 .site-nav .tel svg{flex:none;opacity:.9}
@@ -77,3 +80,10 @@
   background:#fff;color:#114327;padding:12px 18px;border-radius:10px;font-weight:600;
   box-shadow:0 10px 30px rgba(0,0,0,.28);outline:3px solid #34d399}
 /* /css-polish */
+/* prose */
+.cl-prose{max-width:760px;margin-left:auto;margin-right:auto}
+.cl-prose h2{margin-top:2em}
+.cl-prose .cl-lede{font-size:1.08rem;color:#41514a}
+.cl-prose ul.body{margin:0 0 1.1em;padding-left:1.25em}
+.cl-prose ul.body li{margin:0 0 .5em}
+/* /prose */
