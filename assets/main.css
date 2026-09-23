@@ -55,3 +55,15 @@
 @media(max-width:1180px){.site-nav .tel span{display:none}.site-nav .tel>a{padding-left:15px;padding-right:15px}}
 @media(max-width:980px){.mega-more{grid-template-columns:1fr}}
 /* /nav-money-pages */
+/* form-polish */
+#wpforms-1123-field_1-container{position:absolute!important;overflow:hidden!important;display:inline!important;
+  height:1px!important;width:1px!important;z-index:-1000!important;padding:0!important}
+#wpforms-1123-field_1-container input{visibility:hidden}
+.wpforms-form button.wpforms-submit{background:#047857;color:#fff;border:0;border-radius:12px;padding:14px 30px;
+  min-height:44px;font:500 17px/1.2 "DM Sans",system-ui,sans-serif;cursor:pointer}
+.wpforms-form button.wpforms-submit:hover{background:#065f46}
+.wpforms-form button.wpforms-submit:focus-visible{outline:3px solid #34d399;outline-offset:2px}
+.cl-form-legal{margin:14px 0 0;font-size:13px;line-height:1.5;color:#5b6b63}
+.cl-form-legal a{color:#047857}
+@media(max-width:600px){.wpforms-form button.wpforms-submit{width:100%}}
+/* /form-polish */
