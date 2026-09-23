@@ -71,6 +71,12 @@ main.cl-page{overflow-x:clip}
 .cl-prices th,.cl-prices td{padding:.75rem .9rem;border-bottom:1px solid rgba(27,42,34,.14);text-align:left}
 .cl-prices th{font-weight:600;color:#1b2a22}
 .cl-prices td{color:#114327;font-weight:600;white-space:nowrap}
+/* 2026-09-23 audit: nowrap keeps a range like "$1,900 - $8,000" on one line, which is right on
+   a desktop 640px table and wrong on a 375px phone - the cells could not wrap, the table ran
+   past the viewport, and the overflow was clipped rather than scrollable, so the right-hand
+   column was cut off mid-word with no way to reach it. Let cells wrap on small screens; a
+   range broken over two lines is legible, a price you cannot see is not. */
+@media(max-width:700px){.cl-prices td,.cl-prices th{white-space:normal}}
 .cl-price-note{font-size:.9rem;color:#5b6b63;max-width:640px}
 
 /* --- 8. service tab strips wrap instead of scrolling sideways --------------
