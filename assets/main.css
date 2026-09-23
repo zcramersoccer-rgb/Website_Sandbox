@@ -45,18 +45,7 @@
 
 
 
-/* nav-money-pages */
-.site-nav .tel>a{display:flex;align-items:center;gap:8px}
-.site-nav .tel svg{flex:none;opacity:.9}
-.mega-more{list-style:none;margin:8px 0 0;padding:10px 0 2px;border-top:1px solid #e5e7eb;
-  display:grid;grid-template-columns:1fr 1fr;gap:2px 14px}
-.mega-more li{margin:0}
-.mega-more a{display:block;padding:7px 10px;border-radius:8px;color:#114327;font-size:14.5px;
-  font-weight:500;line-height:1.25;text-decoration:none;white-space:nowrap}
-.mega-more a:hover,.mega-more a:focus-visible{background:#f1faf5;color:#047857}
-@media(max-width:1180px){.site-nav .tel span{display:none}.site-nav .tel>a{padding-left:15px;padding-right:15px}}
-@media(max-width:980px){.mega-more{grid-template-columns:1fr}}
-/* /nav-money-pages */
+
 /* form-polish */
 #wpforms-1123-field_1-container{position:absolute!important;overflow:hidden!important;display:inline!important;
   height:1px!important;width:1px!important;z-index:-1000!important;padding:0!important}
@@ -87,3 +76,15 @@
 .cl-prose ul.body{margin:0 0 1.1em;padding-left:1.25em}
 .cl-prose ul.body li{margin:0 0 .5em}
 /* /prose */
+/* nav-money-pages */
+.site-nav .tel>a{display:flex;align-items:center;gap:8px}
+.site-nav .tel svg{flex:none;opacity:.9}
+.mega-more{list-style:none;margin:8px 0 0;padding:10px 0 2px;border-top:1px solid #e5e7eb;
+  display:grid;grid-template-columns:1fr 1fr;gap:2px 14px}
+.mega-more li{margin:0}
+.mega-more a{display:block;padding:7px 10px;border-radius:8px;color:#114327;font-size:14.5px;
+  font-weight:500;line-height:1.25;text-decoration:none;white-space:nowrap}
+.mega-more a:hover,.mega-more a:focus-visible{background:#f1faf5;color:#047857}
+@media(max-width:1180px){.site-nav .tel span{display:none}.site-nav .tel>a{padding-left:15px;padding-right:15px}}
+@media(max-width:980px){.mega-more{grid-template-columns:1fr}}
+/* /nav-money-pages */
