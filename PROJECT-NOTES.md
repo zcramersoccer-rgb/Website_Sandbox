@@ -1093,7 +1093,7 @@ Distinct projects worth telling stories about:
 - **Daniel Island** — pergola over an outdoor kitchen, 6 angles
 - **Summerville** — pergola + putting green + kitchen (already used on the kitchens page)
 - **North Charleston** — pergola with a swing set around a fire pit
-- **Johns Island** — pergola with bluestone path and Japanese maple
+- **Johns Island** — pergola with bluestone path and Japanese maple **(Corrected 2026-09-21 by Zach: this is a JAMES ISLAND job, not Johns Island. See relabel_photo.py:60. Do not rebuild a Johns Island page from this line.)**
 - **James Island** — pergola-covered outdoor bar patio, rustic back porch kitchen
 - **Isle of Palms** — pool pavilion
 
