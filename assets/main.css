@@ -46,26 +46,9 @@
 
 
 
-/* form-polish */
-#wpforms-1123-field_1-container{position:absolute!important;overflow:hidden!important;display:inline!important;
-  height:1px!important;width:1px!important;z-index:-1000!important;padding:0!important}
-#wpforms-1123-field_1-container input{visibility:hidden}
-.wpforms-form button.wpforms-submit{background:#047857;color:#fff;border:0;border-radius:12px;padding:14px 30px;
-  min-height:44px;font:500 17px/1.2 "DM Sans",system-ui,sans-serif;cursor:pointer}
-.wpforms-form button.wpforms-submit:hover{background:#065f46}
-.wpforms-form button.wpforms-submit:focus-visible{outline:3px solid #34d399;outline-offset:2px}
-.cl-form-legal{margin:14px 0 0;font-size:13px;line-height:1.5;color:#5b6b63}
-.cl-form-legal a{color:#047857}
-@media(max-width:600px){.wpforms-form button.wpforms-submit{width:100%}}
-/* /form-polish */
 
-/* prose */
-.cl-prose{max-width:760px;margin-left:auto;margin-right:auto}
-.cl-prose h2{margin-top:2em}
-.cl-prose .cl-lede{font-size:1.08rem;color:#41514a}
-.cl-prose ul.body{margin:0 0 1.1em;padding-left:1.25em}
-.cl-prose ul.body li{margin:0 0 .5em}
-/* /prose */
+
+
 /* nav-money-pages */
 .site-nav .tel>a{display:flex;align-items:center;gap:8px}
 .site-nav .tel svg{flex:none;opacity:.9}
@@ -142,3 +125,22 @@
   .mega li + li{border-top:1px solid rgba(27,42,34,.08)}
 }
 /* /home-services */
+/* form-polish */
+#wpforms-1123-field_1-container{position:absolute!important;overflow:hidden!important;display:inline!important;
+  height:1px!important;width:1px!important;z-index:-1000!important;padding:0!important}
+#wpforms-1123-field_1-container input{visibility:hidden}
+.wpforms-form button.wpforms-submit{background:#047857;color:#fff;border:0;border-radius:12px;padding:14px 30px;
+  min-height:44px;font:500 17px/1.2 "DM Sans",system-ui,sans-serif;cursor:pointer}
+.wpforms-form button.wpforms-submit:hover{background:#065f46}
+.wpforms-form button.wpforms-submit:focus-visible{outline:3px solid #34d399;outline-offset:2px}
+.cl-form-legal{margin:14px 0 0;font-size:13px;line-height:1.5;color:#5b6b63}
+.cl-form-legal a{color:#047857}
+@media(max-width:600px){.wpforms-form button.wpforms-submit{width:100%}}
+/* /form-polish */
+/* prose */
+.cl-prose{max-width:760px;margin-left:auto;margin-right:auto}
+.cl-prose h2{margin-top:2em}
+.cl-prose .cl-lede{font-size:1.08rem;color:#41514a}
+.cl-prose ul.body{margin:0 0 1.1em;padding-left:1.25em}
+.cl-prose ul.body li{margin:0 0 .5em}
+/* /prose */
