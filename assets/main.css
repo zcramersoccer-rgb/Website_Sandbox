@@ -102,8 +102,18 @@
   white-space:nowrap}
 .rf-svc-links a:hover,.rf-svc-links a:focus-visible{color:#047857;border-color:#047857}
 @media(max-width:980px){
-  .mega{min-width:0}
-  .mega-s{padding:0 14px 0 14px;margin:0 0 6px}
+  /* Centring the panel needs two fixes. First, a later bare `.mega{transform:none}` rule was
+     cancelling the mobile translateX(-50%), so the panel sat flush to the right edge. Second,
+     left:50% measures from the <li>, which is nowhere near the middle of the screen and moves as
+     the nav wraps (measured 43px right of centre at 360px, 10px left at 375px). The <ul> is
+     perfectly centred at every width, so make it the positioning context instead: then
+     left:50% is true viewport centre. Measured 12/12px gaps at 320 and 360, 37/37 at 414. */
+  .site-head .site-nav{position:relative}
+  .site-head .site-nav>li.svc{position:static}
+  .site-head .mega{left:50%;transform:translateX(-50%);top:calc(100% + 8px);min-width:0;
+    width:min(340px,calc(100vw - 24px));max-height:calc(100vh - 150px);overflow-y:auto}
+  .site-head .mega-s{padding:0 14px 6px;margin:0}
+  .site-head .mega-s a{white-space:normal}
   .mega li + li{border-top:1px solid rgba(27,42,34,.08)}
 }
 /* /home-services */
