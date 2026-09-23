@@ -1060,7 +1060,7 @@ KD-1 blog post).
 
 **Materials & build**
 4. What do you build pergolas out of by default — cedar, PT pine, aluminium? What do you steer people away from on the coast?
-5. Same for pavilions: roof material, posts, ceiling finish. (Is the haint blue tongue-and-groove in the West Ashley photos typical or a one-off?)
+5. Same for pavilions: roof material, posts, ceiling finish. (Ceiling material answered 2026-09-23: that West Ashley ceiling is **beadboard sheets**, Zach's words. Still open: roof material and posts, and whether beadboard is typical for a pavilion here or was a one-off on that job.)
 6. Stain, paint or natural? How often does it need redoing here?
 7. Anything about salt air, humidity or hurricane tie-downs that changes how you build?
 
@@ -1087,7 +1087,8 @@ KD-1 blog post).
 `assets/work/` has 80+ pergola/pavilion masters (`*-800.webp` and `*-1600.webp`).
 Distinct projects worth telling stories about:
 
-- **West Ashley pool cabana** — haint blue vaulted tongue-and-groove ceiling, cedar posts, TV wall, hammock lounge, storage shed, stepping-stone walkway
+- **West Ashley pool cabana** — haint blue vaulted **beadboard** ceiling, cedar posts, TV wall, hammock lounge, storage shed, stepping-stone walkway
+  - *Corrected 2026-09-23.* This read "tongue-and-groove" until Zach was asked directly and answered "its beadboard sheets". The old wording had already been copied onto four published pages, photos.json and three generator scripts before anyone questioned it. Beadboard sheets and individual beaded boards are indistinguishable in a photograph taken from below, so this is not a thing to re-derive from the images — ask.
 - **Mount Pleasant pool pavilion** — open rafter, shiplap bathroom, kitchen, travertine deck
 - **Daniel Island** — pergola over an outdoor kitchen, 6 angles
 - **Summerville** — pergola + putting green + kitchen (already used on the kitchens page)
