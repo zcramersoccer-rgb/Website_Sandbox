@@ -58,17 +58,7 @@
 .cl-form-legal a{color:#047857}
 @media(max-width:600px){.wpforms-form button.wpforms-submit{width:100%}}
 /* /form-polish */
-/* css-polish */
-.cl-hero{background-image:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.3) 55%,rgba(0,0,0,.45) 100%),
-  var(--hero,none)}
-.cl-hero h1{text-shadow:0 2px 18px rgba(0,0,0,.45)}
-.cl-hero .cl-crumb,.cl-hero .cl-crumb a{text-shadow:0 1px 10px rgba(0,0,0,.5)}
-/* skip link: the site had none, so keyboard users met 7-10 header stops before the content */
-.skip-link{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;z-index:9999;
-  background:#fff;color:#114327;padding:12px 18px;border-radius:10px;font-weight:600;
-  box-shadow:0 10px 30px rgba(0,0,0,.28);outline:3px solid #34d399}
-/* /css-polish */
+
 /* prose */
 .cl-prose{max-width:760px;margin-left:auto;margin-right:auto}
 .cl-prose h2{margin-top:2em}
@@ -88,6 +78,18 @@
 @media(max-width:1180px){.site-nav .tel span{display:none}.site-nav .tel>a{padding-left:15px;padding-right:15px}}
 @media(max-width:980px){.mega-more{grid-template-columns:1fr}}
 /* /nav-money-pages */
+
+/* css-polish */
+.cl-hero{background-image:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.3) 55%,rgba(0,0,0,.45) 100%),
+  var(--hero,none)}
+.cl-hero h1{text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.cl-hero .cl-crumb,.cl-hero .cl-crumb a{text-shadow:0 1px 10px rgba(0,0,0,.5)}
+/* skip link: the site had none, so keyboard users met 7-10 header stops before the content */
+.skip-link{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;z-index:9999;
+  background:#fff;color:#114327;padding:12px 18px;border-radius:10px;font-weight:600;
+  box-shadow:0 10px 30px rgba(0,0,0,.28);outline:3px solid #34d399}
+/* /css-polish */
 /* home-services */
 .mega{min-width:340px}
 .mega-s{margin:-2px 0 8px;padding:0 12px 0 54px;font-size:12.5px;line-height:1.7;color:#8a9a92}
@@ -102,26 +104,39 @@
   white-space:nowrap}
 .rf-svc-links a:hover,.rf-svc-links a:focus-visible{color:#047857;border-color:#047857}
 @media(max-width:980px){
-  /* Centring the panel on a phone took two goes. Two separate faults.
+  /* Centring this panel took three goes. Recording all three, because each fix broke on
+     something the previous test could not see.
      1. left:50% measures from the <li>, which is nowhere near the middle of the screen and
-        moves as the nav wraps: measured 43px right of centre at 360px and 10px left of centre
-        at 375px, so no fixed nudge could work. The <ul> IS centred at every width, so it
-        becomes the positioning context instead.
-     2. The centring must not use transform. The rule
-        .site-nav>li:hover>.mega, .site-nav>li:focus-within>.mega
-        sets transform to none at specificity (0,3,1), which outranks anything scoped to
-        .site-head here, and a touch device applies :hover to the element it taps. So a
-        translateX(-50%) centring was being cancelled by the very tap that opens the menu -
-        invisible to a scripted checkbox test, obvious on a real phone. Symmetric insets plus
-        auto side margins centre with no transform at all, so the tapped and untapped states
-        render identically.
-     Measured side gaps after the fix, with hover active: 20/20 at 320, 24/24 at 360,
-     27/27 at 390, 29/29 at 414. No link overflow and no horizontal page scroll at any width. */
-  .site-head .site-nav{position:relative}
-  .site-head .site-nav>li.svc{position:static}
-  .site-head .mega{left:-12px;right:-12px;width:auto;min-width:0;max-width:360px;
-    margin-left:auto;margin-right:auto;transform:none;top:calc(100% + 8px);
-    max-height:calc(100vh - 150px);overflow-y:auto}
+        moves as the nav wraps (43px right of centre at 360px, 10px left at 375px).
+     2. It must not use transform. .site-nav>li:hover>.mega and its :focus-within twin set
+        transform:none at (0,3,1), which outranks anything scoped to .site-head, and a touch
+        device applies :hover to what it taps - so the tap that opened the menu cancelled the
+        centring. A scripted checkbox toggle never reproduces that. The transform:none below is
+        restated at higher specificity so the tapped and untapped states cannot disagree again.
+     3. Making li.svc position:static to re-anchor the panel orphaned label.svc-tap, which is
+        position:absolute;inset:0. Its nearest positioned ancestor became ul.site-nav, so the
+        invisible Services overlay stretched across the WHOLE nav and swallowed every tap:
+        Home, Portfolio, About, the tap-to-call pill and Contact Us all opened the Services
+        panel instead of following their link. Verified with elementFromPoint on all six pills.
+        The label is now taken out of positioning entirely and stacked on the Services link in
+        a one-cell grid, which needs no positioned ancestor. align-items must be stretch:
+        .site-nav>li sets center, which would shrink the label to the height of its hidden text.
+     The panel now hangs off header.site-head, which is position:relative, a direct child of
+     <body>, and exactly viewport-width - so left:0/right:0 with auto margins centres it on the
+     screen and it cannot drift when the nav wraps.
+     Measured with hover active: 12/12px gaps at 320, 15/15 at 390, 27/27 at 414, and all six
+     nav links hit their own anchor. */
+  .site-head .site-nav{position:static}
+  .site-head .site-nav>li.svc{position:static;display:grid;align-items:stretch;justify-items:stretch}
+  .site-head .site-nav>li.svc>a,
+  .site-head .site-nav>li.svc>.svc-tap{grid-area:1/1}
+  .site-head .site-nav>li.svc>.svc-tap{position:static;inset:auto;z-index:2}
+  .site-head .mega{left:0;right:0;width:auto;min-width:0;max-width:min(360px,calc(100vw - 24px));
+    margin:0 auto;top:calc(100% + 8px);
+    max-height:calc(100vh - 200px);overflow-y:auto}
+  .site-head .site-nav>li.svc>.mega,
+  .site-head .site-nav>li.svc:hover>.mega,
+  .site-head .site-nav>li.svc:focus-within>.mega{transform:none}
   .site-head .mega-s{padding:0 14px 6px;margin:0}
   .site-head .mega-s a{white-space:normal}
   .mega li + li{border-top:1px solid rgba(27,42,34,.08)}

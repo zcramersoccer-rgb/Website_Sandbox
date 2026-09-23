@@ -1,3 +1,6 @@
-# Review sandbox - not the real site. Keep it out of search engines.
+# Review sandbox - not the real site.
+# Every page carries <meta name="robots" content="noindex">, which is what actually keeps
+# these out of the index. A blanket Disallow would stop Google fetching the page at all,
+# so it could never read that noindex, and bare URLs could still be listed.
 User-agent: *
-Disallow: /
+Allow: /
