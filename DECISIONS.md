@@ -42,6 +42,26 @@ Newest first.
 | 10 | *"fix the title on the concrete page too and the mobile menu is still off to the side"* | Mobile Services panel centred without depending on `transform` (a `:hover` rule was overriding it on tap). Concrete and pool-deck titles fixed. | **Done, live** |
 | 9 | *"add outdoor showers... driveways goes to the concrete page should those match... water features are higher priority... it doesnt fit on mobile so center the drop down"* | Services dropdown. | **Done, live** |
 
+## 2026-09-23 — indexing, off-boarding and Drive (daily-tasks session)
+
+Separate workstream, so lettered rather than numbered to avoid colliding with the content log above.
+
+| # | Zach said | What was done | Status |
+|---|---|---|---|
+| D9 | *"When i google cramers landscaping the website link either shows up a blank logo or our logo is black and white. Also can we make sure the text descriptions are good."* | **Logo is a real defect:** the site icon is a *white* logo on a transparent background — measured chroma 0.0 (no colour at all), luminance 229/255, 81% transparent. White on Google's white results background renders as nothing; confirmed on the live SERP as a blank circle. Two 512px replacements cropped from the colour emblem in `photos-inbox/archive/logo_no_background.png` (transparent and white-backed) sent to Zach. **Descriptions need no work** — sampled 12 pages, all 136–160 chars, specific, no duplication. What Google *displays* is its own stale snippet ("premier…"), from the 21 Sep crawl, and clears on re-crawl. | **OPEN — waiting on Zach to pick an icon**, then set as WordPress Site Icon + add a root `/favicon.ico` (currently 404) |
+| D8 | *"yes bump it to tomorrow"* | `/project-west-ashley-pool-cabana/` out of tonight's batch — crawled 22 Sep and already indexed, so a rationed slot was better spent on a blog Google has refused to index since July. Added `indexing.py defer URL DATE`, which **clears itself** on the date, rather than reusing `hold` (a forgotten hold keeps a page out of the queue forever). | **Done** |
+| D7 | *"collapse it to one hop"* | `/tree-shrub-trimming/` was `→ /landscape-maintenance/ → /plants/`. Now a single 301 to `/plants/` (Redirection rule id 22). All 24 enabled rules verified single-hop. | **Done, live** |
+| D6 | *"yeah fill the last three with those blogs or location pages that need indexing"* | Checked every location page first: 11 of 12 are indexed and were crawled post-rebuild; the only one needing indexing, `/folly-beach-sc/`, was requested 22 Sep and is inside its 5-day cooldown. So the three slots went to the oldest not-indexed blogs. | **Done** |
+| D5 | *"Switch the non indexed blogs to tomorrow and lets get the high priority service pages reindexed first"* | Reversed D4's ordering: `rank()` now sorts **priority first**, then not-indexed, then oldest crawl. Money pages re-crawl before blog posts. | **Done** |
+| D4 | *"prioritize pages that arent indexed or hasnt been crawled since we completly redid the website"* | Half was already enforced — `done()` only counts a page finished if crawled after the 2026-09-20 flip **and** indexed. Added ordering by not-indexed, and `indexing.py recrawl` so a page whose content changed can re-enter the queue **without clearing its `requested` stamp**. Superseded next by D5. | **Superseded by D5** |
+| D3 | *"You can rerequest those three"* (`/about/`, `/concrete-pool-decks/`, `/west-ashley-sc/`) | Two of the three had **not** been crawled since the rebuild (9 and 16 Sep), so they were already queue-eligible and in cooldown until the 27th. Only `/west-ashley-sc/` needed a flag. | **Done** |
+| D2 | *"grab the brand assets and strategy documents too"* then *"grab the luxurious renovations folders too but put it into the LR session database"* | Brand assets and strategy links were **not** in the e-mail — they were hyperlinks inside the .docx, recovered by unzipping it and reading `word/_rels/document.xml.rels`. Cramers: 86 files total. LR: 41 files, with its record filed in the LR project, not here. **The February 2026 photos are stock, not Cramers work** (Drive's own captions; the outdoor-kitchen one is a 3D render) — check before any page reuses them. | **Done** |
+| D1 | *"log all of the relevant info mostly all the past blog posts"* | `tracking/data/searchx-offboarding-email-2026-09-23.md` — month-by-month inventory of everything SearchX produced, reconciled against the 22 live posts. Seven drafts were written and never published. Their off-boarding document **e-mails the `seo@searchxpro.com` WordPress login password in plain text**; rotate it when reclaiming user 1. Their Google access checklist is entirely unticked. | **Done** |
+
+**Note on the standing rule below.** "Do not touch the SearchXPro offboarding" still holds for *access
+revocation* — Zach owns that. It does not cover the archive work in D1–D2, which he directed himself after
+their off-boarding e-mail arrived.
+
 ## Earlier — backfilled from git, 2026-09-20 to 09-22
 
 Partial. Reconstructed from commit messages, which quote Zach but were not written as a log, so
