@@ -220,3 +220,20 @@ main.cl-page{overflow-x:clip}
 .cl-pay-button{display:inline-block;margin:1.2rem 0 .6rem;padding:1rem 2.2rem;font-size:1.1rem;text-decoration:none}
 .cl-pay-button.is-disabled{opacity:.45;cursor:not-allowed}
 .cl-pay-secure{font-size:.9rem;color:#4a5a50;text-align:center;margin-top:1rem}
+
+/* --- 8. shared-footer helpers (2026-09-23 CSS audit) --- */
+/* .rf-wrap lived only in refine.css, which is bundled into home.css and NOT main.css - it was a
+   home-page-only helper. The trust strip now sits in the SHARED footer and uses it, so on all 74
+   non-home pages its <ul> had no width limit and no centring. site-fixes.css is bundled into BOTH,
+   so putting it here is the durable fix; home.css simply gets the identical rule twice. */
+.rf-wrap{width:min(1180px,calc(100% - 2.5rem));margin:0 auto}
+
+/* The blog sidebar search button, added 2026-09-23 when the input was wrapped in a real <form>.
+   It had no rule at all and rendered as a default browser button. */
+.cl-side-search{display:flex;gap:6px}
+.cl-side-search input{flex:1;min-width:0;padding:8px 10px;border:1px solid rgba(27,42,34,.22);
+  border-radius:8px;font:inherit;font-size:.95rem}
+.cl-side-search-go{flex:none;padding:8px 14px;border:0;border-radius:8px;background:#047857;
+  color:#fff;font:500 .92rem/1.2 "DM Sans",system-ui,sans-serif;cursor:pointer}
+.cl-side-search-go:hover{background:#065f46}
+.cl-side-search-go:focus-visible{outline:3px solid #34d399;outline-offset:2px}
