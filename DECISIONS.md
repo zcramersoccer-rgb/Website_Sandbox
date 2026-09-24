@@ -21,6 +21,14 @@ Newest first.
 
 ---
 
+## 2026-09-24
+
+| # | Zach said | What was done | Status |
+|---|---|---|---|
+| 34 | *"planting price is good."* | **Confirms the planting price ladder** flagged as unsourced on 2026-09-23 — the site's only published figures with no traceable origin. The three confirmed figures: plant beds **$1,000–$2,000**, front yard planting **$5,000–$10,000**, full house landscape **$20,000+ in plants**, published on seven pages (`/landscape-installation/`, `/johns-island-sc/`, `/kiawah-island-sc/`, `/daniel-island-sc/`, `/folly-beach-sc/`, `/sullivans-island-sc/`, `/blog/outdoor-living-space-cost-charleston/`). **No page changed** — he confirmed the numbers as published, so the correct action was to source them, not edit them. `PROJECT-NOTES.md` UNVERIFIED block replaced with a dated VERIFIED one. `build_knowledge.py` needs no re-run (that was only required on a correction), and the circular claim in `Landscaping-Agent/knowledge.md` — "prices: only figures published on the website, which Zach confirmed" — is now actually true rather than self-referential. | **Done 2026-09-24** |
+
+---
+
 ## 2026-09-23
 
 | # | Zach said | What was done | Status |
@@ -57,6 +65,9 @@ Separate workstream, so lettered rather than numbered to avoid colliding with th
 
 | # | Zach said | What was done | Status |
 |---|---|---|---|
+| D12 | Backlinks, over several messages: *"We dont sell enough techo-block or use any one product that much"* / *"being a small company i dont think we can get links from site-one, Palmetto masonry, carolina fresh farms, buck lumber"* / on South of Broad, *"cost is high and i dont think we will get any jobs from it"* / *"im going to pass on that for now"* (West Of Free Press) | **Ruled out:** all manufacturer and supplier directories, and South of Broad - which is *Stroll* South of Broad, a private print-only monthly mailed to one historic downtown neighbourhood, so zero link value and an audience whose walled courtyards rule out pavilions and putting greens. **Sent:** enquiries to HBA of the Lowcountry (no published email - form or 843-471-0163) and Charleston Home + Design (tbarkley@newhomecharleston.com), drafts in `tracking/data/backlink-enquiry-emails-2026-09-24.md`. **On hold:** Mount Pleasant Magazine - its Best of programme is a reader vote and there has been no Mount Pleasant job this year, so no customers to mobilise; revisit with a live job. **Passed for now:** West Of Free Press (West Ashley, publisher@westof.net) - measured at one outbound link sitewide, so it was a neighbour-awareness play for the new cabana rather than an SEO one. | **Two enquiries out, awaiting prices** |
+| D11 | *"lets get those fixes done since this is for google ads send it to the ad campaign session"* | Two conversion-tracking gaps found during the 2026-09-24 ads review, handed to the **Google Ad campaign setup** session with full context and guardrails. **(1) Calls from ads are not tracked** — the action list is 4 of 4 with no Calls-from-ads action, so `lead_phone_click` only catches clicks on the website number and a tap on the ad's call button is invisible; for a trade where customers phone rather than fill in forms, that is likely the main lead path and it may explain part of the zero. **(2) Probable double count** — "Form" counts EVERY while "lead_form" counts One, both Primary GA4 web actions, so one submission may record as two and halve the apparent cost per lead. Tracking is otherwise healthy: all four actions live, GA4-imported, Primary, 90-day window; "Awaiting conversions" means waiting, not broken. | **Handed off** |
+| D10 | *"im handling the GBP duplicate but you should be handling the optimization with posts and photos. Note that its currently under verification due to the major changes so nothing to do today"* | Split recorded: **Zach owns the duplicate profiles and the ownership tangle** (the part with irreversible steps); **the daily-tasks session owns GBP optimization** — the weekly batch of a post, photos and review replies, drafted for his approval before anything publishes. **Profile is under verification right now**, so nothing is queued or posted until he says it has cleared. Worth knowing why this ranks high: Search Console shows 131 "near me" queries, 948 impressions, average position 34, zero clicks — those resolve in the map pack, so GBP is the highest-value recurring work available and it is currently blocked. | **Standing split; on hold pending verification** |
 | D9 | *"When i google cramers landscaping the website link either shows up a blank logo or our logo is black and white. Also can we make sure the text descriptions are good."* | **Logo is a real defect:** the site icon is a *white* logo on a transparent background — measured chroma 0.0 (no colour at all), luminance 229/255, 81% transparent. White on Google's white results background renders as nothing; confirmed on the live SERP as a blank circle. Two 512px replacements cropped from the colour emblem in `photos-inbox/archive/logo_no_background.png` (transparent and white-backed) sent to Zach. **Descriptions need no work** — sampled 12 pages, all 136–160 chars, specific, no duplication. What Google *displays* is its own stale snippet ("premier…"), from the 21 Sep crawl, and clears on re-crawl. | **CLOSED 2026-09-23.** Zach chose white background with green and gold. Already live via #27 (Logo B, attachment 7418) — verified on the live site and the artwork is clean. Zach reported a green line on the right of **my** candidate: real, and my error — I cropped the emblem out of the wordmark using a fixed 28%-of-width region, and the emblem's bounding box ran right up to that boundary, so the crop caught the left edge of the "C" in "Cramers". The deployed icon does not have it. **`/favicon.ico` cannot be fixed from here.** LiteSpeed serves `.ico` requests itself and they never reach PHP — proven: a Redirection rule for `/favicon.ico` had no effect while a control rule kept working, `cf-cache-status: BYPASS` ruled out caching, and an unrelated `/zzz-test.ico` 404s the same way. The rule was removed rather than left dead. It needs a real file at the web root: a 6-resolution `favicon.ico` (16-256px) was built from the live site icon and **Zach uploaded it 2026-09-23 — verified live**: 200, `image/x-icon`, and the served bytes are MD5-identical to the generated file (`69c6ce68…`), parsing with all six resolutions and rendering the green-and-gold emblem legibly at 48px. Cosmetic only — browsers and Google both use the declared `<link rel="icon">`, which is correct. **D9 fully closed.** |
 | D8 | *"yes bump it to tomorrow"* | `/project-west-ashley-pool-cabana/` out of tonight's batch — crawled 22 Sep and already indexed, so a rationed slot was better spent on a blog Google has refused to index since July. Added `indexing.py defer URL DATE`, which **clears itself** on the date, rather than reusing `hold` (a forgotten hold keeps a page out of the queue forever). | **Done** |
 | D7 | *"collapse it to one hop"* | `/tree-shrub-trimming/` was `→ /landscape-maintenance/ → /plants/`. Now a single 301 to `/plants/` (Redirection rule id 22). All 24 enabled rules verified single-hop. | **Done, live** |
@@ -108,3 +119,33 @@ Not one-off decisions — these apply to everything.
   1, never delete it.
 - **`site-build/` is NOT under version control.** It is a sibling of this repo, not inside it. No
   undo. Back up before editing `deploy_shell.py`, which renders all 77 pages.
+
+## Google Ads — 2026-09-24 (ads session)
+
+- **"sod near me" and hydroseeding stay blocked.** Zach: *"sod near me sounds more like someone
+  looking to buy sod and not having it installed and we dont hydroseed."* Cramers sells the
+  installation, not the material. Install-intent keywords are unaffected — a phrase negative only
+  blocks those three words consecutively.
+- **Ownership-identity and language searches blocked**, after a click on "black owned landscaping
+  companies near me" cost $11.00. Zach: *"we are both white english speaking"*, and Doug is not a
+  veteran. Blocked: black owned, african american, minority/woman/women/hispanic/latino/asian/
+  veteran owned, spanish speaking, habla espanol, se habla, espanol, bilingual. **Never add
+  "family owned"** — it is Cramers' own claim and runs as a headline in all ten ads.
+- **No military discount offered**, but no negative needed: "discount" already blocks it.
+- **`custom landscaping` paused** — 97 impressions, 1 click (1.0% CTR vs a 4.2% account average)
+  while taking 43% of the campaign's impressions. A keyword pause on a pre-agreed CTR trigger, not
+  a bid or budget change. It stays listed in build_campaign.py or a sync run would delete it.
+- **Ad copy corrected:** "Charleston Irrigation Co." removed (it read as a trade name that is not
+  this business) and the outdoor-kitchen headlines now all say "outdoor kitchen", after Google
+  flagged that one ad under its Housing policy.
+- **The "Form" conversion action was set to Secondary.** It imports the legacy
+  `ads_conversion_Contact_Us_1`, which GA4 confirms fires on a PAGE VIEW of /contact-us/ — 47 times
+  in four days — while counting EVERY occurrence. It was never a lead. `lead_form`,
+  `lead_phone_click` and `lead_chat` stay Primary. The tell in the Ads UI is the Count column:
+  "Every" is the fake one, "One" is real.
+- **Calls from ads now tracked** — call asset, account-level call reporting, and a Calls-from-ads
+  conversion action with a minimum call length. Until today a tap on the call button in the ad was
+  invisible, so "zero leads" could not be read as a market verdict.
+- **Learning period holds until ~2026-10-05** (14 days AND 100+ clicks; day 3 with 15 clicks).
+  Negatives and clear fixes only. No bid or budget changes, and no accelerating it.
+
