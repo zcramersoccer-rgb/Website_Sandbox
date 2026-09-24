@@ -54,58 +54,7 @@
 @media(max-width:1180px){.site-nav .tel span{display:none}.site-nav .tel>a{padding-left:15px;padding-right:15px}}
 @media(max-width:980px){.mega-more{grid-template-columns:1fr}}
 /* /nav-money-pages */
-/* home-services */
-.mega{min-width:340px}
-.mega-s{margin:-2px 0 8px;padding:0 12px 0 54px;font-size:12.5px;line-height:1.7;color:#8a9a92}
-.mega-s a{display:inline;padding:0;margin:0;background:none;border-radius:0;font-size:12.5px;
-  font-weight:500;line-height:1.7;color:#41514a;text-decoration:none;
-  border-bottom:1px solid rgba(27,42,34,.22);white-space:nowrap}
-.mega-s a:hover,.mega-s a:focus-visible{color:#047857;background:none;border-color:#047857}
-.rf-svc-cell{display:flex;flex-direction:column}
-.rf-svc-cell>.rf-svc{flex:1 1 auto}
-.rf-svc-links{margin:.6rem 0 0;padding:0 .15rem;font-size:.86rem;line-height:1.85;color:#6b7b73}
-.rf-svc-links a{color:#41514a;text-decoration:none;border-bottom:1px solid rgba(27,42,34,.18);
-  white-space:nowrap}
-.rf-svc-links a:hover,.rf-svc-links a:focus-visible{color:#047857;border-color:#047857}
-@media(max-width:980px){
-  /* Centring this panel took three goes. Recording all three, because each fix broke on
-     something the previous test could not see.
-     1. left:50% measures from the <li>, which is nowhere near the middle of the screen and
-        moves as the nav wraps (43px right of centre at 360px, 10px left at 375px).
-     2. It must not use transform. .site-nav>li:hover>.mega and its :focus-within twin set
-        transform:none at (0,3,1), which outranks anything scoped to .site-head, and a touch
-        device applies :hover to what it taps - so the tap that opened the menu cancelled the
-        centring. A scripted checkbox toggle never reproduces that. The transform:none below is
-        restated at higher specificity so the tapped and untapped states cannot disagree again.
-     3. Making li.svc position:static to re-anchor the panel orphaned label.svc-tap, which is
-        position:absolute;inset:0. Its nearest positioned ancestor became ul.site-nav, so the
-        invisible Services overlay stretched across the WHOLE nav and swallowed every tap:
-        Home, Portfolio, About, the tap-to-call pill and Contact Us all opened the Services
-        panel instead of following their link. Verified with elementFromPoint on all six pills.
-        The label is now taken out of positioning entirely and stacked on the Services link in
-        a one-cell grid, which needs no positioned ancestor. align-items must be stretch:
-        .site-nav>li sets center, which would shrink the label to the height of its hidden text.
-     The panel now hangs off header.site-head, which is position:relative, a direct child of
-     <body>, and exactly viewport-width - so left:0/right:0 with auto margins centres it on the
-     screen and it cannot drift when the nav wraps.
-     Measured with hover active: 12/12px gaps at 320, 15/15 at 390, 27/27 at 414, and all six
-     nav links hit their own anchor. */
-  .site-head .site-nav{position:static}
-  .site-head .site-nav>li.svc{position:static;display:grid;align-items:stretch;justify-items:stretch}
-  .site-head .site-nav>li.svc>a,
-  .site-head .site-nav>li.svc>.svc-tap{grid-area:1/1}
-  .site-head .site-nav>li.svc>.svc-tap{position:static;inset:auto;z-index:2}
-  .site-head .mega{left:0;right:0;width:auto;min-width:0;max-width:min(360px,calc(100vw - 24px));
-    margin:0 auto;top:calc(100% + 8px);
-    max-height:calc(100vh - 200px);overflow-y:auto}
-  .site-head .site-nav>li.svc>.mega,
-  .site-head .site-nav>li.svc:hover>.mega,
-  .site-head .site-nav>li.svc:focus-within>.mega{transform:none}
-  .site-head .mega-s{padding:0 14px 6px;margin:0}
-  .site-head .mega-s a{white-space:normal}
-  .mega li + li{border-top:1px solid rgba(27,42,34,.08)}
-}
-/* /home-services */
+
 /* prose */
 .cl-prose{max-width:760px;margin-left:auto;margin-right:auto}
 .cl-prose h2{margin-top:2em}
@@ -180,3 +129,58 @@ div.wpforms-container-full .wpforms-form button.wpforms-submit:focus-visible,
   .site-head .mega{max-height:calc(100vh - 150px);overflow-y:auto;overscroll-behavior:contain}
 }
 /* /css-polish */
+/* home-services */
+.mega{min-width:340px}
+.mega-s{margin:-2px 0 8px;padding:0 12px 0 54px;font-size:12.5px;line-height:1.7;color:#8a9a92}
+.mega-s a{display:inline;padding:0;margin:0;background:none;border-radius:0;font-size:12.5px;
+  font-weight:500;line-height:1.7;color:#41514a;text-decoration:none;
+  border-bottom:1px solid rgba(27,42,34,.22);white-space:nowrap}
+.mega-s a:hover,.mega-s a:focus-visible{color:#047857;background:none;border-color:#047857}
+.rf-svc-cell{display:flex;flex-direction:column}
+.rf-svc-cell>.rf-svc{flex:1 1 auto}
+/* 2026-09-23: #6b7b73 on the #f3f6f4 tint measured 4.10:1 at 13.76px - the last WCAG AA
+   contrast failure on the site, and the only thing keeping the home page off 100. #5b6b63
+   is 5.18:1 and is already used elsewhere on the site for secondary text. */
+.rf-svc-links{margin:.6rem 0 0;padding:0 .15rem;font-size:.86rem;line-height:1.85;color:#5b6b63}
+.rf-svc-links a{color:#41514a;text-decoration:none;border-bottom:1px solid rgba(27,42,34,.18);
+  white-space:nowrap}
+.rf-svc-links a:hover,.rf-svc-links a:focus-visible{color:#047857;border-color:#047857}
+@media(max-width:980px){
+  /* Centring this panel took three goes. Recording all three, because each fix broke on
+     something the previous test could not see.
+     1. left:50% measures from the <li>, which is nowhere near the middle of the screen and
+        moves as the nav wraps (43px right of centre at 360px, 10px left at 375px).
+     2. It must not use transform. .site-nav>li:hover>.mega and its :focus-within twin set
+        transform:none at (0,3,1), which outranks anything scoped to .site-head, and a touch
+        device applies :hover to what it taps - so the tap that opened the menu cancelled the
+        centring. A scripted checkbox toggle never reproduces that. The transform:none below is
+        restated at higher specificity so the tapped and untapped states cannot disagree again.
+     3. Making li.svc position:static to re-anchor the panel orphaned label.svc-tap, which is
+        position:absolute;inset:0. Its nearest positioned ancestor became ul.site-nav, so the
+        invisible Services overlay stretched across the WHOLE nav and swallowed every tap:
+        Home, Portfolio, About, the tap-to-call pill and Contact Us all opened the Services
+        panel instead of following their link. Verified with elementFromPoint on all six pills.
+        The label is now taken out of positioning entirely and stacked on the Services link in
+        a one-cell grid, which needs no positioned ancestor. align-items must be stretch:
+        .site-nav>li sets center, which would shrink the label to the height of its hidden text.
+     The panel now hangs off header.site-head, which is position:relative, a direct child of
+     <body>, and exactly viewport-width - so left:0/right:0 with auto margins centres it on the
+     screen and it cannot drift when the nav wraps.
+     Measured with hover active: 12/12px gaps at 320, 15/15 at 390, 27/27 at 414, and all six
+     nav links hit their own anchor. */
+  .site-head .site-nav{position:static}
+  .site-head .site-nav>li.svc{position:static;display:grid;align-items:stretch;justify-items:stretch}
+  .site-head .site-nav>li.svc>a,
+  .site-head .site-nav>li.svc>.svc-tap{grid-area:1/1}
+  .site-head .site-nav>li.svc>.svc-tap{position:static;inset:auto;z-index:2}
+  .site-head .mega{left:0;right:0;width:auto;min-width:0;max-width:min(360px,calc(100vw - 24px));
+    margin:0 auto;top:calc(100% + 8px);
+    max-height:calc(100vh - 200px);overflow-y:auto}
+  .site-head .site-nav>li.svc>.mega,
+  .site-head .site-nav>li.svc:hover>.mega,
+  .site-head .site-nav>li.svc:focus-within>.mega{transform:none}
+  .site-head .mega-s{padding:0 14px 6px;margin:0}
+  .site-head .mega-s a{white-space:normal}
+  .mega li + li{border-top:1px solid rgba(27,42,34,.08)}
+}
+/* /home-services */
