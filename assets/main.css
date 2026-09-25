@@ -182,13 +182,6 @@ div.wpforms-container-full .wpforms-form button.wpforms-submit:focus-visible,
 .mega-more a{display:block;padding:7px 10px;border-radius:8px;color:#114327;font-size:14.5px;
   font-weight:500;line-height:1.25;text-decoration:none;white-space:nowrap}
 .mega-more a:hover,.mega-more a:focus-visible{background:#f1faf5;color:#047857}
-/* 2026-09-24: the number used to be display:none below 1180px, leaving a 49x41 phone GLYPH
-   and nothing else on every phone - the number was in the DOM and invisible on all 77 pages.
-   Found while measuring the paid landing pages; it is a sitewide defect, not an ads one, and
-   for a business whose main conversion is a phone call it is the worst possible thing to hide.
-   Measured before changing: widest pill is 172px and the nav wraps, so nothing overflows at any
-   width; at 375px the nav grows from 87px to 133px, one extra row, and stays inside its box.
-   The rule was also stale - Blog came out of the header later, freeing a slot. */
 @media(max-width:1180px){.site-nav .tel>a{padding-left:15px;padding-right:15px}}
 @media(max-width:980px){.mega-more{grid-template-columns:1fr}}
 /* /nav-money-pages */
