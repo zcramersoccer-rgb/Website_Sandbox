@@ -1,6 +1,6 @@
 # /services/ restructured around the process — ready to port and deploy (2026-09-27)
 
-**Zach's go to build AND deploy:** `DECISIONS.md` #93 (*"Restructure /services/ around the process
+**Zach's go to build AND deploy:** `DECISIONS.md` #99 (*"Restructure /services/ around the process
 can you do this and then have the other session push it live"*). Built in the sandbox `services.html`
 by the cloud session; **the local session ports it into the generator and deploys.** Nothing is live.
 

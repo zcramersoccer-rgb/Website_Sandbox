@@ -1670,3 +1670,19 @@ site by `build_knowledge.py`, so it copied the claim rather than sourcing it. Ci
 **No re-run needed.** `build_knowledge.py` only had to be re-run if he had corrected the numbers.
 If they ever DO change, seven pages plus `town_pages.py`, `page_landscape_installation.py` and the
 blog cost post carry them, and `build_knowledge.py` must be re-run afterwards.
+
+## VERIFIED: fire feature prices (confirmed by Zach 2026-09-27)
+
+Zach, 2026-09-27: *"prices are correct."* Asked directly after the 2026-09-27 facts sweep flagged
+both figures as published with no recorded source. He confirmed them **as published**, so nothing
+changed on any page - the fix was to source them, not edit them. Same handling as the planting
+price ladder (DECISIONS #34).
+
+| Confirmed figure | Where it is published |
+|---|---|
+| Custom fire bowls on pedestals **$2,000 and up** | `/fire-pits/` (body and FAQ JSON-LD) |
+| Custom fire pit **from $2,500** | 10 pages: `/fire-pits/` meta, `/hardscape-installation/`, 3 town pages, 4 posts, `/fireplaces/` |
+
+**Do not re-flag these as unsourced.** This block is the source of record. Note the kit fire pit
+at ~$1,000 and the "up to $3,000+" range in 754a653 are a different, earlier framing and do not
+contradict these.
