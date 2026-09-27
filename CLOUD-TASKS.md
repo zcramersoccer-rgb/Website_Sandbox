@@ -24,6 +24,42 @@ pergola filters light; a pavilion keeps the rain off", the wording `PROJECT-NOTE
 `/retaining-walls/` still ends with old vendor copy ("retaining walls Charleston SC"). Details in the
 findings.
 
+### Handback — what the local session still has to do
+
+The cloud session cannot reach `site-build/` and cannot publish, so everything below is yours. Each
+page change goes through the generator, then a grep of both the generators and the rendered HTML,
+per the rule below. Writes to WordPress need Zach's explicit go.
+
+1. **Fix the pergola-vs-pavilion description** — HIGH, live now. The meta, og and twitter
+   descriptions of `/blog/pergola-pavilion-installation-charleston-sc/` and its `/blog/` card
+   excerpt say "a pergola filters light; a pavilion keeps the rain off". Replacement text is in the
+   findings, finding 1. Grep the generators for "filters light".
+2. **Delete the vendor paragraph on `/retaining-walls/`** — MEDIUM, live now. The one ending "...our
+   retaining walls Charleston SC can transform your outdoor space." Findings, finding 2.
+3. **Replace the 22 "read more" links on `/blog/`** — Task 3. Recommended: drop the `cl-more` link from
+   each card, since the image and title already link to the post.
+4. **Retitle `/contact-us/` and the pergola-vs-pavilion post** — Task 1. Proposed titles are in the
+   findings.
+5. **Put the lighting consolidation to Zach** — Task 4. Proposal only; nothing moves without his go.
+6. **Strip the developer comments from the CSS bundles** — Task 5, with the next `perf_bundle.py`
+   run.
+7. **Align the gazebo wording** on `/outdoor-structures/` ("peaked" to "domed"), then re-run
+   `build_knowledge.py` — LOW. Findings, finding 3.
+8. **Optional:** confirm Task 2's exact URL in the Semrush Site Audit UI (campaign 31306158). No
+   change is expected; every candidate works for people. The Semrush connector had no API units left.
+
+**Getting these files onto Site-revamp.** They are on
+`claude/cramers-landscaping-tasks-wctmu4`, open as PR #1 against `main`. That branch is Site-revamp
+plus docs-only commits, so it fast-forwards cleanly:
+
+```
+git fetch origin && git checkout Site-revamp && git merge --ff-only origin/claude/cramers-landscaping-tasks-wctmu4 && git push origin Site-revamp
+```
+
+Publishing `main` afterwards the usual way (`--ff-only` from Site-revamp) marks PR #1 merged. Do not
+use GitHub's merge button with squash or rebase: both rewrite the commits, and the next
+fast-forward publish would fail.
+
 ---
 
 ## READ THIS BEFORE YOU CHANGE ANY PAGE

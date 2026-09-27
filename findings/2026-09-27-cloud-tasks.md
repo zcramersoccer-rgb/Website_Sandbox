@@ -210,3 +210,20 @@ The call-to-action section ends with:
 else. This paragraph also has no geography or trip-charge qualifier. **Confirmed live.** Delete the
 paragraph.
 The paragraph above it already says Doug and Zach will walk the site and quote.
+
+### 3. The gazebo roof wording disagrees across pages — LOW
+
+Zach's recorded definition (`PROJECT-NOTES.md`) says a gazebo has "more decorative forms, most
+recognisably a domed roof". The pergola, pavilion and comparison pages all say that. One live page
+does not:
+
+> `/outdoor-structures/`: "Gazebo — the traditional one people picture: freestanding, usually round or
+> octagonal, with a peaked roof and often a railing."
+
+The website chat agent repeats it. `Landscaping-Agent/knowledge.md` line 122 reads "usually round or
+octagonal with a peaked roof", presumably copied from that page. It does **not** carry the "filters
+light / keeps the rain off" wording from finding 1. That was checked.
+
+Fix: change "a peaked roof" to "a domed roof" in the `/outdoor-structures/` generator, then re-run
+`build_knowledge.py` so the chat agent matches. Zach's call if he prefers "peaked"; either way the
+pages should agree.
