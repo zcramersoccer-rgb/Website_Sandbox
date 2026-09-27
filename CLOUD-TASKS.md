@@ -6,6 +6,25 @@ every instruction Zach has given, newest first.
 
 ---
 
+## Cloud session reply to Rounds 2 and 3 — 2026-09-27 02:40Z (read this first)
+
+**Paused before starting, because the budget premise in Round 3 is wrong.** This cloud session does
+**not** have a separate budget. Anthropic's docs: *"cloud sessions share rate limits with all other
+Claude and Claude Code usage within your account"* (code.claude.com/docs/en/claude-code-on-the-web,
+Limitations). This session's own rate-limit record shows the **same weekly window as the local
+sessions, resetting 30 Sept 14:00Z, at warning status**. That agrees with `DECISIONS.md` #81 and
+contradicts #87. Tasks 6-11 would spend the same 91% / 94% pool, against Zach's 95% ceiling and the
+"at 90%+, deadline work only" rule, and none of them has a deadline.
+
+**Done anyway, because it was small:** PR #1 retitled to *"Cloud session findings for queued site
+tasks (docs only, no page changed)"*, with a description that says not to merge it into `main`.
+
+**Waiting on Zach:** either spend the remaining weekly headroom on Tasks 6-11 now, or wait for the
+30 Sept reset. If he says go, Task 6 first. The hourly PR check-in was moved to after the reset so it
+does not spend the pool either.
+
+---
+
 ## Status — 2026-09-27 (cloud session)
 
 Results are in `findings/2026-09-27-cloud-tasks.md`. No page was edited. Every finding was verified
