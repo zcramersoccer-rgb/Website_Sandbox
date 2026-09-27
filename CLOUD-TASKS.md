@@ -6,6 +6,67 @@ every instruction Zach has given, newest first.
 
 ---
 
+## Cloud session reply to Rounds 2 and 3 — 2026-09-27 02:40Z (read this first)
+
+**Paused before starting, because the budget premise in Round 3 is wrong.** This cloud session does
+**not** have a separate budget. Anthropic's docs: *"cloud sessions share rate limits with all other
+Claude and Claude Code usage within your account"* (code.claude.com/docs/en/claude-code-on-the-web,
+Limitations). This session's own rate-limit record shows the **same weekly window as the local
+sessions, resetting 30 Sept 14:00Z, at warning status**. That agrees with `DECISIONS.md` #81 and
+contradicts #87. Tasks 6-11 would spend the same 91% / 94% pool, against Zach's 95% ceiling and the
+"at 90%+, deadline work only" rule, and none of them has a deadline.
+
+**Done anyway, because it was small:** PR #1 retitled to *"Cloud session findings for queued site
+tasks (docs only, no page changed)"*, with a description that says not to merge it into `main`.
+
+**Update 02:45Z:** Zach chose "All tasks now" (DECISIONS #88), so Tasks 6-11 are running, and PR #1
+is closed. He also reported the **homepage video glitching**: diagnosed in
+`findings/2026-09-27-hero-video-glitch.md`. The poster is the t = 1.5 s frame but playback starts at
+frame 0, so the picture jumps on every page load. A frame-0 poster is ready to upload; `hero_video.py`
+needs the same change.
+
+The pause above no longer applies. With PR #1 closed, its scheduled check-ins were cancelled too.
+
+---
+
+## Rounds 2 and 3 — results, 2026-09-27 03:30Z (cloud session)
+
+All six tasks are done, plus Zach's homepage-video report. **Findings only; no page, generator or
+setting was changed.** Everything was checked against a live snapshot taken at 02:43Z, after the
+02:34Z batch deploy and the lighting merge.
+
+| Task | File in `findings/` | Headline |
+|---|---|---|
+| Video | `2026-09-27-hero-video-glitch.md` | Poster is the t = 1.5 s frame, playback starts at frame 0, so the picture jumps on every load. Frame-0 poster ready in `findings/hero-video/`. |
+| 6 Facts sweep | `2026-09-27-task6-facts-sweep.md` | Founding year "2016" is live on `/about/`; Zach's crisp-edge correction never reached 4 pages; Sullivan's Island "waterfront backyard" may be the Charleston live-oak job (needs Zach); bare free-consultation claims on 3 blog posts and 7 service pages; fire bowls $2,000 and custom fire pit $2,500 have no recorded source. 843-709-6140 appears nowhere. |
+| 7 Unindexed pages | `2026-09-27-task7-unindexed-pages.md` | Wait for re-crawl on all three. `/services/` may stay out, which is fine for a navigation page. |
+| 8 Images | `2026-09-27-task8-images.md` | No wrong-town labels. 118 of 339 base images unused (42.6 MB); 149 duplicate groups. One "pool and lawn" alt on an artificial-turf photo on `/sullivans-island-sc/`. |
+| 9 Internal links | `2026-09-27-task9-internal-links.md` | Mulch and grading pages are missing from both sitewide menus. Retired lighting post is still in `post-sitemap.xml` and still published. |
+| 10 Structured data | `2026-09-27-task10-structured-data.md` | `WebSite.name` is the bare domain on all 74 pages; LocalBusiness address has no postalCode 29485. Two FAQ-schema mismatches. |
+| 11 Blog plan | `2026-09-27-task11-blog-plan.md` | Draft for Zach. Top 3: pergola permits (needs his town answers), fire pit vs fireplace, irrigation running cost. |
+
+### Handback, in order (local session; Zach's go for any WordPress write)
+
+1. **Hero video poster** — upload the frame-0 poster, change `hero_video.py` to cut the poster at
+   frame 0, update `og:image`/JSON-LD references, purge Cloudflare. Seen on every homepage visit.
+2. **Questions for Zach:** is "opened the business in 2016" right (then the "no founding year" rule
+   changes) or should it come off `/about/` and `/summerville-sc/`? Is the Sullivan's Island
+   "waterfront backyard" a Sullivan's job? Where do fire bowls $2,000 and custom fire pit $2,500 come
+   from?
+3. **Crisp-edge sentence** on `/patios-pavers/`, `/hardscape-installation/` and two posts: align to
+   the `754a653` correction. Grep the generators.
+4. **Bare free-consultation claims**: the 3 blog posts first (their FAQ schema repeats them).
+5. **Menus**: add `/mulching-bed-maintenance/` and `/landscape-grading-services-charleston-sc/` to
+   the header and footer service lists.
+6. **Retired lighting post**: unpublish it so it leaves `post-sitemap.xml`; set its Redirection rule
+   to ignore query parameters.
+7. **Schema**: `WebSite.name` to "Cramers Landscaping"; add postalCode 29485; regenerate the cost
+   post's FAQ schema.
+8. Lower priority: the turf CTA superlative, the "pool and lawn" alt, and the unused and duplicate
+   images.
+
+---
+
 ## Status — 2026-09-27 (cloud session)
 
 Results are in `findings/2026-09-27-cloud-tasks.md`. No page was edited. Every finding was verified

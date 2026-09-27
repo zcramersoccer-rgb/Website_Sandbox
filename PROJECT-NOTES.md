@@ -744,6 +744,11 @@ Installed with **mortar over a concrete slab**, which is what let them get a
 perfect install on the pavers with **crisp edges**. It has a **brick border**, and
 the marble is **tile imported from Italy**.
 
+> ⚠️ **Corrected by Zach 2026-09-20 (commit `754a653`):** the mortar-set explanation was wrong.
+> Mortar over a concrete base does **not** give a paver a crisp edge; it lets a paver that already
+> has one be laid dead flat. Do not reuse "which is what let them get ... crisp edges". Found still
+> live on four pages on 2026-09-27; see `findings/2026-09-27-task6-facts-sweep.md`.
+
 **Charleston driveway retaining wall (RW5)** —
 `charleston-residential-driveway-retaining-wall-landscaping`
 **CMU block with rebar in every other void**, sitting on a **2ft wide
