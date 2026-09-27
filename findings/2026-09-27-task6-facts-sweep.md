@@ -11,7 +11,7 @@
 
 The same extraction was run on the sandbox HTML.
 
-**Sandbox against live.** Every finding below is identical in the sandbox. The sandbox is behind live in one place only. The lighting consolidation is now live: `/landscape-lighting/` has a new "Beyond Paths and Trees" section, and `/blog/` no longer has the lighting card. The new text breaks no rule.
+**Sandbox against live.** Every finding below is identical in the sandbox. Apart from WordPress form and metadata markup, the sandbox differs from live in one place: it is behind on the lighting consolidation, which is now live. `/landscape-lighting/` has a new "Beyond Paths and Trees" section, and `/blog/` no longer has the lighting card. The new text breaks no rule.
 
 **How the probes were checked.** Each search pattern was first shown to find a known positive:
 
@@ -28,7 +28,7 @@ Severity runs from customer-facing false claims down to tidying. "Needs Zach" me
 | # | Page (live) | Exact string (excerpt) | Rule broken | Where | Proposed replacement (published wording) |
 |---|---|---|---|---|---|
 | 1 | `/sullivans-island-sc/` | H3 "A waterfront backyard": "This waterfront property was a whole-yard project… A pavilion and a brick herringbone patio… The backyard lawn is artificial turf… Out front the lawn is zoysia." | **1: wrong-town job.** Same class as the Johns Island fix (823f086), probably the Charleston job; see note A | body, og:image | **Needs Zach to confirm.** If it is the Charleston job, use the Johns Island pattern: call it a Charleston job and link it, reusing "This Charleston job covered the whole property, from the front walk down to the water" from `/project-charleston-live-oak-landscape/` |
-| 2 | `/about/` (twice), `/summerville-sc/` | "Doug Cramer opened the business **in 2016** after a lifetime in landscaping." / "**In 2016** he opened Cramers Landscaping…" / "Before starting Cramers Landscaping **in 2016**, he helped develop Nexton…" | **5: founding year.** The standing rule and the ABC/GBP pack (DECISIONS #72) say none is published, but it is. The text has been there since before the repo's first commit (49a16ed) | body | **Needs Zach.** Either confirm 2016 and correct the rule and the ABC pack, or delete the year: "Doug Cramer opened the business after a lifetime in landscaping." / "He opened Cramers Landscaping and turned his focus to…" / "Before starting Cramers Landscaping, he helped develop Nexton…" |
+| 2 | `/about/` (twice), `/summerville-sc/` | "Doug Cramer opened the business **in 2016** after a lifetime in landscaping." / "**In 2016** he opened Cramers Landscaping…" / "Before starting Cramers Landscaping **in 2016**, he helped develop Nexton…" | **5: founding year.** The standing rule and the ABC/GBP pack (DECISIONS #72) say none is published, but it is. The About text is already in the repo's first commit (49a16ed). The Summerville line came in with fa8701c, "Rewrite… from Zach's answers", so 2016 may well be Zach's own figure and the rule may be what is wrong | body | **Needs Zach.** Either confirm 2016 and correct the rule and the ABC pack, or delete the year: "Doug Cramer opened the business after a lifetime in landscaping." / "He opened Cramers Landscaping and turned his focus to…" / "Before starting Cramers Landscaping, he helped develop Nexton…" |
 | 2b | `/`, `/contact-us/` | `"founder": [Doug Cramer, Zach Cramer]` | Contradicts `/about/`: "Doug Cramer opened the business", "Doug owns the company". Added by 0851717 (site audit), not by Zach | JSON-LD | Founder: Doug Cramer only, per `/about/`. Also for Task 10 |
 | 3 | `/patios-pavers/` (Summerville story), `/hardscape-installation/`, `/blog/hardscaping-in-charleston-the-ultimate-design-material-guide/`, `/blog/outdoor-living-space-ideas-charleston/` | "Mortar over a slab is what let us get a perfect install **with crisp edges**" / "…which is what let us get **crisp edges** and a perfectly flat install" | **1: wording Zach corrected.** 754a653 (Zach, 09-20): "Mortar over a concrete base does not give a paver a crisp edge – it lets a paver that already has one sit dead flat." That commit says the Summerville story was fixed; it was not, and three later pages copied the line. `/patios-pavers/` now contradicts its own FAQ | body | Use the `/patios-pavers/` FAQ wording: "…mortar set over a concrete slab. That does not give the paver a crisp edge – it means a paver that already has one can be laid dead flat, every piece level with the next." |
 | 4 | `/blog/outdoor-living-design-installation-charleston-sc/`, `/blog/why-cramers-landscaping-is-charlestons-top-landscaping-company/`, `/blog/drainage-solutions-grading-charleston-sc/` | "The consultation at your home is free, you get drawings, and 3D renderings are available at additional cost." (FAQ, and the body of the How We Work post) / "…The consultation is free." (drainage FAQ) | **3(c): bare.** There is no caveat anywhere on these pages. "You get drawings" beside "3D at additional cost" also implies drawings are always included, which Zach's design-fee answer (ce9b9a4) removed from the landscaping FAQ | body, FAQ JSON-LD | The `/landscape-installation/` FAQ answer: "The consultation at your home is free around Charleston, Mount Pleasant and Summerville. For Kiawah, Seabrook, Wadmalaw and Awendaw, or anywhere else more than an hour from Charleston or Summerville, there is a charge for the proposal trip. It comes off the price if you go ahead with the build, and it is not refundable if you do not. A job that does not need a design, or where a quick drawing will do, is not charged for one. A larger project with a full drawn design carries a design fee… 3D renderings are available as an option at additional cost." For the drainage post, use the first three sentences |
@@ -62,11 +62,11 @@ Severity runs from customer-facing false claims down to tidying. "Needs Zach" me
 
 ## Rule 3: every free-consultation claim, judged by section
 
-**(a) Qualified by the caveat.** 32 passages on 28 pages. These are the canonical sentence, "…free around Charleston, Mount Pleasant and Summerville. For Kiawah, Seabrook, Wadmalaw and Awendaw… not refundable…". The trip-charge wording is identical in all 34 places it appears.
+**(a) Qualified by the caveat.** 32 passages on 25 pages; 4 of the 32 are FAQ JSON-LD copies. These are the canonical sentence, "…free around Charleston, Mount Pleasant and Summerville. For Kiawah, Seabrook, Wadmalaw and Awendaw… not refundable…". The trip-charge wording says the same thing in all 34 places it appears: non-refundable, and it comes off the price. Three pages word it slightly differently.
 
 **(a), but the heading is bare.** 4 headings; see row 18.
 
-**(b) Qualified only by the town.** 14 passages, 3 of them mirrored in FAQ JSON-LD; see row 19. Ambiguous, Zach's call.
+**(b) Qualified only by the town.** 15 passages on 14 pages, plus 3 FAQ JSON-LD copies; see row 19. Ambiguous, Zach's call.
 
 **(c) Bare within the section, with the caveat elsewhere on the page.** 7 pages and 8 instances; see row 6.
 
@@ -108,7 +108,7 @@ Every price below is consistent everywhere it appears. The exceptions are flagge
 | Cost-post worked example ($7,200 / $1,200 / $525 / $20,925) | 1 | derived and labelled "an illustration… not a quote" |
 | Cited third-party figures: Cost vs Value $18,263 and $25,096; North Charleston tree fee $217.50/inch; Charleston Water rates | 1–2 each | sourced, not Cramers prices |
 
-**Founding year:** "2016" is on 2 pages; see row 2. There is no "since", "established", "founded" or `foundingDate` anywhere.
+**Founding year:** "2016" is on 2 pages; see row 2. No other founding claim appears anywhere: no "since 19xx/20xx", "founded", "established" or `foundingDate`. The only "since 1924" is the state flower, and every "established" is about lawns or yards.
 
 ## Fixes worth making, ranked
 
@@ -124,10 +124,10 @@ Every price below is consistent everywhere it appears. The exceptions are flagge
 
 ## Checked and clean
 
-- **Rule 7, 843-709-6140.** It appears in no form (dashed, dotted, bracketed or `tel:`) on any of the 74 live pages or `/thank-you/`. It is also absent from all 76 sandbox HTML files, `chat-widget.js`, `sitemap.xml` and every other repo file except the rule text in `CLOUD-TASKS.md` and `DECISIONS.md`. Git history shows it was last in page HTML on the concrete pages, removed in 6806c2b (09-22). The only other phone-like strings are the form placeholder `(843) 555-1234` and a Facebook ID.
+- **Rule 7, 843-709-6140.** It appears in no form (dashed, dotted, bracketed or `tel:`) on any of the 74 live pages or `/thank-you/`. It is also absent from all 78 sandbox HTML files, `chat-widget.js`, `sitemap.xml` and every other repo file except the rule text in `CLOUD-TASKS.md` and `DECISIONS.md`. Git history shows it was last in page HTML in a concrete-page CTA ("Call 843-709-6140 today…"), removed in 6806c2b (09-22). The only other phone-like strings are the form placeholder `(843) 555-1234` and a Facebook ID.
 - **Rule 1, Zach's known corrections, all clean live:**
   - The sago palm line.
-  - The West Ashley ceiling: "beadboard" on all 8 surfaces. The cost-saving motive is back by Zach's #20 ("the beadboard ceiling was a cost decision"), so it is approved. The `-plywood-` filename is deliberate (e3ff1cd).
+  - The West Ashley ceiling: "beadboard" everywhere it is described, in body, alt, captions and FAQ JSON-LD. The cost-saving motive is back by Zach's #20 ("the beadboard ceiling was a cost decision"), so it is approved. The `-plywood-` filename is deliberate (e3ff1cd).
   - "The paving stopping at the posts" and the related drafted lines.
   - Open vs covered, "cannot have a roof", "defined by gable/hip/gambrel", and the gazebo "peaked" (now "domed").
   - Pre-emergent, fertilizer, fungicide and pesticide claims. The only first-person chemical line is Zach's approved "spray and kill the old grass and the weeds"; the rest is homeowner advice.
@@ -153,3 +153,17 @@ Every price below is consistent everywhere it appears. The exceptions are flagge
   - The North Charleston "swing set around the fire" story. PROJECT-NOTES (B16) still records that Zach did not recognise that job.
   - 23 alt texts on 13 pages read "… by Cramers Landscaping, Charleston area", which breaks the alt convention in PROJECT-NOTES.
 - **Sandbox only, not live:** `_draft-pay-invoice.html` has a bare "Request a free consultation" twice and the old footer "Charleston's premier landscaping company…". Fix both before it is ever published.
+
+---
+
+**Verified by the parent cloud session, 2026-09-27 03:30Z, against the live snapshot and git history.**
+- Founding year: live `/about/` reads *"Doug Cramer opened the business in 2016 after a lifetime in
+  landscaping."* Confirmed. The live LocalBusiness JSON-LD also lists both Doug and Zach as `founder`.
+- Crisp edge: Zach's correction is commit `754a653` (2026-09-20, "Corrections from Zach"): *"the
+  mortar-set explanation was wrong. Mortar over a concrete base does not give a paver a crisp edge."*
+  It reached the `/patios-pavers/` FAQ only. The pre-correction sentence is still live on
+  `/patios-pavers/` itself, `/hardscape-installation/`, and the hardscaping-materials and
+  outdoor-living-ideas posts. Its source is `PROJECT-NOTES.md` (Summerville marble patio), which
+  still carried the uncorrected wording; a correction note was added there in this commit.
+- Sullivan's Island: the live page's "A waterfront backyard" paragraph is as quoted. Its source is in
+  `site-build/`, which the cloud cannot read, so it stays "needs Zach".
