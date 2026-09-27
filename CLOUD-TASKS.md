@@ -247,3 +247,96 @@ photos**, and generic shots must say "Charleston area". See `project_photo_town_
 - **Semrush API** — 0 units, and they cannot be bought on this plan. Returns 18 October.
 - **Search Console / GA4** — the service account key is not in this repo.
 - **Deploying anything.** The repo is the sandbox, not the live site.
+
+---
+
+# Round 3 — queued 2026-09-27
+
+Round 1 merged into Site-revamp at `632d937`, docs only. **Good work** — and Task 2's "no link is
+dead, change nothing" was the right answer rather than the expected one.
+
+**Context you need: the local session is stopped until Monday.** Weekly Claude usage is at **91%
+all-models / 94% Fable** against Zach's **95% ceiling**, resetting **30 Sept 14:00Z**. The eight
+generator-side items you handed back are queued but **nothing local will happen before then**. You
+have separate budget, so **you are the only one working on this until Monday.** Queue findings in
+`findings/`; do not expect a local fix to land in between.
+
+**Still outstanding from Round 2 — start here.** Tasks **6, 7 and 8** were appended to this file
+after your branch was cut, so you may not have seen them. They are above. In priority order:
+**Task 6** (sitewide sweep against the standing facts), **Task 7** (content verdicts on `/services/`
+and the two unindexed blogs), **Task 8** (the 64 `assets/work/` images).
+
+**Task 6 is the highest-value thing available to you.** You found two live defects *by accident* in
+Round 1 — the rejected pergola wording in a meta description, and the keyword-stuffed
+`/retaining-walls/` paragraph. Doing that deliberately across all 74 pages is likely to find more,
+and those are the defects that actually reach customers.
+
+**Still true, do not attempt:** `site-build/` (generators, `deploy_shell.py`, `perf_bundle.py`,
+`build_knowledge.py`), the Semrush API (0 units until 18 October), Search Console and GA4 (service
+account key is not in this repo), and deploying anything.
+
+---
+
+## Task 9 — Internal linking and orphan audit
+
+Semrush scores Internal Linking **93%** but does not say what the 7% is. Round 1 showed why this
+matters: 75 footer links reading "Pavilions & Pergolas" pointed at the *pavilions* page, which was
+over a third of all pergola anchor text on the site pointing at the wrong URL. **That was invisible
+until someone counted.**
+
+Across all 74 pages, from the sandbox HTML and confirmed against the live pages, report:
+1. **Orphans** — pages in the sitemap that no other page links to.
+2. **Click depth** from the home page for every page. Flag anything deeper than 3.
+3. **Inbound internal link counts per page**, ranked. Call out any **money page** (the service hubs,
+   the 12 town pages, `/contact-us/`) that is unusually starved.
+4. **Anchor-text profile for each money page** — the distinct anchor strings pointing at it and how
+   many of each. **This is where the pergola defect showed up.** Flag any page whose most common
+   inbound anchor does not describe it.
+5. Internal links that **301 rather than resolving directly** — a hop wastes a little equity and
+   they are cheap to correct at source.
+
+**Deliverable:** the tables, plus a short list of the changes worth making, ranked. **No edits** —
+these all live in generators.
+
+## Task 10 — JSON-LD / structured data audit
+
+Semrush reports Markup 100%, which is not the same as correct. Two known incidents: a **duplicate
+`BreadcrumbList` on 73 pages** (caught and fixed), and an **old `HomeAndConstructionBusiness` block
+with "Cramers landscaping" lower-cased** still sitting in a WordPress option (inert — stripped from
+rendered pages — but it shows this drifts).
+
+For all 74 pages: extract every JSON-LD block, and report **duplicate `@type`s on one page**;
+**inconsistent NAP** across blocks (name, phone, address, URL) against the version of record —
+**Cramers Landscaping · (843) 614-9773 · 9153 Markleys Grove Blvd, Summerville, SC 29485 ·
+https://cramerslandscaping.com**; **any appearance of `843-709-6140`**, which must never be
+published; broken or self-inconsistent `BreadcrumbList` trails; `FAQPage` entries whose questions or
+answers do not match the visible page text; and any `priceRange`, `aggregateRating` or `review`
+markup, **which must not be present unless it reflects something genuinely published**.
+
+**Deliverable:** one table of defects, with the correct value for each. **No edits.**
+
+## Task 11 — Blog plan by audience (DRAFT for Zach, do not write posts)
+
+Zach, 2026-09-25: *"creating different content that serves different needs. So some blogs are going
+to be more for homeowners and designs some are going to be more proffesional some statistics based
+etc."* Logged as a standing direction, not started.
+
+Using only the 22 existing posts and what is already published: **classify each existing post** by
+audience (homeowner/design, trade/professional, data-led) and note which register dominates; then
+**propose a shortlist of new post ideas per register**, each with a one-line rationale tied to a real
+gap — a service with no supporting post, a town with real jobs and no story, a question the chat
+logs or the FAQs show people asking.
+
+**Hard constraint, and it is the reason this is draft-only: a statistics-led post is the highest
+risk of invented figures on this whole site.** Every number must carry a named, checkable source, or
+come from Zach. **Do not draft any post body.** A list of ideas with rationales is the deliverable;
+Zach picks, then supplies the facts.
+
+---
+
+**Housekeeping:** PR #1 is still titled *"Complete service page rewrite from Zach's answers +
+pricing confirmation"*, which the branch does not contain. **Please retitle it.**
+
+**Do not touch `main`.** It is 154 commits behind Site-revamp and deliberately holds the pre-revamp
+site; Pages serves Site-revamp. Fast-forwarding it would publish the whole revamp. **That is Zach's
+decision and he has not made it.**
