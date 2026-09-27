@@ -6,6 +6,23 @@ every instruction Zach has given, newest first.
 
 ---
 
+## Status — 2026-09-27 (cloud session)
+
+Results are in `findings/2026-09-27-cloud-tasks.md`. No page was edited.
+
+| Task | Status |
+|---|---|
+| 1. Duplicate title/H1 | **Done.** `/contact-us/` and the pergola-vs-pavilion post, with proposed titles |
+| 2. Broken external link | **Not finished.** The cloud network policy blocks every external host. Ranked suspects and a local check command are in the findings |
+| 3. Non-descriptive anchors | **Done.** The 22 "read more" links on `/blog/` |
+| 4. Lighting consolidation | **Proposal written.** Awaiting Zach |
+| 5. CSS comments | **Not done.** Needs `site-build/` |
+
+Also found: the pergola-vs-pavilion post's meta description still says "a pergola filters light; a
+pavilion keeps the rain off", the wording `PROJECT-NOTES.md` calls wrong. Details in the findings.
+
+---
+
 ## READ THIS BEFORE YOU CHANGE ANY PAGE
 
 **`site-build/` is NOT in this repository.** It is a *sibling directory* on the local machine,
