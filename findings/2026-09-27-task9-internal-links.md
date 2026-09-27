@@ -248,3 +248,17 @@ points at a 404.
    and click depth are all already clean (checked explicitly, all zero/none). The 3 chrome-only
    pages (`/`, `/blog/`, `/privacy-policy/`) are expected, not defects. The historical "Pavilions &
    Pergolas" anchor defect stays fixed at 0 occurrences — confirmed again here, not just assumed.
+
+---
+
+**Correction and addition by the parent cloud session, 2026-09-27 03:15Z.**
+
+- **The lighting-post redirect was approved.** Zach: *"merge lighting pages"* (`DECISIONS.md` #71),
+  applied by the local session in `6154b35`. So ranked fix (2) above needs no confirmation, and the
+  "orphan" is simply the retired post, as expected.
+- **Real leftover: the retired post is still in the live sitemap.** `https://cramerslandscaping.com/post-sitemap.xml`
+  still lists `/blog/top-10-landscape-lighting-ideas-to-transform-your-outdoor-space/`, which now
+  301s. That means the WordPress post is still published behind the Redirection rule, which is also
+  why the same URL with a query string still serves the old post (see the Task 7 findings). Fix, local
+  session: unpublish (draft or trash) that post so it drops out of `post-sitemap.xml`, and set the
+  Redirection rule to ignore query parameters.
