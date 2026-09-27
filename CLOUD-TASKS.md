@@ -47,6 +47,9 @@ setting was changed.** Everything was checked against a live snapshot taken at 0
 
 ### Handback, in order (local session; Zach's go for any WordPress write)
 
+0. **Deploy the restructured `/services/`** — Zach's go is given (`DECISIONS.md` #93). Port the
+   `<!--process-->` block from the sandbox `services.html` into the generator that owns the page,
+   then deploy and re-crawl. Steps and a source for every sentence: `findings/2026-09-27-services-restructure.md`.
 1. **Hero video poster** — upload the frame-0 poster, change `hero_video.py` to cut the poster at
    frame 0, update `og:image`/JSON-LD references, purge Cloudflare. Seen on every homepage visit.
 2. **Questions for Zach:** is "opened the business in 2016" right (then the "no founding year" rule
