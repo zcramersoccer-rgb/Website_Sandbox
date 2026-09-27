@@ -2,9 +2,16 @@
 
 > **Revision 2, same day.** Zach: *"service page still doesnt have enough unique content"* (`DECISIONS.md` #100).
 > Three new sections were added: **What Happens Before What**, **Comparing Quotes**, and a six-question
-> **FAQ** with matching FAQPage JSON-LD. Main content 544 → **1,655 words**; phrasing found on no other
-> page 483 → **1,473** eight-word sequences (89% of the page). Port **all three marked blocks**:
-> `<!--process-->`, `<!--sequence-->` + `<!--quotes-->`, and `<!--faq-->`, plus the FAQ JSON-LD in `<head>`.
+> **FAQ** with matching FAQPage JSON-LD. Main content 544 → **1,667 words**; phrasing found on no other
+> page 483 → **1,582** eight-word sequences (**95%** of the page). The sentences the first version had copied whole
+> from other pages (the trip-charge paragraph, design fee, warranty, start times, stages) were **reworded, same
+> facts**, which is Zach's "repeated block content" point.
+>
+> **Where each block goes (the local session found the owners):** the reworded `<!--process-->` block into
+> `site-build/process_section.py`, which already emits it for `/services/` only; the new `<!--sequence-->`,
+> `<!--quotes-->` and `<!--faq-->` blocks into whichever generator emits the rest of the `/services/` body
+> (`grep -rln "Custom Outdoor Spaces, Designed and Built by One Family" site-build/`), **never into a generator
+> that fans out to other pages**; and the FAQPage JSON-LD into the `/services/` head.
 
 **Zach's go to build AND deploy:** `DECISIONS.md` #99 (*"Restructure /services/ around the process
 can you do this and then have the other session push it live"*). Built in the sandbox `services.html`
@@ -122,3 +129,9 @@ on the live site; none of "near me", a year, 843-709-6140, "premier", "trusted",
 unqualified "free" in the new sections; FAQ JSON-LD matches all six visible answers after normalising;
 no horizontal overflow at 1440px or 390px. Full-page shots in `findings/services-restructure/` were
 re-taken.
+
+**Rewording pass (revision 2b):** nine sentences reworded so they no longer repeat other pages word for
+word. Facts unchanged. The consultation sentence keeps every element of the rule: free around
+Charleston, Mount Pleasant and Summerville; charged beyond, naming Kiawah, Seabrook, Wadmalaw, Awendaw and
+anywhere over an hour out; credited toward the build; not refunded otherwise. FAQ JSON-LD rebuilt from the
+visible answers; zero mismatches, markup balanced, one H1.
