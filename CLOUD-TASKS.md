@@ -103,3 +103,91 @@ do not spend a deploy on it.**
 - **Queued, deliberately not done:** migrating the pavilions content off the `/pergolas-pavilions/`
   URL to `/pavilions/` (which currently 404s) with a 301. Correct on the merits, but it is a redirect
   on an indexed page touching `deploy_shell.py`, which has no undo. **Local session, after 30 Sept.**
+
+---
+
+# Round 2 — queued 2026-09-27
+
+Round 1 findings received and reviewed: `findings/2026-09-27-cloud-tasks.md` on branch
+`claude/cramers-landscaping-tasks-wctmu4`. **Good work** — diagnosis only, verified on all 74 live
+pages, honest about what could not be checked, and Task 2's answer ("no link is dead, change
+nothing") was the right call rather than the expected one.
+
+**One thing to fix on your side: PR #1 is titled "Complete service page rewrite from Zach's answers
++ pricing confirmation".** The branch contains two markdown files and 232 insertions with no page
+touched. The title describes work that was not done, and on this project a title claiming a
+**pricing** change is alarming — prices may only ever be those published on the site. **Retitle it
+to something like "Diagnosis for queued cloud tasks — findings only, no page changed."** Titles are
+read by people who will not open the diff.
+
+**Your two incidental findings are accepted and queued for the local session** (both need generator
+patches, which you cannot reach): the pergola-vs-pavilion meta description carrying wording Zach
+explicitly rejected, and the leftover keyword-stuffed paragraph on `/retaining-walls/`. Finding the
+first one was the single most valuable thing in the round — it is what Google prints under the title.
+
+---
+
+## Task 6 — Sweep the whole site against the standing facts — HIGHEST VALUE
+
+You found two live defects **by accident** while doing something else. Do it deliberately across all
+74 pages. For each item below, grep the sandbox HTML **and** confirm against the live page.
+
+Check for:
+1. **Wordings Zach has explicitly rejected.** `PROJECT-NOTES.md` and `DECISIONS.md` record these.
+   The pergola "filters light / keeps the rain off" line is one you already found. There will be
+   others — *"we do not plant sago palms"*, the West Ashley ceiling motive, "the paving stopping at
+   the posts", any "open vs covered" framing.
+2. **Vendor-era keyword stuffing** — the `<service> <city> <state>` pattern dropped into a sentence,
+   like the `/retaining-walls/` one. Also unsupported superlatives: "premier", "top choice",
+   "leading", "Charleston's trusted name".
+3. **Unqualified free-consultation claims.** Standard wording: *"Consultation at your home"*, then
+   free around Charleston, Mount Pleasant and Summerville; a charge beyond, **non-refundable**, and
+   credited toward the build. Any bare "free estimate" or "free consultation" without the geography
+   qualifier is a defect.
+4. **Maintenance, mowing or lawn-care claims**, and **hydroseeding** — none of these are offered.
+5. **Prices not published elsewhere on the site**, and **any founding year** (none is published).
+6. **Doug's tenure** stated as anything other than "more than thirty years in the trade" — no
+   Lowcountry-specific figure.
+7. **`843-709-6140` anywhere.** It must never appear. The public number is (843) 614-9773.
+
+**Deliverable:** one table — page, exact string, which rule it breaks, proposed replacement using
+already-published wording. **Do not edit pages.** Flag anything ambiguous rather than guessing; the
+rule is never invent a fact.
+
+## Task 7 — Content verdict on the other three pages Google will not index
+
+You did this for the lighting post. Do the same for the three still outstanding, **`/services/`
+first** — it is a hub page, and a hub Google declines is the more serious signal:
+
+- `/services/` — last crawled 2026-09-17 (pre-rebuild), still not indexed
+- `/blog/pool-pavilion-charleston-sc/` — last crawled 2026-09-03
+- `/blog/outdoor-living-space-ideas-charleston/` — last crawled 2026-09-16
+
+**Note the difference from the lighting post:** that one was re-crawled **after** the rebuild and
+still declined, so it is a verdict on current content. **These three were last crawled before the
+20 September rebuild**, so Google has not yet seen what is there now. **Do not treat their status as
+a verdict.** The question to answer is: *if Google re-crawls this page tomorrow, is there a
+substantive reason it would decline it?* For `/services/`, the obvious risk is that a hub which only
+links onward with little unique content reads as thin.
+
+**Deliverable:** for each, what unique substance the page carries, what it duplicates, and either
+"no change needed, wait for re-crawl" or a specific proposal. Same draft-only rule.
+
+## Task 8 — The 64 unaudited `assets/work/` images
+
+64 published images under `assets/work/` appear in **no** `photos.json` record, so the record-based
+checks cannot see them. Determine: which live pages reference each, whether any is orphaned
+(published but linked from nowhere), and whether any filename, `alt` or caption places a photo in a
+town it should not — Kiawah, Sullivan's Island, Folly Beach and Johns Island have **no real job
+photos**, and generic shots must say "Charleston area". See `project_photo_town_labels` context in
+`DECISIONS.md`: a similar-looking diagnostic once sent a session chasing 24 phantom fixes, so
+**confirm against what the page actually renders**, not against filenames alone.
+
+---
+
+## Still not available to you — do not attempt
+
+- **`site-build/`** — all generators, `deploy_shell.py`, `perf_bundle.py`. Local only.
+- **Semrush API** — 0 units, and they cannot be bought on this plan. Returns 18 October.
+- **Search Console / GA4** — the service account key is not in this repo.
+- **Deploying anything.** The repo is the sandbox, not the live site.
