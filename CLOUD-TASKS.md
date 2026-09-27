@@ -8,18 +8,21 @@ every instruction Zach has given, newest first.
 
 ## Status — 2026-09-27 (cloud session)
 
-Results are in `findings/2026-09-27-cloud-tasks.md`. No page was edited.
+Results are in `findings/2026-09-27-cloud-tasks.md`. No page was edited. Every finding was verified
+on the 74 live pages once network access opened.
 
 | Task | Status |
 |---|---|
-| 1. Duplicate title/H1 | **Done.** `/contact-us/` and the pergola-vs-pavilion post, with proposed titles |
-| 2. Broken external link | **Not finished.** The cloud network policy blocks every external host. Ranked suspects and a local check command are in the findings |
-| 3. Non-descriptive anchors | **Done.** The 22 "read more" links on `/blog/` |
+| 1. Duplicate title/H1 | **Done, confirmed live.** `/contact-us/` and the pergola-vs-pavilion post, with proposed titles |
+| 2. Broken external link | **Done.** No link is dead for visitors. The flagged one is almost certainly a Charleston Water rate page (404 to Semrush's crawler only) or Instagram (rate-limits crawlers). Change nothing |
+| 3. Non-descriptive anchors | **Done, confirmed live.** The 22 "read more" links on `/blog/` |
 | 4. Lighting consolidation | **Proposal written.** Awaiting Zach |
 | 5. CSS comments | **Not done.** Needs `site-build/` |
 
-Also found: the pergola-vs-pavilion post's meta description still says "a pergola filters light; a
-pavilion keeps the rain off", the wording `PROJECT-NOTES.md` calls wrong. Details in the findings.
+Also found, both confirmed live: the pergola-vs-pavilion post's meta description still says "a
+pergola filters light; a pavilion keeps the rain off", the wording `PROJECT-NOTES.md` calls wrong; and
+`/retaining-walls/` still ends with old vendor copy ("retaining walls Charleston SC"). Details in the
+findings.
 
 ---
 

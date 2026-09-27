@@ -4,17 +4,18 @@ Diagnosis only. **Nothing on any page was changed.** `site-build/` is not reacha
 cloud container, so every fix below has to land through the generators in the local session, per
 the rule at the top of `CLOUD-TASKS.md`.
 
-**Two limits on this session, both from the container's network policy:**
+**Verified on the live site, 2026-09-27.** The first pass was blocked by the container's network
+policy. Access was opened later the same day, and every finding below was re-run on all 74 live
+pages from the live sitemaps. The live pages matched the sandbox HTML in this repo (Site-revamp at
+`425074c`) on every point checked.
 
-- `cramerslandscaping.com` is blocked, so the live site could not be read. Everything below is
-  measured on the sandbox HTML in this repo (Site-revamp at `425074c`). **Grep the live page before
-  applying any fix.** The sandbox and live can drift.
-- Every external host is blocked too, including WebFetch. Task 2 could not be finished. It has a
-  ranked shortlist and a one-line command to run locally.
+**Semrush itself could not be queried.** The account has no API units left for the Site Audit
+report, so the pages Semrush flags could not be read directly. Tasks 1 and 3 match Semrush's counts
+exactly. Task 2 is inferred; see that section.
 
 ---
 
-## Task 1 — Pages where the title and H1 are identical — DONE
+## Task 1 — Pages where the title and H1 are identical — DONE, confirmed live
 
 Semrush compares the full `<title>` against the H1. Exactly two pages match in full. Seven more
 match once the ` | Cramers` suffix is removed, one of them the unpublished pay-invoice draft. Their
@@ -28,50 +29,41 @@ full strings differ, so Semrush does not count them.
 Every claim in the proposals is already published. "Call or text Doug at (843) 614-9773" is on
 the service pages. The pergola post has "Pergola and Pavilion Costs in Charleston" and "Permitting
 in Charleston" sections. The second title keeps the KD-1 phrase "pergola vs pavilion" at the front.
-Keep both H1s as they are.
+Keep both H1s as they are. The live site has exactly these two matches and no others.
 
-## Task 2 — The one broken external link — NOT FINISHED (network blocked)
+## Task 2 — The one broken external link — DONE: no link is dead
 
-The sandbox has **34 unique external links**. None could be requested from here: the proxy logged
-`connect_rejected` for every host, and WebFetch returned `EGRESS_BLOCKED`.
+**No external link on the site is dead.** The live site has 34 unique external links, the same 34
+as the sandbox. The 31 that are not social profiles return real content with a 200, including every
+PDF, and none is an error page served with a 200 status. The Facebook link opens the Cramers
+Landscaping LLC page in real Chromium. LinkedIn and Instagram sent this container's logged-out
+browser to a sign-in page. Both services do that to unrecognized visitors, so neither is a dead link.
 
-Skip the three social profiles in the footer. The Ahrefs note in `DECISIONS.md` already records
-LinkedIn (999) and Facebook (400) as bot-blocking, not broken. Clemson returns 403 to crawlers for
-the same reason.
+**What Semrush most likely flagged** is a link that answers audit crawlers differently from
+people. Each of these was retested several times with Semrush's and Google's crawler user agents:
 
-**Suspects, most likely first**, from web-search evidence only:
+| Link | Pages | What a crawler gets | What a person gets |
+|---|---|---|---|
+| `https://www.charlestonwater.com/203/Water-Rates` and `/213/Sewer-Rates` | 2 each: the sod guide and the turf-savings post | **404 every time** to the `SemrushBot` user agent; the homepage link returns 404 or drops the connection | 200 every time |
+| `https://www.instagram.com/cramers_landscaping/` | 74, footer | **429** (rate-limited) or a redirect to the login page | the profile, or a sign-in page when logged out |
+| `https://www.linkedin.com/in/zach-cramer-03122b34b/` | 74, footer | 999, LinkedIn's non-standard bot block | the profile when logged in; a sign-in wall otherwise |
+| `https://www.facebook.com/people/Cramers-Landscaping-LLC/100068333256940/` | 74, footer | 200 to Semrush's crawler; 400 to some browser strings | the page |
 
-1. `https://plantscience.psu.edu/research/centers/ssrc/documents/temperature.pdf/@@download/file/temperature.pdf`
-   on 2 pages. Search engines index this document at the **shorter** URL
-   `.../ssrc/documents/temperature.pdf`, without the `/@@download/file/...` suffix. If this link is
-   the 404, point both links at the short URL.
-2. `https://buildingscience.com/documents/bareports/ba-1015-bulk-water-control-methods-for-foundations/view`
-   on 1 page. Still indexed. The PDF also lives at
-   `https://buildingscience.com/sites/default/files/migrate/pdf/BA-1015_Bulk_Water_Control.pdf`, and
-   PNNL mirrors it at `https://basc.pnnl.gov/library/bulk-water-control-methods-foundations-ba-1015`.
-3. `https://llr.sc.gov/bcc/BCAdoption.aspx` on 1 page. It has no `www.`, unlike the other LLR
-   links on the site.
+A single flagged link fits a Charleston Water rate page or Instagram best. Semrush's broken-link
+check looks for 4xx and 5xx responses, which rules out LinkedIn's 999. Facebook currently answers
+Semrush's crawler with a 200. **To confirm the exact URL,** open the "broken external links" issue
+in the Semrush Site Audit (campaign 31306158). The detail view names the URL.
 
-Run this from any machine with open internet. It prints only the failures:
+**Recommendation: change nothing.** Every candidate works for people. The Charleston Water links
+cite the 2026 water and sewer rates that the turf-savings post and the sod guide rely on. Removing
+them would weaken both posts to satisfy a crawler. If Semrush keeps flagging one, treat it as a known false positive.
 
-```
-python3 - <<'PY'
-import re,glob,html,urllib.request
-urls={html.unescape(u) for f in glob.glob('*.html') for u in re.findall(r'href="(https?://[^"]+)"',open(f,encoding='utf-8').read()) if 'cramerslandscaping.com' not in u}
-for u in sorted(urls):
-    try: c=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0'}),timeout=20).status
-    except urllib.error.HTTPError as e: c=e.code
-    except Exception as e: c=type(e).__name__
-    if c!=200: print(c,u)
-PY
-```
-
-## Task 3 — Non-descriptive anchor text — DONE
+## Task 3 — Non-descriptive anchor text — DONE, confirmed live
 
 **Best match for Semrush's 22: the 22 "read more" links on `/blog/`.** Each post card has a
 `<a class="cl-more" ... aria-label="Read more: <post title>">read more</a>`. The `aria-label` is
 good for screen readers, but Semrush and Google read the visible text, which is just "read more".
-The count matches exactly: 22 posts, 22 links, one per post.
+The count matches exactly: 22 posts, 22 links, one per post. The live `/blog/` has the same 22.
 
 No other reading fits the count. The only other generic anchors are footnote numerals (`1`, `2` to
 `#src-n`) and "Source" on external citations. Together those appear on **14** blog posts, not 22.
@@ -117,9 +109,10 @@ read "Source". They could carry the publisher name instead, such as "Tree Care I
 Association: ANSI A300 Part 1". The footnote numerals are in-page `#src-n` jumps and are normal
 citation practice. Leave them.
 
-## Task 4 — Lighting post consolidation — PROPOSAL ONLY, Zach decides
+## Task 4 — Lighting post consolidation — PROPOSAL DONE, Zach decides
 
-**Not approved. Nothing was deleted or redirected.**
+**Not approved. Nothing was deleted or redirected.** The live versions of both pages have the same
+headings as the sandbox, and every sentence the proposal borrows is on the live post.
 
 The post `/blog/top-10-landscape-lighting-ideas-to-transform-your-outdoor-space/` has 11 ideas.
 Compared against `/landscape-lighting/`:
@@ -196,9 +189,9 @@ The sandbox still carries it in two places:
   rain off. Compare them, see what each costs in Charleston, and which needs a permit."*
 - `/blog/`: the card excerpt for that post has the same sentence.
 
-The meta description is what Google shows under the title, so this is the first line most
-searchers read about the post. **Check the live page first.** If it is there, proposed replacement
-(155 chars, uses Zach's final wording):
+**Confirmed live** in both places. The meta description is what Google shows under the title, so
+this is the first line most searchers read about the post. Proposed replacement (155 chars, uses
+Zach's final wording):
 
 > Pergola or pavilion? The difference is scale, roof options and enclosure, not open vs covered.
 > See what each costs in Charleston, and which needs a permit.
@@ -214,6 +207,6 @@ The call-to-action section ends with:
 > Charleston SC can transform your outdoor space.
 
 "retaining walls Charleston SC" is the old keyword-stuffed pattern the rewrite removed everywhere
-else. This paragraph also has no geography or trip-charge qualifier. Check live first, since
-`free_claim_audit.py` may already have handled it there. If it is still live, delete the paragraph.
+else. This paragraph also has no geography or trip-charge qualifier. **Confirmed live.** Delete the
+paragraph.
 The paragraph above it already says Doug and Zach will walk the site and quote.
