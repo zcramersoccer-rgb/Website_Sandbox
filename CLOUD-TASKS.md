@@ -19,9 +19,13 @@ contradicts #87. Tasks 6-11 would spend the same 91% / 94% pool, against Zach's 
 **Done anyway, because it was small:** PR #1 retitled to *"Cloud session findings for queued site
 tasks (docs only, no page changed)"*, with a description that says not to merge it into `main`.
 
-**Waiting on Zach:** either spend the remaining weekly headroom on Tasks 6-11 now, or wait for the
-30 Sept reset. If he says go, Task 6 first. The hourly PR check-in was moved to after the reset so it
-does not spend the pool either.
+**Update 02:45Z:** Zach chose "All tasks now" (DECISIONS #88), so Tasks 6-11 are running, and PR #1
+is closed. He also reported the **homepage video glitching**: diagnosed in
+`findings/2026-09-27-hero-video-glitch.md`. The poster is the t = 1.5 s frame but playback starts at
+frame 0, so the picture jumps on every page load. A frame-0 poster is ready to upload; `hero_video.py`
+needs the same change.
+
+The pause above no longer applies. With PR #1 closed, its scheduled check-ins were cancelled too.
 
 ---
 
