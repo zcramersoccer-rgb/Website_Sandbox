@@ -19,7 +19,6 @@
 .pj-card:hover .pj-card-over,.pj-card:focus-visible .pj-card-over{opacity:1}
 .pj-card:hover .pj-card-name,.pj-card:focus-visible .pj-card-name{transform:none}
 @media(hover:none){.pj-card-over{opacity:1;justify-content:flex-end;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(6,40,30,.85) 100%)}.pj-card-name{transform:none;font-size:22px}}
-25%{opacity:1}75%{opacity:1}100%{opacity:0}}
 .pj-story{max-width:780px;margin:0 auto;text-align:center}
 .pj-story h2{margin-top:0}
 .pj-story>p{font-size:18px;line-height:1.75}
@@ -44,13 +43,7 @@
 /* /project-pages */
 
 
-/* prose */
-.cl-prose{max-width:760px;margin-left:auto;margin-right:auto}
-.cl-prose h2{margin-top:2em}
-.cl-prose .cl-lede{font-size:1.08rem;color:#41514a}
-.cl-prose ul.body{margin:0 0 1.1em;padding-left:1.25em}
-.cl-prose ul.body li{margin:0 0 .5em}
-/* /prose */
+
 /* trust-strip */
 /* 2026-09-23: the strip now sits in the shared footer, so main.css needs these too.
    --rf-green / --rf-brass are defined in home.css only, so the colours are literal. */
@@ -185,3 +178,10 @@ div.wpforms-container-full .wpforms-form button.wpforms-submit:focus-visible,
 @media(max-width:1180px){.site-nav .tel>a{padding-left:15px;padding-right:15px}}
 @media(max-width:980px){.mega-more{grid-template-columns:1fr}}
 /* /nav-money-pages */
+/* prose */
+.cl-prose{max-width:760px;margin-left:auto;margin-right:auto}
+.cl-prose h2{margin-top:2em}
+.cl-prose .cl-lede{font-size:1.08rem;color:#41514a}
+.cl-prose ul.body{margin:0 0 1.1em;padding-left:1.25em}
+.cl-prose ul.body li{margin:0 0 .5em}
+/* /prose */
