@@ -84,3 +84,40 @@
     sync();
   });
 })();
+
+/* Keep the chat button off the call and consultation buttons on phones (2026-10-02, Zach: "go ahead and fix
+   the homepage"). Every ad now lands here, and at 375x812 the hero's "Request a Consultation" sits right at the
+   fold where the fixed chat button (and its once-per-visit teaser) is drawn, covering it. While any of the
+   page's call/consultation button rows - or the form's submit button - is inside the bottom strip of the
+   screen where the chat sits, the chat steps aside; it comes back as soon as the visitor scrolls on. Phones
+   only: on desktop the hero buttons are nowhere near the corner. The chat itself is untouched (its script is
+   served from chat.cramerslandscaping.com); this only hides it with a class on <html>. */
+(function () {
+  if (!('IntersectionObserver' in window) || !window.matchMedia) return;
+  var root = document.documentElement;
+  var STRIP = 120;            // chat button 64px + 14px margin, with room for the teaser's tail
+  var css = document.createElement('style');
+  css.textContent = 'html.cl-chat-tuck .clw-fab,html.cl-chat-tuck .clw-tip' +
+    '{opacity:0!important;visibility:hidden!important;pointer-events:none!important}';
+  document.head.appendChild(css);
+  var mq = window.matchMedia('(max-width: 760px)');
+  var targets = [].slice.call(document.querySelectorAll('.ib-kk-home-btn-container, .wpforms-submit-container'));
+  if (!targets.length) return;
+  var io = null;
+  function update() {
+    var hit = targets.some(function (t) { return t.clInStrip; });
+    root.classList.toggle('cl-chat-tuck', mq.matches && hit);
+  }
+  function build() {
+    if (io) io.disconnect();
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.clInStrip = e.isIntersecting; });
+      update();
+    }, { rootMargin: '-' + Math.max(0, window.innerHeight - STRIP) + 'px 0px 0px 0px' });
+    targets.forEach(function (t) { io.observe(t); });
+  }
+  var timer = null;
+  window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(build, 150); });
+  if (mq.addEventListener) mq.addEventListener('change', update);
+  build();
+})();
