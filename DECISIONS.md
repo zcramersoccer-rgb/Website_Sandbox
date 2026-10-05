@@ -25,6 +25,7 @@ Newest first.
 
 | # | Zach said | What was done | Status |
 |---|---|---|---|
+| 156 | *"yes send the combined brief to the website editor. An extra few clicks a month is a big win for us as we work on more reviews"* (Zach to the daily-tasks session, 2026-10-05) | Town-level service sections for queries ranking at positions 5-30: drainage (James Island, Johns Island, Daniel Island, North Charleston, Summerville), pavilions/pergolas/kitchens (Mount Pleasant, West Ashley, James Island), patios (Isle of Palms, Sullivan's Island), lighting (Folly Beach, Summerville, Daniel Island, Sullivan's, Isle of Palms, James Island, Kiawah). Out of scope: irrigation (Zach: do not promote), sod, the lighting head term, restructuring /landscape-lighting/. **Fact inventory:** town_page_facts.md has almost nothing service-specific per town (no drainage facts except 3 James Island lines, one lighting line); photos: no drainage photos anywhere, lighting photos only in West Ashley (not on the list), none at all for Johns Island, Sullivan's, Folly, Kiawah. The structures cluster CAN be drafted from published project stories (Mount Pleasant pool pavilion, West Ashley cabana, James Island rustic kitchen). Drainage, patios and lighting need Zach's town facts - questions sent to him rather than writing filler (repeated generic text across town pages would not help rankings either). **Structures finding:** all three town pages ALREADY have a real section on the local project (MP "Some of What We've Built" = the glulam pool pavilion; WA "The West Ashley Pool Cabana"; JI "A Rustic Kitchen Built for Barbecue") - the gap is signposting, not substance: no heading names the service with the town. **Link gaps (no new facts needed):** /landscape-lighting/ links to NONE of the 11 town pages; /outdoor-kitchens/ does not link James Island; the drainage page does not link Johns Island, Daniel Island or North Charleston. Proposed to Zach: three heading retitles + those links; facts questions for drainage, patios and lighting. | **Questions to Zach** |
 | 155 | *"make that pergola $6,000 too"* (2026-10-04, answering #153's question) | The cost post's worked example: "Simple pergola over part of it - no trim, no ceiling" goes from $10,000 to $6,000, and the example total is recomputed. **Live:** total $20,925 -> $16,925, "already past $20,000" -> "already past $16,000". Changed in cost_breakdown.py (LINES) and the page block surgically; the page block is byte-identical to what the generator now renders. No pergola $10,000 left anywhere on the site. | **Done** |
 | 154 | *"we dont need both of the daniel island outdoor shower photos on the portfolio. THey are basically the same"* (2026-10-04) | Keep one in Smaller Projects (the portrait, "Outdoor shower painted Charleston green"); remove the travertine-floor shot from the portfolio. It stays on the Daniel Island page, where it is the only shower photo. **Live:** Smaller Projects 21, gallery 61. | **Done** |
 | 153 | *"on the daniel island page it says simple pergolas as cheap as 10,000 the range should be 6000 on the lower end"* (2026-10-04) | NEW FACT: pergolas start at $6,000 (was published as $10,000). Upper end unchanged (he did not mention it). Fix the Daniel Island page and every other place that states the pergola floor. **Live on 18 pages** via new `site-build/pergola_floor.py` (92 exact-phrase replacements, each only where "pergola" is nearby): pages, the 14 generators that wrote them (so no re-run restores $10,000), and the chat knowledge source + knowledge.md. Verified live: no pergola $10,000 on any of the 18 pages; Daniel Island reads "A simple pergola is around $6,000". **Deliberately unchanged:** the pavilion glulam "$10,000 in materials" (not the pergola floor); the cost post's worked example "Simple pergola over part of it - no trim, no ceiling - $10,000", which feeds a project total - asked Zach. **Handed off:** chat worker redeploy (daily session); Google Ads copy still says "Pergolas From $10,000" (ads session - live-ads change, their lane). Backups: `site-build/backups/pergola-floor-20261004/`. | **Done** (worked example settled in #155) |
@@ -1067,3 +1068,192 @@ free tier. Fine at current traffic; watch it ([[feedback-ration-bot-probes]]).
   $10,000" -> "Pergolas Sized To Your Yard"; description -> "Pavilions from $30,000. Pergolas sized to
   your yard and budget, built for the Lowcountry." (89 characters). Only the Pergolas ad is replaced
   (sync_ad); the old ad is paused, not removed. No "$10,000" left in the build file, the CSVs or the script.
+
+## 2026-10-04 — new post indexed-requested, worker deploy pending (daily tasks session)
+
+- **New post `/blog/beautiful-backyard-on-a-budget-charleston/` requested and confirmed.** The website
+  editor flagged it as needing "adding to indexing.py" — **there is no list to add to.** `sitemap_urls()`
+  re-fetches both sitemaps every run, so it was discovered automatically (74 URLs, was 73). Told them, so
+  the hand-off isn't repeated. Verified independently first: 200, 46,801 bytes, **no noindex**,
+  self-referencing canonical, present in post-sitemap.xml.
+- **`/portfolio/` requested and confirmed** after a `recrawl` flag — Google's copy was from 09-28 and
+  predates the Smaller Projects group (60 photos) added for the affordability finding.
+- **`/services/` deliberately left alone.** Still "Crawled - currently not indexed", last crawl **09-17**,
+  and the 10-02 request is still pending — so the corrected design wording will be picked up whenever
+  Google does come. A second flag would be redundant.
+- **`/landscape-grading-services-charleston-sc/` deferred to 10-18 rather than re-requested.** It is
+  **already indexed**; only the crawl is stale (08-03). Requested 09-28, no re-crawl in 6 days.
+  **Google's own confirmation dialog says resubmitting "will not change its queue position or priority"** —
+  so a second request is wasted quota, not a nudge. If it is still un-recrawled by 10-18 the cause is
+  crawl budget, not the request.
+- **State: 74 tracked, 71 done, 3 waiting.**
+- **The `inspect` run was KILLED at the 30-minute background limit, having done 73 of 75.** It was unusually
+  slow today. **No data was lost and no restart was needed** — the 2026-10-01 merge-on-save fix meant every
+  checkpoint persisted, including the new post entering the file. Before that fix a killed run would have
+  been a wasted half hour. Worth knowing the run can exceed 30 minutes: start it early, and treat a kill as
+  partial-success rather than failure.
+- **New-post quality check before spending a slot:** title and meta present, 10 H2s, 12 internal links, the
+  only price quoted is the published $750/pallet sod figure, personal mobile absent. **707 words** — the
+  same band as the lighting post (721) and the old `/services/` (543), **both of which Google crawled and
+  declined.** So if it is not indexed in a week or two that is the authority constraint, not the writing,
+  and the right response is to wait, as it was for the pool-pavilion post.
+
+- **2026-10-04: Zach reported "deployed the worker" — it did NOT take effect. Verified two independent ways.**
+  (1) The served widget at `chat.cramerslandscaping.com/widget.js` is **34,558 bytes and still the old build**
+  — no `clw-badge`, no `clw-cta`, no `chat_open`, no `tipObserver`, and the OLD teaser wording still present.
+  Not an edge-cache artefact: no `cf-cache-status` and no `age` header, and a cache-busted URL returns the
+  same bytes, so it is the worker itself. (2) **One** bot probe (free tier - not repeated):
+  *"How much does a pergola cost?"* -> *"between $10,000 to $30,000"*. **The knowledge update did not land
+  either**, so the deploy did not happen at all rather than partially.
+- **Local artefacts are correct and were NOT the cause:** `build_widget.py` reports "already up to date",
+  `chat-widget.js.txt` is 38,226 bytes and contains all five changes, `knowledge.md` has
+  "Pergolas run $6,000 to $30,000", and `wrangler.toml` is right (`main = worker.js`, Text rule globbing
+  `**/*.js.txt` and `**/*.md`). Uncommitted git state is irrelevant - wrangler deploys the working tree.
+- **MY ERROR, most likely cause: I gave the command as a bash one-liner using `&&`.**
+  **Windows PowerShell 5.1 does not support `&&` — it is a parser error**, so pasting
+  `cd "...\Landscaping-Agent" && npx.cmd wrangler deploy` into PowerShell fails before wrangler ever runs.
+  **Give shell commands for this machine in a form PowerShell accepts** (`;` instead of `&&`, or two lines).
+- **Customer-facing consequence while it waits:** the bot quotes a pergola floor of **$10,000** while the
+  site says **$6,000** — a $4,000 overstatement, on exactly the affordability misread the new content is
+  meant to correct.
+
+- **2026-10-04: worker DEPLOYED and verified. Version `6847570c-02eb-41b2-a245-9a27c31c8844`.**
+  **`wrangler deployments list` was the diagnostic that cracked it:** the most recent deployment on
+  Cloudflare was **2026-09-23T16:12Z** — eleven days old — proving neither of Zach's two attempts today
+  reached Cloudflare at all, rather than reaching it and shipping the wrong bundle. **Wrangler was
+  authenticated fine** (it listed deployments as cramerz738@gmail.com), so the failure was in invocation,
+  not credentials. **My `&&` / PowerShell theory was wrong** — he retried and it still did not land; the
+  real cause on his side is still unknown.
+  `wrangler deploy --dry-run --outdir=` then proved the bundle was correct **before** uploading: it built
+  clean at 99.61 KiB with every binding resolved, and grepping the dry-run output confirmed it contained
+  the new widget AND "Pergolas run $6,000". Deployed from here on that evidence, since Zach had twice
+  stated the intent.
+  **Verified after:** served widget **38,208 bytes** (was 34,558) with all seven changes present, old
+  teaser gone, `lead_chat` intact; and **one** bot probe now answers *"anywhere from $6,000 to $30,000"*
+  with no $10,000. Site, knowledge and bot finally agree.
+- **Keep for next time: `deployments list` before assuming a deploy landed.** Byte-size and content checks
+  tell you the *old* thing is still being served; only the deployment list tells you whether anything was
+  uploaded at all, which is the difference between "wrong bundle" and "never ran".
+- **Zach, 2026-10-05:** "should we try and filter out search terms that could be people looking for
+  pre-fab outdoor kitchens".
+- **10-05 a, prefab-kitchen and competitor negatives (Outdoor Living):** pre fab, modular, ready to
+  assemble, rta, cabinet(s), frame(s), cart(s), ikea, walmart, menards, tractor supply, blaze, napoleon,
+  danver, brown jordan, bull outdoor, profit outdoor, sweetgrass, elevate outdoor, john michael, design my.
+  - Already blocked before this: prefab, prefabricated, kit(s), for sale, buy, store, home depot, lowes,
+    costco, sams club, wayfair, amazon, bbq guys, grills, diy, price, cost.
+  - Deliberately NOT blocked: "island" (custom island builds are real jobs) and luxury appliance brands
+    like Kalamazoo (could be custom-build buyers).
+  - None of these conflicts with an active keyword.
+
+- **2026-10-05: live chat checked end to end at Zach's request. Working.** On `/pergolas/`:
+  launcher renders (fab 72px, **badge 26px, pill 182px reading "Questions? Chat with us"**), teaser shows
+  **"Have a question about a project? Ask here."**, clicking the launcher opens the panel and
+  **`chat_open` fired exactly once into the dataLayer on the live site** — the tag published on 10-02 is
+  now receiving real events. Sent a real message through the widget UI (not the API):
+  *"Do you build pergolas in Mount Pleasant?"* -> correct answer, correct links
+  (`/mount-pleasant-sc/`, `/pergolas/`), and **the public number (843) 614-9773**, not Zach's mobile.
+  Disclaimer line present.
+- **NOT verified on live: the phone tuck interaction.** The browser window would not take a 375x812
+  viewport — `resize_window` reported success but `innerWidth` stayed 1536 and
+  `matchMedia('(max-width: 760px)')` stayed false, so the phone path could not be exercised here.
+  **What is known:** the behaviour was verified locally against the real rule including an
+  `elementFromPoint` hit test, and the live homepage does contain **2** of the elements refine.js watches
+  (`.ib-kk-home-btn-container`, `.wpforms-submit-container`), so the mechanism has targets. Treat the phone
+  teaser timing as verified-in-isolation but not verified-on-live.
+- **Test traffic:** visits tagged `?chat-check=1` and `?chat-check=2`, and **one `chat_open` and one chat
+  conversation in today's GA4 / Clarity / chat log are mine, not a visitor.** Discount them.
+- **Zach, 2026-10-05:** "lets run a full audit for the ads".
+- **Full ads audit 2026-10-05: report at tracking/reports/ads-audit-2026-10-05.md.** Nothing in the
+  account was changed.
+  - Since the 09-29 restructure: $742, 49 clicks, 2 leads (people), $371 per lead, CPC $15.14, CTR 7.3%.
+    Since launch: $1,225, 100 clicks, 2 leads.
+  - Live account matches the build file (0 mismatches); settings correct; all ads approved.
+  - Open finding: clicks cost up to 1.43x the keyword bid, so a second bid adjustment (Zach's
+    income/age adjustments from September) is still active. The bridge was updated to read them; it
+    needs a paste and Run.
+  - Questions for Zach: stamped concrete patios? gravel (crush and run) or pervious driveways? block
+    generic "landscape design near me" searches?
+- **Zach, 2026-10-05:** "stamped concrete is fine, gravel concrete yes, leave landscape design. i ran the
+  bridge can you add business name and logo". So: stamped concrete patios and gravel/pervious concrete
+  driveways are services (never negate them); generic "landscape design near me" searches stay
+  unblocked; add business name and logo assets.
+- **Income/age settings found (bridge export 2026-10-05 11:56Z), set by Zach in the UI in September:**
+  - On 10 ad groups (all the original ones): household income top 10% +20%, 11-20% +15%, 21-30% +10%;
+    lowest 50% income EXCLUDED; age 18-24 EXCLUDED.
+  - On NONE of the three groups the build script created later: Outdoor Living Contractor, Driveways,
+    Fireplaces & Fire Pits. Those show to all incomes and ages at the plain bid.
+  - This is the second multiplier behind clicks clearing over the bid. Asked Zach whether to keep the
+    income boosts and whether to copy the exclusions to the three newer groups. Nothing changed.
+- **Business name + logo:** one-time script google-ads/ads-brand-assets.js and logo file
+  "Cramers Ad Images/cramers-logo-1200.png" (the site's own mark on white). Business name "Cramers
+  Landscaping". Linked at account level; falls back to per-campaign. Zach drags the logo into Drive and
+  runs the script.
+
+- **Zach, 2026-10-05, on the irrigation/lighting ranking losses:** *"rebranding to outdoor living specialist
+  is ideal because our website and photos are better off selling that work than irrigation although we do
+  install irrigation"*. **Decision closed: the losses are accepted, deliberately.** Do NOT try to rescue
+  irrigation or lighting rankings — doing so would dilute the positioning that is working.
+- **And the loss was theoretical, not real.** In the 13 days BEFORE the rebuild, non-branded search produced
+  **zero clicks in total**, so irrigation sitting at position 11.5 was already earning nothing. Falling to
+  73.9 cost no traffic that existed. **Positions outside the top 3 produce nothing on this site**, so a
+  ranking change in the 10-70 band is not a revenue event either way.
+- **Irrigation is still offered, so keep `/irrigation-system-installation/` healthy and linked** — it is
+  1,039 words, indexed, PASS, crawled 09-30. It will serve branded and direct visitors and supports the
+  "everything in-house" story. It simply should not be optimised for or promoted at the cost of the
+  outdoor-living positioning.
+- **Flagged onward to the ads session: the paid account still has a dedicated "Irrigation & Sprinklers" ad
+  group** (10 keywords, landing on the irrigation page). That is not necessarily wrong — paid is a
+  reasonable way to keep catching irrigation work the organic site no longer chases. **But at $12.29 avg
+  CPC a $50/day budget buys about four clicks a day**, so every irrigation click is one not spent on
+  pavilion and outdoor-kitchen terms, which is where the organic data now says the site is strongest and
+  where a job is worth 5-10x more. Worth a deliberate decision rather than drift.
+- **Zach, 2026-10-05 (relayed by the Daily index session):** "rebranding to outdoor living specialist is
+  ideal because our website and photos are better off selling that work than irrigation although we do
+  install irrigation". For ads this is already the state: the Irrigation & Sprinklers ad group sits in
+  the Quick Services campaign, which Zach paused on 10-01. Irrigation spent $17.28 in total (2 clicks, 0
+  conversions). No change needed.
+
+- **CORRECTIONS to the 2026-10-05 metrics review, from the ads session plus one I then verified.**
+  **(1) "13 leads" was wrong — that is the EVENT count. The honest number is 8 people.** Verified with GA4
+  `totalUsers` on the same filter: organic 6 events/**3 users**, direct 4/**3**, paid 3/**2**. Visible by
+  day: 09-21, 09-30 and 10-04 each have a `lead_form` AND a `lead_phone_click`, and on 10-02 one person
+  tapped call twice. **Someone who fills the form and then taps the number is one enquiry, not two.**
+  **RULE: report leads as `totalUsers`, never `eventCount`** — events overstate enquiries here by ~60%.
+  The same error inflated cost-per-lead optimism: 3 paid conversions are **2 people**.
+  **(2) The budget is $110/day on Outdoor Living only, not $50/day.** My "four clicks a day, so every
+  irrigation click costs a pavilion click" reasoning was built on the wrong number.
+  **(3) The irrigation ad concern was already moot** — the Irrigation & Sprinklers group sits in the Quick
+  Services campaign, which **Zach paused on 2026-10-01**. Irrigation's whole history is **37 impressions,
+  2 clicks, $17.28, 0 conversions — about 1% of spend.** Both real leads came from Outdoor Living keywords.
+  **Lesson: check the account's current state before reasoning about where its money goes.** I inferred an
+  allocation problem from a keyword list in `build_campaign.py` without confirming the campaign was live.
+- **Zach, 2026-10-05:** "keep the boosts and copy the exclusions and boosts to the new group". Income
+  boosts stay (+20% / +15% / +10% on the top three brackets). Copy the boosts AND the two exclusions
+  (lowest 50% income, ages 18-24) to Outdoor Living Contractor, Driveways and Fireplaces & Fire Pits.
+- Zach's script error "script has multiple main functions (Code.gs line 1; line 24)": the brand script was
+  pasted into a script that still had code in it. Fix: select all, delete, paste.
+- **Built 2026-10-05:** google-ads/ads-demographics.js. One-time script that reads the income/age
+  settings from "Patios & Pavers" and applies the same ones to Outdoor Living Contractor, Driveways and
+  Fireplaces & Fire Pits. Mock-tested only; Zach runs it (Preview first). Not yet applied.
+- **Verified 2026-10-05 12:10Z:** income/age settings on Outdoor Living Contractor, Driveways and
+  Fireplaces now match Patios & Pavers exactly (top 10% +20%, 11-20% +15%, 21-30% +10%, lowest 50%
+  excluded, 18-24 excluded); all 13 ad groups carry them. Logo is linked at account level
+  (BUSINESS_LOGO, enabled). The BUSINESS_NAME asset is NOT linked: the script's name step failed or was
+  refused; asked Zach for the script log.
+- **Business name link error (Zach's log, 2026-10-05):** customerAssetOperation create BUSINESS_NAME on
+  asset 427932616816 returned "An error occurred. Please try again later." The text asset itself was
+  created; only the link failed. The API gives no reason. Next: add it in the Ads UI (Assets -> Business
+  name), which states the eligibility reason; advertiser verification is the likely gate.
+
+- **Zach, 2026-10-05:** *"yes send the combined brief to the website editor. An extra few clicks a month is a
+  big win for us as we work on more reviews"*. **Town x service brief sent to the website editor.**
+  Basis: Search Console 09-20..10-02, town-qualified non-branded queries grouped by service, clusters at
+  average position 5-30. In scope: **drainage** (James Island 11.2, Johns Island 14.0, Daniel Island 15.1,
+  North Charleston 17.7 — served by the metro drainage page), **pavilions/pergolas/kitchens** (Mount
+  Pleasant 12.3, West Ashley 18.0, James Island kitchen 18.6), **patios/hardscape** (Isle of Palms 12.0,
+  Sullivan's Island 15.3), **lighting** (Folly Beach 19.5, Summerville 20.4, Daniel Island 24.7, James
+  Island 29.1, Sullivan's 25.8, Kiawah 29.5). **Out of scope: irrigation** (positioning decision same day)
+  and sod (too thin). Head term "landscape lighting charleston sc" deliberately NOT targeted: page one is
+  seven lighting specialists, six with exact-match domains. Content must come from Zach's facts; several
+  towns have no local photos. Reports: `tracking/reports/lighting-ranking-2026-10-05.md`,
+  `keyword-volumes-2026-10-05.md`, `metrics-review-2026-10-05.md`.
