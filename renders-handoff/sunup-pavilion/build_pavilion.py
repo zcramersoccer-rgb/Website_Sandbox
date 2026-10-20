@@ -310,13 +310,38 @@ ENTS = {
  'C': ([(0, B-0.25), (0.75, B-0.25), (0.75, B+5.375), (0, B+5.375)],                                  # simple: thick architrave band,
        [(0, B+11.0), (0.75, B+11.0), (2.0, B+12.25), (2.0, B+16.75), (0, B+16.75)]),                   # plain frieze, one crown band
 }
-arch, corn = ENTS[ENT]
-dc = max(d for d, z in corn); dz = T - corn[-1][1]
+def quarter(d0, z0, d1, z1, convex, n=10):
+    """elliptical quarter from (d0, z0) to (d1, z1), rising and projecting: convex = ovolo-like, else cove-like"""
+    out = []
+    for i in range(1, n + 1):
+        t = math.radians(90*i/n)
+        if convex: out.append((d0 + (d1 - d0)*math.sin(t), z1 - (z1 - z0)*math.cos(t)))
+        else:      out.append((d1 - (d1 - d0)*math.cos(t), z0 + (z1 - z0)*math.sin(t)))
+    return out
+def crown(d0, z0, d1, z1):
+    """cyma recta crown/bed mould: convex below, concave above"""
+    dm, zm = (d0 + d1)/2, (z0 + z1)/2
+    return quarter(d0, z0, dm, zm, True) + quarter(dm, zm, d1, z1, False)
+# E and F (study after D read as "trim lines"): fewer, bigger parts, a curved moulding for graded shadow, a real cornice
+# overhang, and a 3/4" recessed panel on the beam underside. Third item = inside profile (from the inner face, bottom up,
+# ending (dc, T), (0, T)); fourth = underside panel recess.
+ENTS['E'] = ([(0, B-0.25)],                                                                            # box beam: plain face,
+             [(0, B+11.0), (0.75, B+11.0), (0.75, B+12.25)] + crown(0.75, B+12.25, 4.25, B+16.0) + [(4.25, B+16.25), (0, B+16.25)],  # bed board + 3-3/4" crown
+             None, 0.75)
+ENTS['F'] = ([(0, B-0.25), (0.75, B-0.25), (0.75, B+5.0), (1.5, B+5.0), (1.5, B+6.0), (0, B+6.0)],   # Tuscan: fascia + taenia,
+             [(0, B+10.5)] + quarter(0, B+10.5, 1.75, B+12.25, False) + [(4.5, B+12.25), (4.5, B+15.25), (4.75, B+15.25),
+              (4.75, B+16.0), (0, B+16.0)],                                                             # frieze, cove bed + corona + cap
+             [(0, B-0.25), (0.75, B-0.25), (0.75, B+5.0), (1.5, B+5.0), (1.5, B+6.0), (0, B+6.0), (0, T-2.0)]
+             + quarter(0, T-2.0, 1.75, T-0.25, False) + [(1.75, T), (0, T)],                            # inside: architrave + frieze + cove
+             0.75)
+arch, corn, inner_up, recess = (tuple(ENTS[ENT]) + (None, 0.25))[:4]
+dz = T - corn[-1][1]
 outer = arch + corn + [(0, T)]
-inner_up = arch + [(d, z + dz) for d, z in corn]
+if inner_up is None: inner_up = arch + [(d, z + dz) for d, z in corn]
+dc = inner_up[-2][0]
 mir = [(-P - d, z) for d, z in reversed(inner_up)]
 inner = [(-P - dc + 0.75, T), (-P - dc + 0.75, T + 0.75), (-P - dc, T + 0.75)] + mir[1:]
-prof = outer + inner + [(-10.5, B-0.25), (-10.5, B), (-0.75, B), (-0.75, B-0.25)]
+prof = outer + inner + [(-10.5, B-0.25), (-10.5, B-0.25+recess), (-0.75, B-0.25+recess), (-0.75, B-0.25)]
 bm = bmesh.new(); loft_ring(bm, 0, 0, OX, OY, prof); mesh_obj('Beam ring + entablature', bm, M_TRIM, 'Structure + trim', bevel=0.05)
 led = bmesh.new()
 loft_ring(led, 0, 0, OX, OY, [(-11.6, T+0.02), (-12.3, T+0.02), (-12.3, T+0.12), (-11.6, T+0.12)])

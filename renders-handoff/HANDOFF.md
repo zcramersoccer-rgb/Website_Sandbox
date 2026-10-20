@@ -196,3 +196,97 @@ fence gate.
   - Plus a finish close-up sheet. `other-projects/vanhove-hood/build_scene.py` rebuilds it; its textures were ambientCG Concrete034/Plaster006/Metal042A.
   - The full package (with .blend) was delivered to the client as 5 zips.
 - **Cramers Landscaping pavilion:** `blender_setup.py` v3 plus the final renders (CAM_01-07). Delivered earlier.
+
+## 5. Update from the second cloud session ("Renderings and design work", 2026-10-20). Read this first.
+
+The work is moving to a **desktop (local) session** so it can use Zach's Kindle in Chrome. Neither cloud session could
+reach his computer.
+
+### Done here
+- Blender 4.2.3 installed. `sh fetch_textures.sh` + `build_pavilion.py` rebuild cleanly, and a test render of CAM_07 matches `D_trim.jpg`. The pipeline works.
+- **Shown to Zach:** `renders/options/D_trim.jpg`.
+- **`renders/review/` is STALE.** Those 16 views pre-date D: deep fascia, older trim, white fan. A D re-render was started and then stopped when D was called into question. Re-render after the trim is settled.
+- Added `scripts/contact_sheets.py`: `python3 scripts/contact_sheets.py RENDERDIR [OUTDIR]` converts the PNGs to JPG and builds Sheet1-3.
+- `render_review.py` needs the view names listed explicitly. With none given, it renders nothing.
+
+### Zach's latest feedback on D (verbatim)
+> "The entablature is just missing something whether its detail or proportion idk but it doesnt look like a built up beam
+> like it should especially from the renderings on the inside of the pavilion it just looks like trim lines running
+> around. Maybe its due to it being a rendering and not in person but idk"
+
+### Diagnosis (mine, not yet shown to Zach)
+1. **No hierarchy.**
+   - D puts about 5 horizontal edges in 18-3/4", and they are similar sizes.
+   - Every projection is small: 3/4", 1-3/4", 3".
+   - Flat stock gives thin, hard shadow lines of equal weight, which read as stripes, not mass.
+2. **No curved moulding.**
+   - A cove or ogee gives a graded shadow, and that is what the eye reads as "moulding" or "cornice".
+   - Bevels and flat steps don't.
+3. **The cornice barely projects.**
+   - D's cornice projects 3". A classical cornice projects about as far as it is tall, so roughly 6-8" here.
+   - The deep shadow a cornice throws on the frieze is what makes an entablature look heavy and built up.
+   - Limit: the 4:12 soffit descends outward, at T - 3/4" - d/3, so the projection is capped at about 4-3/4" unless the cornice is lowered.
+4. **The inside face repeats every outside step, plus the LED lip.**
+   - That doubles the line count in the interior views; CAM_03 shows it clearly.
+   - Historic porch beams usually show only the architrave, or a plain box with one crown at the ceiling, on the inside.
+5. **The beam underside doesn't read as a beam bottom.**
+   - The recess is only 1/4".
+   - A 3/4" recessed panel would make it read as a built-up box from below.
+6. **Rendering factors, which are real but secondary:**
+   - The beam sits in the overhang's shade, under a soft sky, in flat all-white material.
+   - Wide lenses.
+   - In person, 3/4" reveals also fade beyond about 10 ft. So part of this is real, not just the render.
+
+### Study in progress (code committed, renders NOT done)
+`build_pavilion.py` now has:
+- `quarter()` and `crown()` helpers for curved profiles.
+- Two new options, selected with `PAV_ENT=E` or `PAV_ENT=F`.
+- An optional 3rd item per ENTS entry, the inside profile, and a 4th, the underside recess.
+
+The options:
+- **E, "built-up box beam":**
+  - Plain flush face.
+  - A 3/4" x 1-1/4" bed board at B+11.
+  - A 3-3/4" tall cyma recta crown projecting to +4-1/4", with its top at B+16.25.
+  - The same crown inside, with the LED behind its lip.
+  - A 3/4" recessed underside panel.
+  - Only one CAM_07 draft is rendered: `renders/study/E-CAM_07 corner detail (draft).jpg`. I have NOT reviewed it critically. Check it before showing it.
+- **F, "Tuscan with a real cornice":**
+  - Architrave: one fascia at +3/4" (B-1/4 to B+5), plus a taenia at +1-1/2" (B+5 to B+6).
+  - Frieze: plain, B+6 to B+10.5.
+  - Cornice: a cove bed mould to +1-3/4", then a corona at +4-1/2" (B+12.25 to B+15.25) with a flat 2-3/4" soffit that throws a deep shadow, then a cap at +4-3/4" up to B+16.
+  - **Inside:** architrave + frieze + a small cove at the ceiling only. No corona, so fewer lines.
+  - 3/4" recessed underside panel.
+  - Not rendered yet.
+
+Unfinished plan:
+1. Render D vs E vs F at `CAM_07 corner detail - trim + soffit hip`, `CAM_03 interior to TV` and `CAM_01 front 3-4`. Use 1280x720 / 48 spp; about 1 min each on 4 cores.
+2. Make true-scale sections. Extend `scripts/ent_sections.py`, which only knows A/B/C.
+3. Show Zach a side-by-side board with the diagnosis above.
+4. Check E and F against Hull's *Millwork* and McAlester before recommending one (see "Kindle" below).
+
+```
+for E in D E F; do PAV_ENT=$E PAV_OUT=study/ent$E.blend blender -b --factory-startup -P build_pavilion.py
+  for C in "CAM_07 corner detail - trim + soffit hip" "CAM_03 interior to TV" "CAM_01 front 3-4"; do
+    blender -b study/ent$E.blend -P scripts/render_view.py -- "study/$E-${C%% *}.png" Pavilion "$C" 1280 720 48; done; done
+```
+
+### Kindle (now reachable: Zach is logged in to Kindle in Chrome on his computer)
+Pull these and quote the rules and numbers with page refs:
+- **Hull, *Millwork*:**
+  - The classical system / orders chapter (from about p. 2).
+  - Exterior entablatures, porch beams, cornices.
+  - Capitals and bases for square posts and pilasters.
+  - Tuscan/Doric profile plates.
+  - His ratios: entablature to column; architrave / frieze / cornice split; projections; inside vs outside face of porch beams.
+- **McAlester, *Field Guide to American Houses* (rev. ed.):**
+  - The porch support and cornice detail pages for Federal, Greek Revival and Colonial Revival.
+  - Square porch supports and entablature types.
+  - Charleston / Lowcountry piazza examples.
+- **Hull, *Traditional American Rooms*:** only the classical-language section, if it covers porch or exterior entablatures.
+
+### Still open from before
+- The yard measurements and the bed/walkway layout are needed for the yard model and the finals.
+- Capital underside: rounded or square.
+- Whether to simplify the inside entablature. Study F's inside profile is one answer.
+- The old cloud session (session_016AReCdWE7Xr6Bg2QTK7yqU) may still push historic reference images to `sunup-pavilion/refs/` on this branch. `git pull` to get them.
