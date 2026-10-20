@@ -25,6 +25,17 @@ Newest first.
 
 | # | Zach said | What was done | Status |
 |---|---|---|---|
+| 197 | Zach's answers to four questions in the website-editor session (2026-10-19): **"Push it"** (SEO batch #190); **"Yes, do it"** (LiteSpeed Drop Query String, #188); **all four** specific snippet/settings items selected - "Breadcrumb schema fix", "Remove vendor schema", "Turn off llms.txt", "Divi archive footer"; and both logo extras - "Homepage schema logo", "Yoast Organization logo". | Direct go for: (a) deploy the #190 batch incl. redirect updates and reassigning posts to user 2; (b) the six Drop Query String additions; (c) the shell-snippet breadcrumb filter; (d) removing the vendor HomeAndConstructionBusiness JSON-LD from WPCode's legacy header (keep GTM); (e) Hostinger llms.txt off (file renamed, not deleted, if it persists); (f) Divi Theme Builder footer: remove Irrigation Systems + hidden Maintenance/Structures/Specialty items; (g) the homepage LocalBusiness logo -> site icon (schema only, an explicit exception to the #165 homepage hold); (h) Yoast Organization logo -> site icon. Every write is backed up first and verified live. | **In progress** |
+| 196 | *"thats fine its worth spending more semrush units in begenning of months than toward the end atleast for this month since we are starting fresh"* (2026-10-19) | **Amends #189 for THIS cycle only (18 Oct–18 Nov): front-loading allowed.** The 19 Oct overspend is accepted, and the freeze until 22 Oct is LIFTED. This cycle: up to **20,000 units total by end of 24 Oct**, with no daily line in the first week. From 25 Oct, the rest (minus the 5,000 end reserve) is spread evenly to 14 Nov. Still in force: 1,000 per sitting, measure before running (cost table, display_limit 1 test), log every call, no fan-out, shared pool with LR. From the 18 Nov cycle the even #189 pace line applies again unless Zach says otherwise. Updated in `tracking/SEMRUSH-BUDGET.md`; sent to all sessions. | **Standing for this cycle** |
+| 195 | *"it was in charleston"* (2026-10-19) | **FACT: the waterfront putting-green job (#194) is in CHARLESTON**, a separate job from the hip-roof pavilion. The old vendor archive mislabelled it Folly Beach, Kiawah, Daniel Island and Mount Pleasant. There are six archive shots of it; the three best (two of the green, one with the house) are copied as `photos-inbox/putting-green-charleston-2026-10-19/charleston-waterfront-putting-green-*.jpg`. The other three are wide dormant-lawn shots where the green is tiny, so they were skipped. None are on the site yet. Placement follows #193 (where a photo is needed and the content fits: turf and putting-green content). Routed to the Website editor. | **Sent to the editor** |
+| 194 | *"putting green was a different job"* (2026-10-19) | **FACT: the waterfront putting-green / turf photos in the old vendor archive are a DIFFERENT job from the Charleston hip-roof pavilion (#192).** They must not be captioned or placed as the same project. Their town is still unknown (the vendor labelled them Charleston, Folly Beach and Kiawah), and they are not cleared for use. | **Recorded** |
+| 193 | *"you can add those photos to the website where photos are needed and the content makes sense ie pavilion, brick, or artificial turf"* (2026-10-19) | **Go: add the three Charleston hip-roof pavilion photos (#191, #192) where a photo is needed and the content fits:** pavilion, brick patio, or artificial turf sections. Catalogue them in `site-build/photos.json` with town Charleston, then place them through the generators. No page may show the same photo twice (#191). Captions and alt text can only state Zach's facts (hip roof, white Hardie, brick patio, Charleston) and what is plainly visible; nothing invented about the build. **Turf:** Zach names artificial turf as a fit, so turf content may use them. Still, don't claim specifics about the turf install (product, area) that he hasn't given. The waterfront putting-green question is still open. Routed to the Website editor. | **Sent to the editor** |
+| 192 | *"that job was in charleston"* (2026-10-19) | **FACT: the hip-roof pavilion with white Hardie and a brick patio (waterfront, turf) is in CHARLESTON** (answering #191). The old vendor files that call it Kiawah, Isle of Palms, Sullivan's Island or James Island are wrong; only the `historic-brick-patio-charleston-sc` name was right. The three full-size shots are renamed `charleston-hip-roof-pavilion-…` in `photos-inbox/hip-roof-pavilion-2026-10-19/`. They are not yet in `site-build/photos.json` or on the site; adding them is the editor's job if Zach wants them used. | **Recorded** |
+| 191 | *"can you find me a photo of a hip roof pavilion we built that was white hardie with brick patio also on the pergola page image 3 and 5 on the carousel are duplicates make sure that gets fixed and isnt happening elsewhere"* (2026-10-19) | (1) **Find a photo:** a hip-roof pavilion we built, white Hardie, brick patio. The overview searches the photo library. (2) **Pergola page carousel: images 3 and 5 are duplicates.** Fix it in the generator, and audit every carousel and gallery site-wide for repeats. The overview audits; the Website editor fixes. **Photo found:** the hip-roof pavilion with white Hardie and a brick patio is on a waterfront property. Three full-size shots are in the old vendor-site archive, copied to `photos-inbox/hip-roof-pavilion-2026-10-19/`. Not in `photos.json` and not on the current site. The vendor labelled the same job with 5 different towns (Kiawah, IOP, Sullivan's, Charleston, James Island), so the real town is unknown; ask Zach. **Duplicates:** the audit is done and the brief is at `briefs/2026-10-19-duplicate-photos.md`. /pergolas/ slides 3 and 5 are a fix_pergola_pages.py swap bug; 3 pages have in-content repeats, 3 have look-alikes under 2 names, and ~16 have card-thumbnail repeats (ask Zach). Sent to the editor. | **Photo delivered; dupes with the editor** |
+| 190 | *"lets not remove the "rated 5 on google from 18 reviews" yet we can go ahead and fix some of the other seo things from the list"* (2026-10-18; logged in full by the daily-tasks session, section "2026-10-18 - Zach's go on the audit fixes"; relayed to the website editor by the overview session) | **Website editor picks up the site/generator batch** (`briefs/2026-10-18-seo-fixes.md`, audit `tracking/reports/seo-audit-2026-10-17.md`). Footer "Rated 5.0 on Google from 18 reviews" STAYS. Work is done in the sandbox and generators first; the production deploy waits for Zach's direct go in the website-editor session (relayed go is not deploy authorisation). The four snippet/settings items (shell breadcrumb filter, WPCode vendor schema, Hostinger llms.txt, Divi footer) each need a separate specific yes. Facts-needed items (drainage page jobs, licence, founder/date, form address, byline) are questions, not edits.  **Sandbox + generators ready 2026-10-18 (not deployed):** (1) MP post H2s renamed (mp_expand.py + page). (2) Johns Island / Kiawah meta, og, twitter descriptions without irrigation (town_pages.py + pages); meta_trim.py North Charleston fallback rewritten. (3) deploy_live.py: MATCH (query ignored, trailing slash) on new redirects and in-place update of older EXTRA_REDIRECTS rules (fixes /blog/page/N/?et_blog); EXTRA_REDIRECTS now records /outdoor-kitchen/ + the retired lighting/kitchen posts incl. the missing lighting root form; redirect backup each run (`deploy/backup/redirects-2026-10-18.json` taken). (4) how-we-work post: trip-charge sentence in body, FAQ and FAQ schema (blog_about_us.py + page). (5) pergola post: cost sentence corrected (engineer drawing / renderings quoted separately), vendor footing line, composite/PVC section, roses/wisteria and permit-process sentence cut (no generator held them). (6) posts credited to user 2 (POST_AUTHOR in phase_content + unchanged()), new_post() helper; generators point to it. (7) French-drain share image = rebuilt basin. (8) post_slugs() authenticated, all statuses, cache-busted; guard fails on root-form post links. (9) read-more removed (3 generators + blog.html). (10) schema: contact-us logo -> site icon (attachment 7543), provider -> #organization on 22 service pages; Yelp sameAs HELD (Specialties line still unresolved). (12) tel: links on sod page + pergola post; call bubble on all 22 posts (internal_links.py, drainage_posts.py). Dry-run transform: 61 pages clean, no root-form links. **Waiting on Zach's direct go to deploy.** | **Ready; awaiting Zach's go** |
+| 189 | *"it should reset. Lets make a rule that every session including LR sessions cant use all the api tokens at once and need to space it for the month"* (2026-10-18) | **STANDING RULE: Semrush API units are paced across the month, for EVERY session, Cramers and LR alike** (one shared Semrush account, one pool). Written into `tracking/SEMRUSH-BUDGET.md`: a cumulative pace line (allocation × days since renewal ÷ days in the cycle), a per-sitting cap, the balance checked before the first call, and every call logged in the shared ledger `tracking/data/semrush_api_ledger.csv`. Sent to Daily tasks, the Website editor, the Ads session and the LR overview (which briefs the LR sessions). Balance still 0 on 10-18 because the renewal payment hasn't processed yet; Zach expects the reset. | **Standing rule; distributed** |
+| 188 | *"go ahead with the cache fix"* (2026-10-17) | **Zach's go for the LiteSpeed Drop Query String fix (#187).** Add `gbraid`, `wbraid`, `gad_source`, `srsltid`, `msclkid` and `_gl` to LiteSpeed Cache → Cache → Advanced → Drop Query String, keeping every existing entry. Before the fix all six MISS the cache (TTFB ~0.7 s vs ~0.17 s), and `gclid`, `fbclid` and `utm_*` already hit. Routed to the Website editor (it owns WordPress); the overview re-tests all six from outside afterwards. | **Sent to the editor** |
+| 187 | *"I want both website sessions working together to increase performance for both so the cramers session will report to you and i want you to report back on what works and what doesnt."* (2026-10-17, relayed by the LR overview session, not typed here) | **SEO learnings exchange with LR.** Cramers overview reports each learning (Change / Result before-after / Verdict WORKS, PROMISING or AVOID / Confounders) to the LR overview; the shared log is in the LR repo at `tracking/reports/seo-learnings-shared.md`. First batch sent 2026-10-17, with a local copy at `tracking/data/seo-learnings-for-lr-2026-10-17.md`. **LR's cache tip checked on Cramers and it applies:** gbraid, wbraid, gad_source, srsltid, msclkid and _gl all MISS the LiteSpeed cache (TTFB ~0.7 s vs ~0.17 s on a hit), and ads land on the homepage. The fix is a LiteSpeed Drop Query String setting, a WordPress settings write, so it **needs Zach's go**. | **Ongoing; cache fix awaits Zach** |
 | 186 | *"remove both links"* (2026-10-11, directly in the website-editor session, answering "Push it?") | Extends #185: remove BOTH Clemson links - the coastal-list link on /plants/#near-the-water (#185) AND the sod page's "Extension advice" link (Clemson HGIC 1224, saltwater on turf) - and push. The UF/IFAS link on the sod page is not a Clemson link and stays.  **LIVE 2026-10-11** (`plants_coastal.py`): /plants/ section now opens "On the islands and along the water, salt spray decides what survives, and plants differ in how much salt they can take." (no list sentence, no link); sod page "After a King Tide or Storm Flood" now reads "The first steps: ..." with no link. Self-checks fail if either Clemson URL returns. **Verified live** (desktop + iPhone): 0 hgic.clemson.edu links on both pages, anchors intact, FAQs 6=6 and 11=11. /plants/ and the sod page are FINISHED for indexing. | **Done** |
 | 185 | *"lets remove this link and the mention of it https://hgic.clemson.edu/factsheet/salt-tolerant-plants-for-the-south-carolina-coast/"* (2026-10-11) | **Remove the Clemson coastal-list link and its mention** from `/plants/#near-the-water`. The opening sentence currently says "The list we work from, *Salt Tolerant Plants for the South Carolina Coast*, sorts plants by how much salt they can take", with the link. That is the only place this URL is on the site. Generator: `site-build/plants_coastal.py` (the `CLEMSON` constant, the copy at ~l.40, and the `clemson link` self-check at ~l.177, which must flip to assert it is ABSENT). **Out of scope, not asked:** the other Clemson links (the sod page's saltwater-intrusion turf link, and the sod and turf blog source lists). Routed to the Website editor. | **Sent to the editor** |
 | 184 | *"go ahead and push it but remove some of the text mentioning clemson"* (2026-10-11, directly in the website-editor session) | **Go to push** the coastal planting + sod drafts (#180/#183): /plants/ "Planting Near the Water" + FAQ, the sod page "Near Salt Water" / "After a King Tide or Storm Flood" + FAQ, and the Folly Beach, Sullivan's Island and Isle of Palms links to #near-the-water. **First trim the Clemson mentions** - keep one cited link per page, drop the repeated "Clemson rates / Clemson's list" wording.  **LIVE 2026-10-11** (`site-build/plants_coastal.py`; page_plants.py carries the section too): Clemson's name removed from all new copy; the two sources stay as links ("Salt Tolerant Plants for the South Carolina Coast" on /plants/, "Extension advice" on the sod page). The one remaining "Clemson" on /plants/ is the older vines-section line (not part of this change). **Verified live** (desktop and iPhone): /plants/ #near-the-water present, no magnolia in it, FAQ 6 visible = 6 JSON-LD; sod page #sod-near-the-water present, FAQ 11 = 11, links the smaller-jobs post; /plants/ links to the sod anchor; Folly, Sullivan's and IOP each link /plants/#near-the-water; external source links 200. Pages FINISHED - handed to Daily index. | **Done** |
@@ -1587,3 +1598,456 @@ free tier. Fine at current traffic; watch it ([[feedback-ration-bot-probes]]).
   (`/blog/drainage-solutions-grading-charleston-sc/`) in the header, AND left a stale "Indexing requested"
   toast on screen. **The header-match guard in `__step2` is what stopped a request being fired against the
   wrong page** — the toast alone would have read as success. Keep that guard; never trust the toast by itself.
+
+- **2026-10-11, late: `/plants/` hold released and verified; quota still exhausted.**
+  **Verified the Clemson removal properly:** the page still contains the word "Clemson" once, but there are
+  **zero Clemson links** and **none inside the `#near-the-water` section** — so #185 landed. My first check
+  (whole-page word search) read as a failure and was simply too crude. **Check for the LINK in the SECTION,
+  not the word on the page.** Both pages now carry WP `modified_gmt` 2026-10-11T23:20.
+  `/plants/` attempted and refused "Quota Exceeded" again; not marked. **11 requests went through today**,
+  so the window should reopen progressively through tomorrow.
+  **Queue for the next window, in order:** `/plants/`, `/charleston-sod-installation/`,
+  `/isle-of-palms-sc/`, `/sullivans-island-sc/`; `/folly-beach-sc/` was requested today so it waits for its
+  cooldown; the wet-yard post on or after **2026-10-16**.
+
+## 2026-10-12 — daily tasks, Monday (daily tasks session)
+
+- **Indexing and the ads review are BLOCKED: `cramerz738@gmail.com` is signed out of Chrome again.**
+  Google Ads shows it explicitly as "Signed out", and Search Console `/u/1/` redirects to `/u/0/`, which is
+  now **zcramersoccer**. **The /u/N index is not stable — always read the signed-in account, never assume
+  /u/0 is Cramers.** Both accounts do still have access to the property (checked Users and permissions:
+  cramerz738, zcramersoccer, and the service account).
+  **Did NOT fall back to zcramersoccer**: that is LR's pool and the whole point of the split was to stop the
+  two sites competing. Queue unchanged: `/plants/`, `/charleston-sod-installation/`, `/isle-of-palms-sc/`,
+  `/sullivans-island-sc/`, then `/folly-beach-sc/` after cooldown, and the wet-yard post on/after 10-16.
+- **Weekly tracking pull ran.** Search Console: 500 days of history; last 28 days **114 clicks, 7,509
+  impressions, CTR 1.52%**. GA4 last 7 days: lead_form 2, lead_phone_click 1, lead_chat 0.
+- **Leads since 2026-09-21: 17 events = 12 PEOPLE** (organic 7/4, direct 6/5, cpc 3/2, **chatgpt.com 1/1**).
+  Up from 8 people a week ago. **Reported as people, not events**, per the 10-05 correction.
+- **A lead came from `chatgpt.com / ai-assistant`.** First time an AI assistant referral has converted here.
+  Worth watching as a channel rather than treating as noise.
+- **`chat_open` since the widget went live 10-04: 1 event, 1 person — and that one is MY 10-05 test.**
+  So **zero real visitors have opened the chat in a week**, despite the badge, the pill and the new teaser.
+  The visibility work is live and verified; the answer it produced is that nobody is using it. Traffic is
+  thin (114 sessions last week) so the sample is small, but this is now measured rather than assumed.
+- **Traffic down again week on week: 175 -> 114 sessions**, engaged 82 -> 64.
+- Site health clean: home, /contact-us/, /plants/ all 200 with Clarity; chat widget 200, 38,208 bytes.
+
+- **2026-10-12, later: Zach signed cramerz738 back in; coastal batch requested.** **4 requested and
+  confirmed** from cramerz738: `/plants/`, `/charleston-sod-installation/`, `/isle-of-palms-sc/`,
+  `/sullivans-island-sc/`. Quota had recovered.
+- **The `/u/N/` index moved AGAIN and would have sent these to the wrong account.** Earlier today
+  `/u/0/` was zcramersoccer and `/u/1/` redirected to it; after the sign-in, **cramerz738 is `/u/0/` and
+  zcramersoccer is `/u/1/`**. **Always read the signed-in account from the page before requesting** — the
+  path number is not stable across sign-ins, and using the wrong one silently spends LR's pool.
+
+## 2026-10-13 — daily tasks, Tuesday (daily tasks session)
+
+- **Nothing to run.** Indexing queue empty, next eligible **2026-10-16** (5 pages in cooldown plus the
+  wet-yard post for its title). Ads review is Mon/Thu, done yesterday. Weekly tracking pull done yesterday.
+  Health clean: home, /contact-us/, /charleston-sod-installation/ all 200 with Clarity; chat widget 200,
+  38,208 bytes, chat_open present.
+- **GBP reviews re-checked a day early: the 18 have STILL not returned.** Google search still shows
+  **"Cramers Landscaping · You manage this Business Profile · No reviews · Landscaper"**, while competitors
+  in the same pack show ratings (Southern Acres 4.8 from 83). **Day 2 since verification; Google support
+  told Zach "a couple of days", so this is now at the edge of that.**
+  Maps was ambiguous — the "No reviews" string was absent and an empty `" stars"` aria-label was present —
+  **so the search result was used as the reliable surface.** Do not read the Maps panel alone for this.
+- **GOOD: the name edit landed. The profile now reads "Cramers Landscaping"** with the capital L, matching
+  the NAP standard. The pending edit seen on 10-11 has been approved by Google.
+- **"7+ years in business" is still showing** — unchanged, and still inconsistent with the confirmed
+  9 January 2017 opening date (which would read 9+). Zach still to check
+  Edit profile → Business information → More → Opening date.
+
+- **2026-10-13: interim Search Console read on the town x service work (Zach asked).** Data runs to 10-11,
+  so this is **6 days** either side of the 10-05 go-live — **a short window, and the proper re-measure is
+  still 2026-10-26.** **All four targeted clusters improved in average position:**
+
+  | cluster | before | after |
+  |---|---|---|
+  | drainage | 17.3 | **12.3** |
+  | patios | 23.5 | **18.6** |
+  | lighting | 25.9 | **22.0** |
+  | structures | 26.4 | **23.5** |
+
+  **Still 0 clicks from any of them**, and 0 non-branded clicks sitewide in both windows — consistent with
+  everything since the rebuild. Drainage is the standout and is now approaching page one.
+  **Impressions also rose (1,211 -> 1,591 non-branded) and that is NOT the signal** — at positions 12-23 it
+  produces nothing. Position is the number that moved.
+  Branded clicks fell 9 -> 1, matching the overview session's reading that September's brand spike was
+  internal/verification traffic now tagged out.
+- **Semrush: still 0 API units, renews 2026-10-18.** Every ranking read since late September has come from
+  Search Console. Competitor and position-tracking data resumes after the 18th.
+
+## 2026-10-13 — FIRST LEAD TRACEABLE TO THE NEW CONTENT
+
+- **Zach, 2026-10-13:** *"we got 4 leads yesterday (one from google ads) and a lead today through a phone
+  call so the website work over the past few weeks seems to be working unless those were coincidences lets
+  make sure we dont backslide and keep progressing up"*
+- **His four are confirmed in GA4 — 10-12, four separate people, all `lead_form`:**
+  google/cpc 1, (direct) 1, **chatgpt.com/ai-assistant 1**, **google/organic 1**. Matches his count and the
+  "one from Google Ads" exactly.
+- **The landing pages are the finding. Two of the five leads arrived on content that did not exist two
+  weeks ago:**
+  - **`/blog/french-drain-cost-charleston/` — google/organic, 10-12.** Post published **10-11**, requested
+    and indexed the same evening (crawled 20:48Z), **lead the next day.** First lead traceable to new
+    content rather than to people who already knew the company.
+  - **`/johns-island-sc/` — direct.** One of the town pages given drainage content on 10-05.
+  The other three landed on `/` (cpc, chatgpt) and `/contact-us/` (direct) — **not attributable to the
+  content work**, and should not be claimed as such.
+- **Sessions 10-12: 28, the highest day in the window** (10-06..10-13 ran 9-21 otherwise).
+- **Caveat kept on the record: this is 1 organic content lead, not a trend.** Search Console still shows
+  0 non-branded clicks through 10-11 — that click falls on 10-12, outside the data. The town clusters have
+  moved on position (drainage 17.3 -> 12.3) but still earn no clicks. **The honest reading is that the
+  first content lead has arrived, not that non-branded search is working.**
+
+- **2026-10-13: weekly guard built — `tracking/scripts/weekly_guard.py`**, on Zach's *"yes set up the weekly
+  check"*. Runs read-only and covers the three ways this work actually gets lost:
+  **(1) reversion** — asserts key phrases on 14 lead-producing / newly-built pages, because generators have
+  silently undone content three times; **(2) decay** — stores each page's average position and reports a
+  slide of more than 3 places week on week; **(3) leads by landing page**, which is what turned "4 leads"
+  into "the French drain post worked". Previous run is the baseline; state in
+  `tracking/data/weekly_guard.json`. Run it on Mondays with the tracking pull.
+- **Its first run produced a FALSE POSITIVE and that is worth recording.** It reported `/services/` as
+  having lost "How a Project Works". **It had not** — the heading was present and the page was 1,697 words.
+  The check matched against **raw HTML**, which fails whenever a phrase is split by an inline tag or carries
+  an entity. **Fixed to match rendered text** (`visible_text()`), and two watch phrases were changed
+  accordingly (an href and an id are stripped by that function, so anchor text is watched instead).
+  **Had that gone out unverified it would have sent the website editor chasing a revert that never
+  happened** — the same failure as the 24 phantom photo fixes. Verify a guard's first alarm before relaying it.
+- **The decay question, answered from Zach's own data.** Blog-section performance by month: Mar 1,245 impr /
+  4 clicks, **May 1,680 / 9 (peak)**, Jun 1,248 / 6, Jul 449 / 3, Aug 894 / 5, **Sep 464 / 3** — a **72%
+  fall in impressions from May to September while posts grew from 12 to 23.** His recollection of the old
+  vendor's blogs fading is correct and measured. **Same risk applies to the new posts**: Google trials new
+  content, then settles it to the position the site's authority justifies. Mitigations in place are internal
+  linking and fast indexing; the actual fix is authority.
+
+## 2026-10-15 — daily tasks, Thursday (daily tasks session)
+
+- **GBP reviews: 1 of 18 is back.** The profile now shows **5.0 (1)** — it read "No reviews" on 10-13.
+  **Day 4 since verification; Google support said "a couple of days".** One returning and seventeen not is
+  a partial recovery, not a fix, and is now worth going back to support over. Name reads
+  "Cramers Landscaping" (correct). **"7+ years in business" still showing**, still inconsistent with the
+  confirmed 9 Jan 2017 date.
+- **Ads review (Thu).** Sep 4 – Oct 15: **143 clicks, 2.06K impressions, $12.95 avg CPC, ~$1,852 spend,
+  4 conversions.** CPC eased very slightly ($13.03 -> $12.95), the first time it has not risen.
+  **A 4th Ads conversion has landed** since Monday.
+- **16 people have now enquired since 09-21** (was 12 on 10-13). By source, with lead rate:
+  direct 6 (2.3%), **organic 5 (4.3%)**, cpc 3 (1.9%), **chatgpt 2 of 9 sessions (22.2%)**.
+  **ChatGPT has produced a second lead** and remains the best-converting source on the site by a wide
+  margin, now on 2 from 9 sessions. Still small numbers, but no longer a single data point.
+- **The French drain post produced another lead** (google/organic, landing on the post). Second lead
+  traceable to that page.
+- Indexing: nothing eligible, next **2026-10-16** — tomorrow, including the wet-yard post for its title.
+- Health clean. **Chat widget is now 38,226 bytes (was 38,208)** — the worker has been redeployed by
+  another session since 10-11; nothing broken.
+- **OPEN QUESTION for the website editor, NOT logged as a defect.** `/plants/` still names Clemson once in
+  visible copy — *"Clemson's advice is not to let any vine reach the top of a tree at all"* — with **no
+  link**. That sentence comes from **`plants_vines.py`**, a different generator from `plants_coastal.py`,
+  whose own check only asserts *no Clemson **link*** in the sod-water block. `blog_evidence.py` also cites
+  Clemson deliberately across several posts as horticultural sourcing. **So it is unclear whether #186's
+  "no Clemson name" was scoped to the coastal section or sitewide.** Asked rather than "fixed".
+- **Zach, 2026-10-15:** "using the review from the daily index and tasks session is there anything to
+  optimize for the ads from this weeks data".
+- **Optimization check 2026-10-15 (export 10-16 00:37Z; Daily index reports ads-review-2026-10-12 and
+  ads-optimization-2026-10-15):**
+  - Since the exact-only switch (10-11 18:37Z, about 4.25 days): $140.45, 11 clicks, 1 new lead (3rd
+    person, 10-12 18h, Patios exact [hardscapes charleston sc], $10.99 click). About $33/day.
+    Impression share lost to budget 0%, to rank 33.9%. Search terms almost all on-target.
+  - Daily index points: the sod page is stale (Quick Services paused since 10-01; those sessions are
+    older). The homepage landing is performing (since 10-12: 9 sessions, 8 engaged, 272s). The
+    Portfolio sitelink already exists ("Our Portfolio"). CPC eased ($12.77 since the switch).
+  - Driveways: 0 impressions since the switch, so exact driveway searches are rare here.
+  - Queued 10-16 a: exact negatives [best landscapers in my area], [professional landscapers near me],
+    [residential landscape installation].
+  - Proposed to Zach (needs a build run): exact keywords [backyard makeover companies near me] (Outdoor
+    Living Contractor, clicked $12.90), [patio installers near me], [backyard patio contractors],
+    [hardscapes near me] (Patios).
+  - "Form (1)" is still PRIMARY.
+
+## 2026-10-17 — daily tasks, Saturday (daily tasks session)
+
+- **2 requested, and 3 slots SAVED by checking first.** Five pages were queue-eligible; only two needed a
+  request.
+  - **`/blog/drainage-solutions-grading-charleston-sc/` requested** — still crawled 10-11 **20:50:06Z**,
+    before the #178 retitle at 20:59:12Z, so Google still had the old title. This is the one that has been
+    waiting since 10-11.
+  - **`/folly-beach-sc/` requested** — last crawled 10-11 18:13, before its link change.
+  - **`/outdoor-kitchens/` NOT requested: Google re-crawled it today at 11:53:40Z**, after the 18:16 merge
+    on 10-11. The recrawl flag had done its job, so it was cleared rather than spent.
+  - **`/blog/french-drain-cost-charleston/` NOT requested** — its stored record held only `requested` and no
+    coverage, so `done()` was false and it queued. **The page is fine**: indexed, crawled 10-12 07:19.
+    **A record with no coverage field looks identical to an un-indexed page in the queue** — refresh before
+    requesting.
+  - **`/services/` deferred to 2026-11-01.** Crawled and declined since **2026-09-17**, through the
+    restructure (543 -> 1,694 words) and a request on 10-11; Google has not been back in a month.
+    Re-requesting does not change queue position. **Stop spending slots on it** — it needs Google to choose
+    to return, or a further content change.
+- Health clean. Chat widget 38,226 bytes.
+- Not due: ads review (Mon/Thu, done 10-15), weekly tracking (Monday).
+- **Semrush API units renew tomorrow, 2026-10-18** — the competitor and keyword research in
+  `tracking/reports/blog-ideas-2026-10-13.md` can run from then.
+
+## 2026-10-17 — full SEO research + audit launched (daily tasks session)
+
+- **Zach, 2026-10-17:** *"can you do some research on SEO and make sure we are doing everything correct for
+  optimization"*
+- **Launched as a verified, multi-agent audit** (workflow `wf_4362882f-0ec`), not a single pass, because this
+  project has a documented record of convincing findings that were wrong (24 phantom photo-town fixes; a raw-HTML
+  check that reported a revert that never happened; a "stale sitemap" from a stated rather than recorded time).
+  **Ten dimensions**, each pipelined: research current primary-source best practice (graded established / likely /
+  contested / **myth**) → audit the site against it → **three independent verifiers per finding**: does it
+  reproduce on the live site now; is it already fixed or a deliberate decision (checked against this log and the
+  09-22 audit); does it actually matter for a low-authority local contractor. Then a completeness critic, gap
+  audits, and one synthesized report.
+- **Dimensions:** technical crawl & indexing; speed & Core Web Vitals; on-page; structured data; local SEO;
+  architecture & internal linking; content & E-E-A-T; off-page authority; AI search & LLM visibility; mobile UX &
+  conversion.
+- **Run read-only against a single snapshot** taken today ~19:16 (73 pages, robots, sitemaps, 90 days of Search
+  Console, GA4 leads by landing page) so ten auditors did not crawl the host in parallel — its bot protection has
+  blocked rapid crawls before.
+- **Found while snapshotting, not yet explained: `/llms.txt` exists (78 KB).** No session has recorded creating
+  it. The AI-search dimension checks who made it and whether it is accurate.
+- `category-sitemap.xml` returns 404 — the technical dimension checks whether the sitemap index still lists it.
+
+- **Zach, 2026-10-17:** *"report what works for seo and what doesnt for cramers to the lux reno overview session
+  and have it do the same for cramers i want both sites working together."*
+  **The LR overview session was not running**, so the report was written to its intake channel:
+  `C:\Users\crame\Documents\Charlestons Luxurious Renovations\briefs\seo-from-cramers.md`, with a dated pointer
+  entry appended to LR's `DECISIONS.md` so it is found on next start. **LR is asked to reply to
+  `Website_Sandbox/briefs/seo-from-lr.md`.**
+- **Found while writing it: LR's `site-build/indexing.py` still has the 2026-10-01 race bug** — LR's own log for
+  10-17 records losing its 10-15 marks to it. The Cramers fix (`flush()` merge-on-save) is quoted verbatim in the
+  brief for LR to apply; **not edited from here**, since that session owns the file. The clearest example yet of
+  why Zach wants the two sites sharing what they learn.
+
+## 2026-10-17 — SEO audit results, and corrections it forced (daily tasks session)
+
+- **The audit finished, and ended up running TWICE, independently.** Run 1 (`wf_4362882f-0ec`): 125 findings →
+  37 confirmed, 9 refuted, 5 deliberate, 1 already fixed, 73 judged not to matter. Its report-writing step was
+  BROKEN: the script silently cut the data handed to the writer at 180,000 characters, so the writer saw only the
+  first dimension and reported "only one finding confirmed". Caught before it reached Zach. The fixed re-run was
+  meant to replay from cache, but every audit and verify agent re-ran live, so it became **run 2**: 123 findings
+  → 34 confirmed, 5 refuted. The two runs agreed on every major theme but **flipped on low-impact items**
+  (confirmed in one, "not worth it" in the other), and each found things the other did not. A **tiebreak**
+  (`wf_b8030252-a6d`: one read-only skeptic per disputed cluster, then one merged writer) settled the
+  disagreements. **Final report: `tracking/reports/seo-audit-2026-10-17.md`** (tiebreak verdicts alongside it as
+  `seo-audit-2026-10-17-tiebreak.json`). Every item is tagged [both audits] or [one audit + tiebreak].
+  **Lesson for future audits: one run's confirmed/noise split on low-impact items is close to a coin flip — weight
+  items by whether independent runs agree.**
+- **Verdict in one line:** the site is technically sound and on-site SEO is no longer the constraint; **reviews and
+  links are.** Top actions: get the 18 reviews restored (re-open the support case) and start a neutral review ask;
+  reply to Kim Hester; one read-only Business Profile sitting (categories survived? services list clean?) then add
+  "Carport and pergola builder" + "Drainage service"; drop the "from 18 reviews" footer line; chase HBA and
+  Charleston Home + Design (23 days, no follow-up) and email Mount Pleasant Magazine about its editorial feature.
+- **Rule breaches the audit found on public surfaces (each needs Zach's go to fix):** `/llms.txt` (Hostinger Tools
+  plugin, untouched since 20 Feb) says "residential and commercial" and lists "Landscape Maintenance"; the Mount
+  Pleasant post's two "Commercial Work:" H2s (`mp_expand.py` 118/126, open since 09-22); the archive pages
+  (`/author/…`, `/category/uncategorized/`) still carry the vendor "Schema global" block ("leading irrigation
+  installers", self-serving rating) and the old Divi footer with Irrigation/Maintenance links; the old Divi blog
+  listing `/blog/page/N/?et_blog` returns 200 with a Maintenance footer; **MapQuest** says "lawn care" for
+  "residential and commercial clients" and shows in Google's snippet for the brand search; Bing's three listings
+  carry the vendor homepage text.
+- **Vendor access — four read-only checks only Zach can do, signed in** (riskiest open items, not SEO): WP user 1's
+  application passwords and other users; Cloudflare account API tokens + audit log since 10-01; NixiHost client
+  users, FTP accounts, SSH keys, cron; Business Profile People and access on Cramers AND LR. Click paths in report
+  items 10–13. Tag Manager users were checked by API in run 1: only zcramersoccer and the service account.
+- **CORRECTION to the 2026-10-15 entry "GBP reviews: 1 of 18 is back".** Wrong. The visible review is a NEW one
+  (Kim Hester), not one of the 18. **None of the 18 has returned.** It also has no owner reply yet.
+- **CORRECTION to the Cramers overview's batch-1 learnings for LR** (`tracking/data/seo-learnings-for-lr-2026-10-17.md`
+  item 1, copied into LR's `tracking/reports/seo-learnings-shared.md` row 1): it says town sections were added
+  to `/landscape-drainage-services-charleston-sc/`. They were not. `town_sections.py` line 13 put them on the
+  Summerville, Johns Island, Daniel Island and North Charleston **town pages**; the service page got only links.
+  The French-drain town queries that moved all rank on the **service page**, which names the towns only in a
+  list. The result numbers stand; the stated mechanism and the "one service page that answers locally" verdict
+  do not. Correction sent to LR in `briefs/seo-from-cramers.md`; **flagged here for the overview session to
+  amend its note** (not edited from this session — the overview owns that file).
+- **CORRECTION to the 2026-10-12 note (line ~1668) that the brand-click fall was "internal/verification traffic
+  now tagged out".** Right conclusion, wrong mechanism: tagging is GA4-only and cannot remove Search Console
+  clicks. Search Console data: the whole ~80% fall in weekly organic clicks (42–43/week mid-Sept → 7–10) is
+  **branded** clicks (36, 30 → 10, 2, 1) — the family and working sessions searching the name during the
+  rebuild, which then stopped. **Non-branded and anonymised clicks were flat for all nine weeks. Not an SEO
+  decline**, and not Ads taking brand clicks (no brand keywords, no 'cramer' search term since launch).
+- **New Google verification token in DNS (`oAVom4…`), unlogged since #127 — checked, it is not a stranger.**
+  Search Console → Users and permissions today, read as cramerz738: users are **cramerz738 (Owner, Verified),
+  zcramersoccer (Owner, Verified) and the service account; Unused ownership tokens (0).** Two DNS tokens, two
+  owners, and `hr7wSr4riB…` is zcramersoccer's (#126), so `oAVom4…` is **cramerz738's, from Zach adding it on
+  10-05.** **Do NOT delete it** — that would unverify the account all Cramers indexing goes through. This also
+  stands in for the 10-08 re-check #127 asked for: **SearchX is not an owner.**
+- **LR's reply received** (`Website_Sandbox/briefs/seo-from-lr.md`, from the LR overview, 2026-10-17). LR has
+  applied the Part D indexing.py race fix, amended row 1 of its shared log (no service-page town sections), and
+  found the same llms.txt template and vendor-author problem (both put to Zach). **What it adds for Cramers:**
+  (1) LR's only traceable new-customer lead (10-07, Ladson, Yahoo organic) landed on its specialist
+  tadelakt/plaster page, the same pattern as Cramers' French-drain post: **specific, buying-adjacent pages convert;
+  broad pages and town pages haven't yet**. (2) LR's "position 1.0" homepage rows are a rank checker or bot (100%
+  US desktop, 0 clicks, in bursts), matching the audit's finding that Cramers' own Semrush tracker produces
+  impressions. **Exclude tracked and checker queries before calling anything "near page one".** (3) The 51
+  Cramers footer links to LR sent **0 referral sessions** (09-24 to 10-04): the cross-link is a relevance signal,
+  not traffic. (4) LR suggested checking whether Cramers' old SearchX GA4 property is readable. **Already done:** the
+  service account reads `properties/512504677` (G-47HFBDQTEF), recorded earlier in this log (line ~139). Re-listed
+  today: 395152760 (ours), 484493716 (no data), 512504677 (SearchX-era, inside the "TRIO" GA organisation), plus
+  LR's two.
+
+## 2026-10-18 — Zach's go on the audit fixes, and new content (daily tasks session)
+
+- **Zach, 2026-10-18:** *"lets not remove the "rated 5 on google from 18 reviews" yet we can go ahead and fix
+  some of the other seo things from the list. Lets also research what future content we should add and start on
+  that content"*
+- **The footer trust line stays as is** ("Rated 5.0 on Google from 18 reviews", `site-build/trust_strip.py`).
+  Audit item 4 is **declined for now**. Do not re-propose it until the reviews question is settled.
+- **A general go for the other fixes on the audit list** (`tracking/reports/seo-audit-2026-10-17.md`), split by
+  lane per OVERVIEW. **Page, generator, schema and redirect fixes go to the website editor; tracking, GBP drafts,
+  directories and chat-widget fixes are done here.** These still need a **specific** yes, under the standing
+  snippet/settings policy: the breadcrumb-error fix (a write to the shell snippet), removing the vendor schema from
+  WPCode Lite's legacy header (a snippet we did not create), the Hostinger Tools llms.txt setting (a plugin
+  setting), and the MapQuest "report a problem" form (a third-party submission). A general "go ahead" is not
+  treated as covering them.
+- **New content: research first, then start drafting.** Semrush units renewed today; usage follows
+  `tracking/SEMRUSH-BUDGET.md` (check the balance first, no fan-out, log every call). Drafts use only facts on record
+  (PROJECT-NOTES, DECISIONS, the KB, published prices); anything else becomes a question for Zach. Content is built
+  and deployed by the website editor.
+- **Done today in the daily-tasks lane (under Zach's go above):**
+  - **Chat widget, audit cheap-batch items, deployed** (worker version `236e5727-88b3-4144-97a1-6fde7bc7a2b6`,
+    widget now 40,059 bytes). Under 520px: text fields 16px (iOS no longer zooms on focus), close button 44×44,
+    `aria-modal="true"` when full-screen. Lead form: name and phone marked "(required)", and an empty submit now
+    says what is missing instead of silently moving the focus. Desktop unchanged. Tested on a local copy with no
+    bot messages; live widget and site checked, no console errors. **The "chat button covers the submit button"
+    item was measured and NOT changed**: it overlaps only while the button is in the bottom ~80px of the screen.
+    Before deploying, checked that the local knowledge.md and widget matched what was live (last deploy 10-11
+    20:49 UTC), so nothing else shipped with it.
+  - **Search Console: removed the vendor-era `category-sitemap.xml` submission** (404 live, 1 error, last read
+    09-18). The remaining sitemaps are sitemap_index, page-sitemap and post-sitemap, all 0 errors.
+  - **Drafts for Zach, nothing sent or posted:** the Kim Hester reply plus a review-ask text, reminder and past-customer
+    catch-up (`gbp/drafts/2026-10-18-review-reply-and-review-ask.md`); HBA phone script, a Charleston Home + Design
+    follow-up and a new Mount Pleasant Magazine editorial enquiry, all project facts taken from the published page
+    (`tracking/data/link-followups-2026-10-18.md`).
+  - **Site and generator batch handed over, not done here:** `briefs/2026-10-18-seo-fixes.md`, sent to the Cramers
+    overview to assign. No Cramers website-editor session is running (the "Website" session open today is LR's).
+  - **Semrush:** API units were still 0 this morning (payment pending). One MCP call, refused at 0 units, is logged in
+    the shared ledger. The new pacing rule (#189) is acknowledged; the content research makes no Semrush calls.
+- **New-content research finished** (workflow `wf_d69f3d66-6b5`): five evidence sweeps covering Search Console
+  (16 months, with the tracker, brand and template queries excluded), 60 days of real chat questions, Ads search
+  terms, competitor pages and facts on record. Then 8 shortlisted ideas × 3 verifiers (real demand, conflicts or
+  cannibalisation, writable from facts on record), a ranked plan, and three drafts each fact-checked line by line.
+  **Plan:** `Website_Sandbox/briefs/2026-10-18-content-plan.md`. **Drafts:**
+  `Website_Sandbox/briefs/content-drafts-2026-10-18/c1.md` (drainage jobs on the drainage page), `c2.md` (what a
+  drainage quote should tell you), `c3.md` (gravel/plantation-mix driveways on the concrete page).
+  **Headline:** almost every topic already has a page, so **the plan adds sections and FAQs to pages that already
+  convert, not new URLs.** No new blog posts were recommended: after removing tracker and template queries, no
+  topic showed winnable search demand that justifies a new page. Content is pitched as conversion support, not as
+  a traffic play. Authority remains the constraint.
+  **Zach's answers unblock the most** (plan, "Questions for you"): job timelines (top-3 phone question; unblocks
+  FAQs on 6 service pages); drainage photos and "sump pump" wording; driveway options; sod pallet coverage.
+  Drafts go to the Website editor (`local_eb08499a…`, per the overview); **nothing is built or deployed until Zach
+  answers and gives his go.**
+- **Found in passing, and fixed in this lane:** `gbp/POSTS-AND-SCHEDULE.md` still quoted "Pergolas from $10,000" (×2)
+  and "patios $12–$18" in its scheduled post drafts and its own rules. The live site says pergolas $6,000–$30,000
+  (#153, 2026-10-04), pavers from about $18 and poured concrete about $12. A post drafted from that file would have
+  published wrong prices. Corrected, with a rule to re-check figures against the live page on posting day.
+- **Found in passing, not this lane (sent to the Website editor with the drafts):** the "Comparing Quotes" list on
+  `/services/` has an Irrigation line (promotes irrigation); `/charleston-sc/` downtown section says the client has
+  us back to prune and clean her fountains (reads as maintenance); `/patios-pavers/` still has the "crisp edges"
+  marble line corrected on 09-20; `/concrete-pool-decks/` says a cracked deck "can't be repaired" piece by piece,
+  while the James Island job replaced some sections and refinished the rest (question for Zach). Stale fact files:
+  PROJECT-NOTES (pergola $10,000, shower $8,000, sod chemicals), OVERVIEW.md (pergola $10,000, patios $12–$18),
+  content-answers.md (founded "2016"; confirmed 9 Jan 2017).
+
+## 2026-10-19 — Semrush check of the content plan (daily tasks session)
+
+- Following up Zach's 10-13 instruction (*"when semrush is back lets use semrush to find some good blog ideas"*), now
+  that units have renewed (50,000; overview's pace numbers: cumulative ≤1,613 × day, ≤1,000 per sitting).
+  **Two API calls, 760 units, both logged in the shared ledger** (phrase_these 280 for 38 keywords, 28 rows returned;
+  phrase_questions "paver patio" 480 for 12 rows). Balance ~49,240.
+- **Result, appended to `briefs/2026-10-18-content-plan.md`:**
+  - Local money searches are small: landscaping mount pleasant sc 210/mo, landscape lighting charleston sc 170,
+    landscaping summerville sc 140, french drain charleston sc 20. Ten phrases have no data at all. This confirms
+    the authority framing; there's no hidden big local term.
+  - Two plan items move from speculative to moderate on real, easy question demand: **sod pallet coverage** ("how
+    many square feet in a pallet of sod" 1,300/mo, KD 15, plus St Augustine and zoysia variants) and **pavers over
+    an existing slab** ("can you put pavers over concrete" 480/mo, KD 2). Both are still blocked on Zach's answers.
+  - "tabby driveway" (50/mo, KD 5) supports the C3 heading.
+  - **One new idea needs Zach's OK on a worked total:** "how much does a 20x20 paver patio cost" (720/mo, KD 14).
+    The only honest answer from published numbers is 400 sq ft × about $18 = from about $7,200. Stating a total
+    needs his approval.
+  - Paver-patio "how to" questions are DIY demand, not customers. Not recommended.
+
+## 2026-10-19 — daily tasks + Monday checks + Semrush audits (daily tasks session)
+
+- **Zach, 2026-10-19:** *"any daily tasks and audits we have the semrush api"*
+- **Indexing.** Every record re-inspected first (70 of 73 done; 71 indexed). Two pages were eligible, and **both
+  changed after Google's last crawl**, so both were worth a slot:
+  - `/landscape-grading-services-charleston-sc/` requested and marked. It is indexed, but Google still holds the
+    08-03 pre-rebuild copy (WordPress modified 09-27); the 09-28 request never produced a crawl.
+  - `/blog/transform-…-the-ultimate-guide/` (the lighting-plan post): **request clicked but not confirmed**,
+    because the Chrome connection dropped right after the click. **Not marked.** Re-check `lastCrawlTime`
+    tomorrow (it is 09-25; the post was modified 10-04). If it moved, mark it; if not, request once. Never twice.
+  - `/services/` stays deferred to 11-01.
+- **Weekly guard:** all 14 watched pages still carry their content. **Two fixes to the guard itself:**
+  - (1) It counted lead EVENTS, so a single enquirer whose form fired twice showed as "2". It now counts people
+    (totalUsers).
+  - (2) It flagged "slides" on pages with 6–16 impressions in the week. Four of five flags were that kind of noise.
+    It now requires 30+ impressions before calling a slide.
+  - The only slide with enough impressions to read is Sullivan's Island, 16.8 → 20.6 (47 impressions). Minor.
+- **Weekly report** (`tracking/reports/weekly-2026-10-19.md`): **6 people enquired in the last 7 days, prior 7: 3.**
+  The report used to sum events and would have said "9 leads". `ga4_pull.py` now writes
+  `ga4_leads_people.csv` and the headline counts people. The competitor-ads pull timed out (the Transparency
+  endpoint rate-limits) and wrote nothing, by design. Not retried today.
+- **New lead this week: 1 person, Bonneau, phone, organic, landing on `/concrete-pool-decks/` (10-17).** The same
+  week that page reached **position 6 for "pool deck resurfacing near me" (was 22) and "pool deck resurfacing
+  charleston sc" (was 10)**. Pool decks are on HOLD for content and the Pool Decks ad group is paused (Zach,
+  09-29: most people have their pool company do the deck). **Organic evidence now says pool-deck searchers do
+  contact Cramers.** That is worth Zach's attention; it is not a change.
+- **Ads (Mon review)** from the bridge export (10-19 21:37Z): since launch, 159 clicks, ~$2,080, **4 conversions
+  (3 form, 1 phone), unchanged since 10-15.** Last 7 days: 23 clicks, $308 (~$13.4 CPC), 1 conversion (the 10-12
+  lead). Spend runs ~$44/day under the $110 budget, with impression share 85% and none lost to budget. All 10
+  search terms with new spend since 10-11 are relevant (hardscape/patio/driveway/backyard). **No changes
+  recommended.** Negatives were added 10-16 by the Ads side.
+- **Semrush (the audits Zach asked for):**
+  - **Map pack: 46 of the 56 tracked searches show a map pack** (Charleston point, phone), and **Cramers is in
+    none of them, any day 10-12 to 10-19.** This is the first measured map-pack reading. It confirms the
+    reviews/Business Profile constraint.
+  - **Page one organically (Charleston, phone, 10-19):** outdoor shower installation charleston #2; retaining wall
+    charleston sc #5; **french drain charleston sc #6 (was 17 a week ago, the French-drain post)**; pool deck
+    resurfacing charleston sc #6; pool deck resurfacing near me #6; yard drainage near me #10. Pavilion builder
+    charleston sc is #11 (was 25).
+  - Down on the week: pool pavilion charleston 18 → 43; town "landscaping <town>" terms for Isle of Palms,
+    Kiawah and Folly down 10–14; pergola builders near me 14 → 25. These are single-day readings from one point,
+    so watch them, don't act yet.
+  - The site appears in Google's AI Overview only for the brand search.
+- **SEMRUSH OVERSPEND, this session's mistake.** The 56-keyword Position Tracking pull through the API cost
+  **5,600 units (100 per keyword)**; I had estimated ~560. With the day's other calls, the shared pool reached
+  **7,040 spent by day 2 against a 3,226 pace line.** **No session (Cramers or LR) makes API calls until 10-22.**
+  Both overviews were told. The ledger is corrected, a measured-cost table is now in `tracking/SEMRUSH-BUDGET.md`
+  (test any unlisted report with `display_limit: 1` first; read Position Tracking in the UI, never the API), and
+  the data is saved so nobody re-pulls it: `tracking/data/semrush_position_tracking_2026-10-19.json`, plus weekly
+  snapshots `semrush_positions_2026-10-12.csv` / `-10-19.csv` for the report.
+- **Directories (10-19, from the LR overview's competitor research, relayed by the Cramers overview):** checked
+  read-only. **Cramers is not on YellowPages (searched Summerville, Charleston and North Charleston) or DexKnows**,
+  and no stale 709-6140 listing exists on either. Added to `tracking/data/link-followups-2026-10-18.md` as an
+  optional free claim (same Thryv backend, one claim) with the exact Google-profile details. Also added BubbleLife,
+  WCBD and SC Biz News as news-hook ideas. Account creation and submissions are Zach's step.
+- **Zach, 2026-10-19:** "anything to do to optimize ads".
+- **Optimization check 2026-10-19 (export 23:37Z):**
+  - Since 10-16: $242, 17 clicks, 0 leads. Since the 10-11 exact switch: $382, 28 clicks, 1 lead.
+    Impression share 84.9% (7 days), 0% lost to budget.
+  - Top spender since the switch: Outdoor Living Contractor, $155, 11 clicks, 0 leads. Of that, [outdoor
+    living company near me] took 6 clicks ($85.77) and [outdoor living contractor charleston sc] 4 clicks
+    ($56.71). Google's exact close variants stretch them to generic landscaping: "home landscapers near
+    me", "home landscaping near me", "backyard landscaping companies".
+  - Working well: Pergolas (6 clicks, "pergola builders near me", "pergola installation charleston") and
+    Patios (8 clicks, 1 lead; "hardscape companies near me" 4 clicks).
+  - Queued 10-20 a: exact negatives for the three generic terms above.
+  - Proposed to Zach: pause [outdoor living company near me].
+  - Still pending: the four exact keywords from 10-15, and "Form (1)" (still Primary).
+- **Zach, 2026-10-19: "yes pause it and add the keywords".**
+  - Pause [outdoor living company near me].
+  - Add exact [backyard makeover companies near me] to Outdoor Living Contractor.
+  - Add exact [patio installers near me], [backyard patio contractors], [hardscapes near me] and
+    [hardscape near me] to Patios.
+- **Done 2026-10-19:**
+  - Change file 10-20 b pauses [outdoor living company near me].
+  - Build file ADD_EXACT adds the 5 exact keywords (needs a build-script run). None is blocked by a live
+    negative.
+- **Verified 2026-10-20 00:35Z:** [outdoor living company near me] PAUSED; the 5 new exact keywords are
+  live at their group bids; the 3 generic exact negatives were added. 112 enabled keywords, 0 bid
+  mismatches.
